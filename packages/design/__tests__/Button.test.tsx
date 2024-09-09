@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Button } from '../components/Button'; // adjust the import path as necessary
+import { Button } from '../src/components/button/Button'; // adjust the import path as necessary
 
 test('renders the initial test state and updates it on button click', () => {
   render(<Button />);

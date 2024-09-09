@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../styles/Button.module.scss';
+import styles from './Button.module.scss';
 import { clsx } from 'clsx';
 export const Button = () => {
   const [test, setTest] = useState('test');
