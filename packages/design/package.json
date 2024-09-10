@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "exports": {
     "./button": "./src/components/button/Button.tsx",
-    "./header": "./src/components/header/Header.tsx"
+    "./header": "./src/components/header/Header.tsx",
+    "./OblongInput": "./src/components/oblongInput/OblongInput.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
