@@ -1,5 +1,5 @@
 import { Button } from '@mee-monorepo/design/button';
-import OblongInput from '@mee-monorepo/design/OblongInput';
+import Input from '@mee-monorepo/design/Input';
 import React from 'react';
 
 function ProfileIndex() {
@@ -7,8 +7,9 @@ function ProfileIndex() {
     <div style={{ padding: 100 }}>
       <Button />
       <div style={{ padding: 100 }}>
-        <OblongInput
+        <Input
           type='text'
+          label='이름'
           name='id'
           fontSize='1.8rem'
           color='var(--block300)'
