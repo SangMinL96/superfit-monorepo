@@ -1,8 +1,10 @@
+import BottomSheet from '@mee-monorepo/design/BottomSheet';
 import { Button } from '@mee-monorepo/design/button';
 import Input from '@mee-monorepo/design/Input';
-import React from 'react';
+import React, { useState } from 'react';
 
 function ProfileIndex() {
+  const [open, setOpen] = useState(true);
   return (
     <div style={{ padding: 100 }}>
       <Button />
@@ -16,6 +18,9 @@ function ProfileIndex() {
           placeholder={{ text: '아이디를 입력하세요.' }}
         />
       </div>
+      <BottomSheet open={open} onClose={() => setOpen(false)}>
+        <div>test</div>
+      </BottomSheet>
     </div>
   );
 }

@@ -2152,8 +2152,9 @@ __metadata:
     "@testing-library/jest-dom": ^6.5.0
     "@testing-library/react": ^16.0.1
     "@types/jest": ^29.5.12
-    "@types/react": ^18.3.5
-    "@types/react-dom": ^18.3.0
+    "@types/node": ^20.11.24
+    "@types/react": ^18.2.61
+    "@types/react-dom": ^18.2.19
     babel-jest: ^29.7.0
     clsx: ^2.1.1
     eslint: ^8.57.0
@@ -2161,6 +2162,7 @@ __metadata:
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
     react: ^18.2.0
+    react-dom: ^18.2.0
     react-test-renderer: ^18.3.1
     sass: ^1.78.0
     ts-jest: ^29.2.5
@@ -2661,15 +2663,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.3.0":
-  version: 18.3.0
-  resolution: "@types/react-dom@npm:18.3.0"
-  dependencies:
-    "@types/react": "*"
-  checksum: a0cd9b1b815a6abd2a367a9eabdd8df8dd8f13f95897b2f9e1359ea3ac6619f957c1432ece004af7d95e2a7caddbba19faa045f831f32d6263483fc5404a7596
-  languageName: node
-  linkType: hard
-
 "@types/react@npm:*":
   version: 18.2.5
   resolution: "@types/react@npm:18.2.5"
@@ -2689,16 +2682,6 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: a100c09bc0d6d1a0a42b3fa0944b71d209b5adea6515fc21109972ec3267185372cc416c0467b1998afce6b90fc80f4c0029b5d975afb0b3070d864c7a924a5e
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^18.3.5":
-  version: 18.3.5
-  resolution: "@types/react@npm:18.3.5"
-  dependencies:
-    "@types/prop-types": "*"
-    csstype: ^3.0.2
-  checksum: 63d2ff473b348c902b68c20be55d2c5124d078c4336c2d1778f316c27789ed596657e8e714022ce14fb24994b0960fc64c913e629bb0bf85815355b0c31eb46b
   languageName: node
   linkType: hard
 
