@@ -6,7 +6,7 @@ export const Button = () => {
   const [test, setTest] = useState('test');
   return (
     <>
-      <button onClick={() => setTest('test22')} className={clsx(styles.test, false && styles.active)}>
+      <button onClick={() => setTest('test2s2')} className={clsx(styles.test, false && styles.active)}>
         Boop
       </button>
     </>
