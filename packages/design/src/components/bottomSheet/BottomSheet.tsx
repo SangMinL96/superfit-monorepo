@@ -12,9 +12,11 @@ type Props = {
 
 function BottomSheet({ open, onClose, children }: Props) {
   const [hasMounted, setHasMounted] = useState(false);
+  
   useEffect(() => {
     setHasMounted(true);
   }, []);
+
   const startY = useRef<number>(0);
   const ref = useRef<HTMLDivElement>(null);
   const onTouchStart = (ev: TouchEvent<HTMLButtonElement>) => {
