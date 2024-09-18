@@ -19,6 +19,7 @@ function BottomSheet({ open, onClose, children }: Props) {
 
   const startY = useRef<number>(0);
   const ref = useRef<HTMLDivElement>(null);
+  
   const onTouchStart = (ev: TouchEvent<HTMLButtonElement>) => {
     const y = ev.targetTouches[0].pageY;
     if (ref.current) {
