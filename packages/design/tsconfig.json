@@ -1,5 +1,5 @@
 {
-  "extends": "@mee-monorepo/typescript-config/react-library.json",
+  "extends": "@superfit/typescript-config/react-library.json",
   "compilerOptions": {
     "lib": ["es5", "es6", "dom", "esnext"],
     "types": ["@testing-library/jest-dom"]

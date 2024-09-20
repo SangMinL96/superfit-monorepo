@@ -1,12 +1,13 @@
 {
-  "name": "@mee-monorepo/design",
+  "name": "@superfit/design",
   "version": "0.0.0",
   "exports": {
     "./button": "./src/components/button/Button.tsx",
     "./header": "./src/components/header/Header.tsx",
     "./OblongInput": "./src/components/oblongInput/OblongInput.tsx",
     "./Input": "./src/components/input/Input.tsx",
-    "./BottomSheet": "./src/components/bottomSheet/BottomSheet.tsx"
+    "./BottomSheet": "./src/components/bottomSheet/BottomSheet.tsx",
+    "./Divide": "./src/components/divide/Divide.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -18,8 +19,8 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@jest/globals": "^29.7.0",
-    "@mee-monorepo/eslint-config": "*",
-    "@mee-monorepo/typescript-config": "*",
+    "@superfit/eslint-config": "*",
+    "@superfit/typescript-config": "*",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",

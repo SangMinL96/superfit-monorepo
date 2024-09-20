@@ -123,11 +123,16 @@ q:after {
   content: '';
   content: none;
 }
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-:root {
+body {
   --themeColor: #0028ef;
   --red200: #ff5d5d;
   --red300: #ff2424;

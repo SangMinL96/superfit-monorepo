@@ -1,6 +1,6 @@
-import BottomSheet from '@mee-monorepo/design/BottomSheet';
-import { Button } from '@mee-monorepo/design/button';
-import Input from '@mee-monorepo/design/Input';
+import BottomSheet from '@superfit/design/BottomSheet';
+import { Button } from '@superfit/design/button';
+import Input from '@superfit/design/Input';
 import React, { useState } from 'react';
 
 function ProfileIndex() {

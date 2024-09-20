@@ -1,5 +1,5 @@
 {
-  "name": "@mee-monorepo/mweb",
+  "name": "@superfit/mweb",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mee-monorepo/design": "*",
+    "@superfit/design": "*",
     "next": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,9 +17,9 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
-    "@mee-monorepo/eslint-config": "*",
-    "@mee-monorepo/typescript-config": "*",
     "@next/eslint-plugin-next": "^14.1.1",
+    "@superfit/eslint-config": "*",
+    "@superfit/typescript-config": "*",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",

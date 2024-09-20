@@ -1,14 +1,27 @@
 import { clsx } from 'clsx';
-import { useState } from 'react';
 import styles from './Button.module.scss';
-
-export const Button = () => {
-  const [test, setTest] = useState('test');
+import { ReactNode } from 'react';
+type Props = {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
+  name: string;
+  size?: 64 | 56 | 50 | 44 | 32;
+  width?: string;
+  type: 'button' | 'reset' | 'submit';
+  children: ReactNode;
+  color?: 'primary' | 'outlined' | 'light' | 'grey';
+};
+export const Button = ({ width, name, type, children, color = 'primary', disabled, onClick, size = 50 }: Props) => {
   return (
-    <>
-      <button onClick={() => setTest('test2s2')} className={clsx(styles.test, false && styles.active)}>
-        Boop
-      </button>
-    </>
+    <button
+      style={{ width }}
+      type={type}
+      name={name}
+      className={clsx(styles.wrap, styles[`size_${size}`], styles[color])}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 };

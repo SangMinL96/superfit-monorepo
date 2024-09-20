@@ -1,3 +1,3 @@
-# `@mee-monorepo/eslint-config`
+# `@superfit/eslint-config`
 
 Collection of internal eslint configurations.

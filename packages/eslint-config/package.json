@@ -1,5 +1,5 @@
 {
-  "name": "@mee-monorepo/eslint-config",
+  "name": "@superfit/eslint-config",
   "version": "0.0.0",
   "private": true,
   "files": [

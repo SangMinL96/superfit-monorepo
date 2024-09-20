@@ -1,5 +1,5 @@
 {
-  "extends": "@mee-monorepo/typescript-config/nextjs.json",
+  "extends": "@superfit/typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
     "baseUrl":".",
