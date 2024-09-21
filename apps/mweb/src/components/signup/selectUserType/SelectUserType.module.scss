@@ -1,0 +1,32 @@
+.wrap {
+  padding: 0 20px;
+  margin-top: 40px;
+}
+.tit {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.desc {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  color: var(--grey600);
+  font-weight: 600;
+}
+.card_box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+.tit_card {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--black300);
+}
+.desc_card {
+  margin-top: 15px;
+  line-height: 1.6;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--grey700);
+}

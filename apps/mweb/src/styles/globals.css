@@ -123,6 +123,9 @@ q:after {
   content: '';
   content: none;
 }
+p{
+  line-height: 1.5;
+}
 a {
   text-decoration: none;
   color: #212121;
@@ -138,13 +141,15 @@ body {
   --red300: #ff2424;
   --red400: #f30000;
   --grey100: #eee;
-  --grey200: #d2d2d2;
-  --grey300: #c3c3c3;
-  --grey400: #b7b7b7;
-  --grey500: #949494;
-  --grey600: #707070;
-  --block500: #181818;
-  --block400: #212121;
+  --grey200: #a7a7a7;
+  --grey300: #868686;
+  --grey400: #717171;
+  --grey500: #5a5a5a;
+  --grey600: #454545;
+  --grey700: #393939;
+  --black500: #181818;
+  --black400: #212121;
+  --black300: #3A3A3A;
 }
 input {
   outline: none;

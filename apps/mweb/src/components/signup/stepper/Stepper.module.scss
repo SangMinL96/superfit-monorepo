@@ -1,0 +1,24 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text_box {
+  width: 25%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid var(--grey200);
+  .text {
+    font-size: 1.4rem;
+    color: var(--grey700);
+  }
+}
+.text_box.active {
+  border-top: 2px solid var(--themeColor);
+  .text {
+    font-weight: 600;
+    color: var(--themeColor);
+  }
+}
