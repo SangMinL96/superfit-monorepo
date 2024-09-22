@@ -8,7 +8,8 @@
     "./Input": "./src/components/input/Input.tsx",
     "./BottomSheet": "./src/components/bottomSheet/BottomSheet.tsx",
     "./Divide": "./src/components/divide/Divide.tsx",
-    "./Card": "./src/components/card/Card.tsx"
+    "./Card": "./src/components/card/Card.tsx",
+    "./CheckBox": "./src/components/checkBox/CheckBox.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

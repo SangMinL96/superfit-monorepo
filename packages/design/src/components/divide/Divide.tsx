@@ -17,7 +17,7 @@ function Divide({ value, marginOnly = false, isVertical }: Props) {
     margin: isVertical ? isVertical.margin : '0',
     'background-color': marginOnly ? 'inherit' : 'var(--grey200)',
   };
-console.log(DivideInlineStyle)
+
   useEffect(() => {
     if (ref.current) {
       Object.entries(DivideInlineStyle).forEach(([key, value]) => {

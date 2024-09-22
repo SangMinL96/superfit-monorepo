@@ -2,6 +2,13 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow:
-    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.1) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  transition: translateY 0.3s ease-in;
+  &:active {
+    box-shadow:
+    rgba(60, 64, 67, 0.1) 0px 0.5px 1px 0px,
+    rgba(60, 64, 67, 0.15) 0px 0.5px 1.5px 0.5px;
+    transform: translateY(1.2px);
+  }
 }

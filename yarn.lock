@@ -2162,6 +2162,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/font@npm:^14.2.13":
+  version: 14.2.13
+  resolution: "@next/font@npm:14.2.13"
+  peerDependencies:
+    next: "*"
+  checksum: ba768da0727bcfc2ad41926f2a65aa1dbe59f2e726cbdda1dfa09ac75c4e8cceaa7290de02f111a2d867b58747392ca35aa061e27bddb981c6b2f8ffb4519f95
+  languageName: node
+  linkType: hard
+
 "@next/swc-darwin-arm64@npm:14.1.1":
   version: 14.1.1
   resolution: "@next/swc-darwin-arm64@npm:14.1.1"
@@ -2414,6 +2423,7 @@ __metadata:
   resolution: "@superfit/mweb@workspace:apps/mweb"
   dependencies:
     "@next/eslint-plugin-next": ^14.1.1
+    "@next/font": ^14.2.13
     "@superfit/design": "*"
     "@superfit/eslint-config": "*"
     "@superfit/typescript-config": "*"

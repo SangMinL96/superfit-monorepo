@@ -9,7 +9,7 @@ function SelectUserType() {
       <div className={cx(styles.card_box)}>
         <Card>
           <strong className={cx(styles.tit_card)}>일반회원</strong>
-          <p className={cx(styles.desc_card)}>간단하게 회원가입하고 초대코드를 받아 조인하세요!</p>
+          <p className={cx(styles.desc_card)}>간단하게 회원가입하고 초대코드를 받아 입장하세요!</p>
         </Card>
         <Card>
           <strong className={cx(styles.tit_card)}>제휴회원</strong>

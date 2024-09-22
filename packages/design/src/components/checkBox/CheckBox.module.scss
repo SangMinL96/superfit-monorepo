@@ -1,0 +1,79 @@
+.wrap > input[type='checkbox'] {
+  display: none;
+}
+.wrap {
+  position: relative;
+  .label {
+    display: flex;
+    align-items: center;
+  }
+  .label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../svgs/check_fill.svg');
+    background-size: contain;
+    cursor: pointer;
+  }
+  input[type='checkbox']:checked + .label:before {
+    background-image: url('../../svgs/check_fill_active.svg');
+    background-color: var(--theme_color);
+  }
+  input[type='checkbox']:disabled + .label:before {
+    background-image: url('../../svgs/check_fill_disabled.svg');
+  }
+}
+
+.wrap.size_30 {
+  padding: 0 38px;
+  .label {
+    font-size: 2rem;
+  }
+  .label::before {
+    width: 30px;
+    height: 30px;
+  }
+}
+.wrap.size_24 {
+  padding: 0 32px;
+  .label {
+    font-size: 1.7rem;
+  }
+  .label::before {
+    width: 24px;
+    height: 24px;
+  }
+}
+.wrap.size_20 {
+  padding: 0 28px;
+  .label {
+    font-size: 1.5rem;
+  }
+  .label::before {
+    width: 20px;
+    height: 20px;
+  }
+}
+.wrap.size_16 {
+  padding: 0 24px;
+  .label {
+    font-size: 1.3rem;
+  }
+  .label::before {
+    width: 16px;
+    height: 16px;
+  }
+}
+.wrap.size_12 {
+  padding: 0 20px;
+  .label {
+    font-size: 1.1rem;
+  }
+  .label::before {
+    width: 12px;
+    height: 12px;
+  }
+}
