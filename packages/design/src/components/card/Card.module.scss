@@ -1,4 +1,6 @@
 .wrap {
+  text-align: left;
+  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow:
@@ -7,8 +9,8 @@
   transition: translateY 0.3s ease-in;
   &:active {
     box-shadow:
-    rgba(60, 64, 67, 0.1) 0px 0.5px 1px 0px,
-    rgba(60, 64, 67, 0.15) 0px 0.5px 1.5px 0.5px;
+      rgba(60, 64, 67, 0.1) 0px 0.5px 1px 0px,
+      rgba(60, 64, 67, 0.15) 0px 0.5px 1.5px 0.5px;
     transform: translateY(1.2px);
   }
 }

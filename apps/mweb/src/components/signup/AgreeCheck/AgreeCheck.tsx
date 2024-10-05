@@ -1,14 +1,44 @@
 import styles from './AgreeCheck.module.scss';
 import cx from 'clsx';
 import { CheckBox } from '@superfit/design/CheckBox';
+import Divide from '@superfit/design/Divide';
+import { Button } from '@superfit/design/button';
+import { useState } from 'react';
+import { useShallowRouter } from '@src/hooks/useShallowRouter';
 function AgreeCheck() {
+  const router = useShallowRouter();
+  const [state, setState] = useState({
+    1: false,
+    2: false,
+    3: false,
+  });
+
   return (
     <div className={cx(styles.wrap)}>
-      <CheckBox id='all' size={24} label='전체 동의하기 (필수/선택항목)' labelWeight='700' />
+      <CheckBox
+        id='all'
+        size={24}
+        label='전체 동의하기 (필수/선택항목)'
+        labelWeight='700'
+        checked={state[1] && state[2] && state[3]}
+        onClick={() => {
+          if (state[1] && state[2] && state[3]) setState({ 1: false, 2: false, 3: false });
+          else setState({ 1: true, 2: true, 3: true });
+        }}
+      />
       <ul className={cx(styles.check_list)}>
         <li>
           <div className={cx(styles.header_list)}>
-            <CheckBox id='use' size={20} label='이용약관 필수' labelWeight='500' />
+            <CheckBox
+              id='use'
+              checked={state[1]}
+              size={20}
+              label='이용약관 필수'
+              labelWeight='500'
+              onClick={() =>
+                state[1] ? setState(prev => ({ ...prev, 1: false })) : setState(prev => ({ ...prev, 1: true }))
+              }
+            />
             <a href='#' className={cx(styles.content_link)}>
               내용보기
             </a>
@@ -23,7 +53,16 @@ function AgreeCheck() {
         </li>
         <li>
           <div className={cx(styles.header_list)}>
-            <CheckBox id='userinfo' size={20} label='개인정보 수집/이용에 대한 안내(필수)' labelWeight='500' />
+            <CheckBox
+              id='userinfo'
+              size={20}
+              checked={state[2]}
+              label='개인정보 수집/이용에 대한 안내(필수)'
+              labelWeight='500'
+              onClick={() =>
+                state[2] ? setState(prev => ({ ...prev, 2: false })) : setState(prev => ({ ...prev, 2: true }))
+              }
+            />
             <a href='#' className={cx(styles.content_link)}>
               내용보기
             </a>
@@ -36,7 +75,16 @@ function AgreeCheck() {
         </li>
         <li>
           <div className={cx(styles.header_list)}>
-            <CheckBox id='marketing' size={20} label='마케팅 정보 수신 및 활용 동의' labelWeight='500' />
+            <CheckBox
+              id='marketing'
+              size={20}
+              checked={state[3]}
+              label='마케팅 정보 수신 및 활용 동의'
+              labelWeight='500'
+              onClick={() =>
+                state[3] ? setState(prev => ({ ...prev, 3: false })) : setState(prev => ({ ...prev, 3: true }))
+              }
+            />
             <a href='#' className={cx(styles.content_link)}>
               내용보기
             </a>
@@ -48,6 +96,11 @@ function AgreeCheck() {
           </p>
         </li>
       </ul>
+      <Divide marginOnly value={30} />
+      <Button name='btn' type='submit' disabled={!(state[1] && state[2])} onClick={() => router.push({ step: 3 })}>
+        가입완료하기
+      </Button>
+      <Divide marginOnly value={30} />
     </div>
   );
 }

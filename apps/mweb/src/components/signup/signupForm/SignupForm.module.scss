@@ -26,3 +26,23 @@
   justify-content: space-between;
   gap: 20px;
 }
+.input_desc {
+  width: 80%;
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--grey200);
+}
+.input_box {
+  margin-top: 30px;
+  position: relative;
+}
+.input_btn {
+  background-color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color:var(--themeColor);
+  position: absolute;
+  right: 0;
+  top: 24px;
+}

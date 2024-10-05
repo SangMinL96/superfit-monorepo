@@ -10,6 +10,7 @@ type Props = {
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLInputElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  checked?: boolean;
 };
 export const CheckBox = ({
   id,
@@ -19,6 +20,7 @@ export const CheckBox = ({
   label = '라벨을 입력해주세요',
   onClick,
   onChange,
+  checked = false,
 }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -34,7 +36,7 @@ export const CheckBox = ({
   }, [inlineStyle]);
   return (
     <div ref={ref} className={cx(styles.wrap, styles[`size_${size}`])}>
-      <input type='checkbox' disabled={disabled} id={id} onClick={onClick} onChange={onChange} />
+      <input type='checkbox' checked={checked} disabled={disabled} id={id} onClick={onClick} onChange={onChange} />
       <label htmlFor={id} className={cx(styles.label)}>
         {label}
       </label>
