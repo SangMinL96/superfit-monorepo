@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Stepper from '@src/components/signup/stepper/Stepper';
 import SelectUserType from '@src/components/signup/selectUserType/SelectUserType';
 import AgreeCheck from '@src/components/signup/AgreeCheck/AgreeCheck';
+import SignupForm from '@src/components/signup/signupForm/SignupForm';
 
 function SignupPage() {
   const router = useRouter();
@@ -12,6 +13,7 @@ function SignupPage() {
       <Stepper />
       {step === '1' && <SelectUserType />}
       {step === '2' && <AgreeCheck />}
+      {step === '3' && <SignupForm />}
     </motion.div>
   );
 }
