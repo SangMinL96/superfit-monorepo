@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const body = document.body;
-    // body.style.setProperty('--grey100', 'red');
+    body.style.setProperty('--grey100', 'red');
   }, []);
   return (
     <GlobalLayout>
