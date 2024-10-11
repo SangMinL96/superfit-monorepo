@@ -1759,6 +1759,58 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.6.0":
+  version: 1.6.8
+  resolution: "@floating-ui/core@npm:1.6.8"
+  dependencies:
+    "@floating-ui/utils": ^0.2.8
+  checksum: 82faa6ea9d57e466779324e51308d6d49c098fb9d184a08d9bb7f4fad83f08cc070fc491f8d56f0cad44a16215fb43f9f829524288413e6c33afcb17303698de
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.0.0":
+  version: 1.6.11
+  resolution: "@floating-ui/dom@npm:1.6.11"
+  dependencies:
+    "@floating-ui/core": ^1.6.0
+    "@floating-ui/utils": ^0.2.8
+  checksum: d6413759abd06a541edfad829c45313f930310fe76a3322e74a00eb655e283db33fe3e65b5265c4072eb54db7447e11225acd355a9a02cabd1d1b0d5fc8fc21d
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react-dom@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@floating-ui/react-dom@npm:2.1.2"
+  dependencies:
+    "@floating-ui/dom": ^1.0.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 25bb031686e23062ed4222a8946e76b3f9021d40a48437bd747233c4964a766204b8a55f34fa8b259839af96e60db7c6e3714d81f1de06914294f90e86ffbc48
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react@npm:^0.26.23":
+  version: 0.26.24
+  resolution: "@floating-ui/react@npm:0.26.24"
+  dependencies:
+    "@floating-ui/react-dom": ^2.1.2
+    "@floating-ui/utils": ^0.2.8
+    tabbable: ^6.0.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: c49fc0040d0a75608dc8f9b259027fbaebc8b04bc791b4ec38c680b551fffeaa19dac945ac5d10f75570862159353f0aab78451e1ecc59e0abea6f07251d4504
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.8":
+  version: 0.2.8
+  resolution: "@floating-ui/utils@npm:0.2.8"
+  checksum: deb98bba017c4e073c7ad5740d4dec33a4d3e0942d412e677ac0504f3dade15a68fc6fd164d43c93c0bb0bcc5dc5015c1f4080dfb1a6161140fe660624f7c875
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -2430,15 +2482,20 @@ __metadata:
     "@types/node": ^20.11.24
     "@types/react": ^18.2.61
     "@types/react-dom": ^18.2.19
+    add: ^2.0.6
     clsx: ^2.1.1
+    dayjs: ^1.11.13
     eslint: ^8.57.0
     framer-motion: ^11.5.5
     next: ^14.1.1
     react: ^18.2.0
+    react-calendar: ^5.0.0
+    react-datepicker: ^7.4.0
     react-dom: ^18.2.0
     sass: ^1.78.0
     swr: ^2.2.5
     typescript: ^5.3.3
+    yarn: ^1.22.22
     zustand: ^4.5.5
   languageName: unknown
   linkType: soft
@@ -3113,6 +3170,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wojtekmaj/date-utils@npm:^1.1.3":
+  version: 1.5.1
+  resolution: "@wojtekmaj/date-utils@npm:1.5.1"
+  checksum: ba28a0ba107838cabbef0bceccdb748cb4bfa75e7e7cebe8a5f711f475b4bc5e28b7f394cc6e650826fcec232ee98b39d02fe6a5df32e0526d4eca68609bab9a
+  languageName: node
+  linkType: hard
+
 "abab@npm:^2.0.6":
   version: 2.0.6
   resolution: "abab@npm:2.0.6"
@@ -3170,6 +3234,13 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 818450408684da89423e3daae24e4dc9b68692db8ab49ea4569c7c5abb7a3f23669438bf129cc81dfdada95e1c9b944ee1bfca2c57a05a4dc73834a612fbf6a7
+  languageName: node
+  linkType: hard
+
+"add@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "add@npm:2.0.6"
+  checksum: e2d23d40494565dfed4acd65e478570c444db5ac6c053551ed429c39ea0f2c99d83df63e7befec936df601827d2254d06a2fb6f7dcfd2022e810b25eab818b8c
   languageName: node
   linkType: hard
 
@@ -3943,7 +4014,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^2.1.1":
+"clsx@npm:^2.0.0, clsx@npm:^2.1.1":
   version: 2.1.1
   resolution: "clsx@npm:2.1.1"
   checksum: acd3e1ab9d8a433ecb3cc2f6a05ab95fe50b4a3cfc5ba47abb6cbf3754585fcb87b84e90c822a1f256c4198e3b41c7f6c391577ffc8678ad587fc0976b24fd57
@@ -4108,6 +4179,20 @@ __metadata:
     whatwg-mimetype: ^3.0.0
     whatwg-url: ^11.0.0
   checksum: 033fc3dd0fba6d24bc9a024ddcf9923691dd24f90a3d26f6545d6a2f71ec6956f93462f2cdf2183cc46f10dc01ed3bcb36731a8208456eb1a08147e571fe2a76
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "date-fns@npm:3.6.0"
+  checksum: 0daa1e9a436cf99f9f2ae9232b55e11f3dd46132bee10987164f3eebd29f245b2e066d7d7db40782627411ecf18551d8f4c9fcdf2226e48bb66545407d448ab7
+  languageName: node
+  linkType: hard
+
+"dayjs@npm:^1.11.13":
+  version: 1.11.13
+  resolution: "dayjs@npm:1.11.13"
+  checksum: f388db88a6aa93956c1f6121644e783391c7b738b73dbc54485578736565c8931bdfba4bb94e9b1535c6e509c97d5deb918bbe1ae6b34358d994de735055cca9
   languageName: node
   linkType: hard
 
@@ -5560,6 +5645,15 @@ __metadata:
   version: 4.5.0
   resolution: "get-tsconfig@npm:4.5.0"
   checksum: 687ee2bd69a5a07db2e2edeb4d6c41c3debb38f6281a66beb643e3f5b520252e27fcbbb5702bdd9a5f05dcf8c1d2e0150a4d8a960ad75cbdea74e06a51e91b02
+  languageName: node
+  linkType: hard
+
+"get-user-locale@npm:^2.2.1":
+  version: 2.3.2
+  resolution: "get-user-locale@npm:2.3.2"
+  dependencies:
+    mem: ^8.0.0
+  checksum: 1cbb5527bb7dd102928b5d25f7bb614318c2665b06505d5b46e8c9a4ae8a2f4db55f63b5a2a2d3d63ee6f20d6bf408ac080897552e2976a429411fc05189211b
   languageName: node
   linkType: hard
 
@@ -7211,7 +7305,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -7308,6 +7402,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"map-age-cleaner@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "map-age-cleaner@npm:0.1.3"
+  dependencies:
+    p-defer: ^1.0.0
+  checksum: cb2804a5bcb3cbdfe4b59066ea6d19f5e7c8c196cd55795ea4c28f792b192e4c442426ae52524e5e1acbccf393d3bddacefc3d41f803e66453f6c4eda3650bc1
+  languageName: node
+  linkType: hard
+
 "mee-monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "mee-monorepo@workspace:."
@@ -7318,6 +7421,16 @@ __metadata:
     turbo: ^2.1.1
   languageName: unknown
   linkType: soft
+
+"mem@npm:^8.0.0":
+  version: 8.1.1
+  resolution: "mem@npm:8.1.1"
+  dependencies:
+    map-age-cleaner: ^0.1.3
+    mimic-fn: ^3.1.0
+  checksum: c41bc97f6f82b91899206058989e34bcb1543af40413c2ab59e5a8e97e4f8f2188d62e7bd95b2d575d5b0d823d5034a0f274a0676f6d11a0e0b973898b06c8b1
+  languageName: node
+  linkType: hard
 
 "merge-stream@npm:^2.0.0":
   version: 2.0.0
@@ -7363,6 +7476,13 @@ __metadata:
   version: 2.1.0
   resolution: "mimic-fn@npm:2.1.0"
   checksum: d2421a3444848ce7f84bd49115ddacff29c15745db73f54041edc906c14b131a38d05298dae3081667627a59b2eb1ca4b436ff2e1b80f69679522410418b478a
+  languageName: node
+  linkType: hard
+
+"mimic-fn@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "mimic-fn@npm:3.1.0"
+  checksum: f7b167f9115b8bbdf2c3ee55dce9149d14be9e54b237259c4bc1d8d0512ea60f25a1b323f814eb1fe8f5a541662804bcfcfff3202ca58df143edb986849d58db
   languageName: node
   linkType: hard
 
@@ -7892,6 +8012,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p-defer@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "p-defer@npm:1.0.0"
+  checksum: 4271b935c27987e7b6f229e5de4cdd335d808465604644cb7b4c4c95bef266735859a93b16415af8a41fd663ee9e3b97a1a2023ca9def613dba1bad2a0da0c7b
+  languageName: node
+  linkType: hard
+
 "p-limit@npm:^2.2.0":
   version: 2.3.0
   resolution: "p-limit@npm:2.3.0"
@@ -8228,6 +8355,40 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: b676f8c040cdc5b12723ad2f91414d267605b26419d5c821ff03befa817ddd10e238d22b25d604920340fd73efd8ba795465a0377c4adf45a4a41e4234e42dc4
+  languageName: node
+  linkType: hard
+
+"react-calendar@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "react-calendar@npm:5.0.0"
+  dependencies:
+    "@wojtekmaj/date-utils": ^1.1.3
+    clsx: ^2.0.0
+    get-user-locale: ^2.2.1
+    warning: ^4.0.0
+  peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 4a1f5e6485fa9afedc0e37c16d1d4a863a837479c380834fab2701a169b9fb8ec8ab964d683fb2c8d4f4557843e7ad330cf6472c34c585127e22d11f83167eb3
+  languageName: node
+  linkType: hard
+
+"react-datepicker@npm:^7.4.0":
+  version: 7.4.0
+  resolution: "react-datepicker@npm:7.4.0"
+  dependencies:
+    "@floating-ui/react": ^0.26.23
+    clsx: ^2.1.1
+    date-fns: ^3.6.0
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ^16.9.0 || ^17 || ^18
+    react-dom: ^16.9.0 || ^17 || ^18
+  checksum: 25f2576dd1983b48f41bd43604ec889cef73968093fee75389f4269563ac7ea4ea3b30ea2ebc9370931f14353507cc66f5dcd8caf5bcf8c168e5217fa59feb5a
   languageName: node
   linkType: hard
 
@@ -9251,6 +9412,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tabbable@npm:^6.0.0":
+  version: 6.2.0
+  resolution: "tabbable@npm:6.2.0"
+  checksum: f8440277d223949272c74bb627a3371be21735ca9ad34c2570f7e1752bd646ccfc23a9d8b1ee65d6561243f4134f5fbbf1ad6b39ac3c4b586554accaff4a1300
+  languageName: node
+  linkType: hard
+
 "tapable@npm:^2.2.0":
   version: 2.2.1
   resolution: "tapable@npm:2.2.1"
@@ -9790,6 +9958,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"warning@npm:^4.0.0":
+  version: 4.0.3
+  resolution: "warning@npm:4.0.3"
+  dependencies:
+    loose-envify: ^1.0.0
+  checksum: 4f2cb6a9575e4faf71ddad9ad1ae7a00d0a75d24521c193fa464f30e6b04027bd97aa5d9546b0e13d3a150ab402eda216d59c1d0f2d6ca60124d96cd40dfa35c
+  languageName: node
+  linkType: hard
+
 "webidl-conversions@npm:^7.0.0":
   version: 7.0.0
   resolution: "webidl-conversions@npm:7.0.0"
@@ -10025,6 +10202,16 @@ __metadata:
     y18n: ^5.0.5
     yargs-parser: ^21.1.1
   checksum: 73b572e863aa4a8cbef323dd911d79d193b772defd5a51aab0aca2d446655216f5002c42c5306033968193bdbf892a7a4c110b0d77954a7fdf563e653967b56a
+  languageName: node
+  linkType: hard
+
+"yarn@npm:^1.22.22":
+  version: 1.22.22
+  resolution: "yarn@npm:1.22.22"
+  bin:
+    yarn: bin/yarn.js
+    yarnpkg: bin/yarn.js
+  checksum: 59aeef5ccfd3347287f939448e6d3594f0a42f74025b9bdc2a277641c1d4070c07a38b6e7c35e695f77410b0269a5a43c78535786564f86f39c9f781e6efa311
   languageName: node
   linkType: hard
 
