@@ -9,7 +9,8 @@
     "./BottomSheet": "./src/components/bottomSheet/BottomSheet.tsx",
     "./Divide": "./src/components/divide/Divide.tsx",
     "./Card": "./src/components/card/Card.tsx",
-    "./CheckBox": "./src/components/checkBox/CheckBox.tsx"
+    "./CheckBox": "./src/components/checkBox/CheckBox.tsx",
+    "./Svgs": "./src/components/svgs/Svgs.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -26,11 +27,13 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
+    "@types/body-scroll-lock": "^3.1.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "babel-jest": "^29.7.0",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "clsx": "^2.1.1",
     "eslint": "^8.57.0",
     "identity-obj-proxy": "^3.0.0",
