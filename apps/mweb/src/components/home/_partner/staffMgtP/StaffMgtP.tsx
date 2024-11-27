@@ -52,7 +52,7 @@ function StaffMgtP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='avatarGirl' />
+                        <Svgs name='avatarGirl' /> 
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>이다슬 트레이너</em>
                             <div className={cx(styles.status)}>

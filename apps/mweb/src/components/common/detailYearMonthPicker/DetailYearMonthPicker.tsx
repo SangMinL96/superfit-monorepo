@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './DetailYearMonthPicker.module.scss';
 import cx from 'clsx';
-import ko from 'date-fns/locale/ko';
+import { ko } from 'date-fns/locale/ko';
 import dayjs from 'dayjs';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';

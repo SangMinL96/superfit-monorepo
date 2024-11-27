@@ -1,0 +1,71 @@
+.wrap {
+    :global(.swiper) {
+        padding: 1px;
+    }
+
+    :global(.swiper-wrapper) {
+        width: 100%;
+        padding-left: 20px;
+    }
+    :global(.swiper-slide) {
+        width: auto;
+        &:last-child {
+            margin-right: 40px;
+        }
+    }
+}
+.tit {
+    padding: 0 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card_wrap {
+    width: 230px;
+}
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .tit_card {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+    .status_card {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .status_card.close {
+        color: #f30000;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+}
+.flexBox {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.info_list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.info {
+    display: flex;
+    align-items: center;
+    dt {
+        display: flex;
+        justify-content: space-between;
+        min-width: 50px;
+        width: 50px;
+        font-size: 1.2rem;
+        color: var(--grey400);
+    }
+    dd {
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+}
