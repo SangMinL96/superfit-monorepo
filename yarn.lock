@@ -3673,6 +3673,7 @@ __metadata:
     react-datepicker: ^7.4.0
     react-dom: ^18.2.0
     sass: ^1.78.0
+    swiper: ^11.1.14
     swr: ^2.2.5
     typescript: ^5.3.3
     yarn: ^1.22.22
@@ -11017,6 +11018,13 @@ __metadata:
   bin:
     svgo: ./bin/svgo
   checksum: a3f8aad597dec13ab24e679c4c218147048dc1414fe04e99447c5f42a6e077b33d712d306df84674b5253b98c9b84dfbfb41fdd08552443b04946e43d03e054e
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^11.1.14":
+  version: 11.1.14
+  resolution: "swiper@npm:11.1.14"
+  checksum: 87bf4c42d893c76d3545d42ad664b78b032f7768c99f3d90d8340c035d661e10e7805c3270df704f8da99508304e8ca87cab61d3c863586d9d231c9f718ae785
   languageName: node
   linkType: hard
 

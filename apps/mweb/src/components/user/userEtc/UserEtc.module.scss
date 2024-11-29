@@ -1,0 +1,29 @@
+.wrap {
+    margin-top: 35px;
+}
+.flex_box {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex_box ~ .flex_box {
+    margin-top: 30px;
+}
+.tit {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.edit_btn {
+    padding: 6px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--grey500);
+    border-radius: 4px;
+}
+.txt {
+    padding: 0 20px;
+    margin-top: 8px;
+    font-size: 1.4rem;
+    white-space: pre-wrap;
+}

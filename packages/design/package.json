@@ -10,7 +10,8 @@
     "./Divide": "./src/components/divide/Divide.tsx",
     "./Card": "./src/components/card/Card.tsx",
     "./CheckBox": "./src/components/checkBox/CheckBox.tsx",
-    "./Svgs": "./src/components/svgs/Svgs.tsx"
+    "./Svgs": "./src/components/svgs/Svgs.tsx",
+    "./SvgsPage": "./src/components/svgsPage/SvgsPage.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
