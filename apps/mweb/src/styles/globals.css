@@ -113,6 +113,10 @@ blockquote,
 q {
     quotes: none;
 }
+button,
+a {
+    background-color: #fff;
+}
 blockquote:before,
 blockquote:after,
 q:before,
@@ -136,7 +140,7 @@ body {
     line-height: 1;
     font-family: 'Pretendard', sans-serif;
     --themeColor: #0028ef;
-    --blue400:#0028ef;
+    --blue400: #0028ef;
     --red200: #ff5d5d;
     --red300: #ff2424;
     --red400: #f30000;

@@ -1,0 +1,25 @@
+.flex_box {
+    padding: 10px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.order_by {
+    display: flex;
+    align-items: center;
+    .tit {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--grey400);
+    }
+}
+.sec_tit {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.list_box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+}

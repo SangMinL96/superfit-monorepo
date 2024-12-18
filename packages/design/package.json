@@ -2,6 +2,7 @@
   "name": "@superfit/design",
   "version": "0.0.0",
   "exports": {
+    "./wrap": "./src/components/wrap/Wrap.tsx",
     "./button": "./src/components/button/Button.tsx",
     "./header": "./src/components/header/Header.tsx",
     "./OblongInput": "./src/components/oblongInput/OblongInput.tsx",

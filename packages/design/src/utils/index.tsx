@@ -10,7 +10,10 @@ import clipboardClose from '../svgs/clipboard_close.svg';
 import messageEdit from '../svgs/message_edit.svg';
 import avatarGirl from '../svgs/avatar_girl.svg';
 import avatarMan from '../svgs/avatar_man.svg';
-
+import arrowRight from '../svgs/arrow_right.svg';
+import circleCheck from '../svgs/circle_check.svg';
+import search from '../svgs/search.svg';
+import arrowBottom from '../svgs/arrow_bottom.svg';
 export const svgList = {
     checkFill,
     checkFillActive,
@@ -24,4 +27,8 @@ export const svgList = {
     people,
     messageEdit,
     clipboardClose,
+    arrowRight,
+    circleCheck,
+    search,
+    arrowBottom,
 };

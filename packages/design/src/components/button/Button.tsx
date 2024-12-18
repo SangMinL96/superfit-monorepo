@@ -5,16 +5,18 @@ type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
   name: string;
-  size?: 64 | 56 | 50 | 44 | 32;
+  size?: 64 | 56 | 50 | 44 | 40 | 36 | 32;
   width?: string;
   type: 'button' | 'reset' | 'submit';
   children: ReactNode;
-  color?: 'primary' | 'outlined' | 'light' | 'grey';
+  color?: 'primary' | 'outlined' | 'light' | 'grey' | 'shadow';
+  margin?: string;
+  padding?: string;
 };
-export const Button = ({ width, name, type, children, color = 'primary', disabled, onClick, size = 50 }: Props) => {
+export const Button = ({ width, name, type, children, color = 'primary', disabled, onClick, size = 50, margin, padding }: Props) => {
   return (
     <button
-      style={{ width }}
+      style={{ width, margin, padding }}
       type={type}
       name={name}
       className={clsx(styles.wrap, styles[`size_${size}`], styles[color])}
