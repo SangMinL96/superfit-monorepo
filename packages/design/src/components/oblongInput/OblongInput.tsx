@@ -1,10 +1,11 @@
 import { clsx } from 'clsx';
 import { HTMLInputTypeAttribute, useEffect, useRef } from 'react';
 import styles from './OblongInput.module.scss';
+import Svgs from '../svgs/Svgs';
 type Props = {
   label?: string;
   value?: string | number;
-  type: HTMLInputTypeAttribute;
+  type?: HTMLInputTypeAttribute;
   onClick?: React.MouseEventHandler<HTMLInputElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   readOnly?: boolean;
@@ -25,6 +26,7 @@ type Props = {
   fontSize?: string;
   color?: string;
   fontWeight?: string;
+  isSearch?: boolean;
 };
 function OblongInput({
   label,
@@ -44,6 +46,7 @@ function OblongInput({
   fontSize,
   color,
   fontWeight,
+  isSearch
 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -68,7 +71,8 @@ function OblongInput({
   }, [inputInlineStyle]);
 
   return (
-    <div>
+    <div className={clsx(styles.wrap, isSearch ? styles.search_type : '')}>
+      {isSearch && <Svgs name='search' cxStyles={clsx(styles.search)} />}
       <label style={{ margin: label ? ' 0 0 8px 3px' : '0' }} className={clsx(styles.label)} htmlFor='oblong_input'>
         {label}
       </label>
