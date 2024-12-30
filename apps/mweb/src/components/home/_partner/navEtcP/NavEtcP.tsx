@@ -15,7 +15,7 @@ function NavEtcP() {
                             <p className={cx(styles.info_list)}>69명</p>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
+                    <Link href={'/user/list?category=all'} className={cx(styles.detail_btn)}>
                         전체보기
                     </Link>
                 </li>
@@ -27,7 +27,7 @@ function NavEtcP() {
                             <p className={cx(styles.info_list)}>8명</p>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
+                    <Link href={'/user/list?category=signup'} className={cx(styles.detail_btn)}>
                         전체보기
                     </Link>
                 </li>
@@ -39,7 +39,7 @@ function NavEtcP() {
                             <p className={cx(styles.info_list)}>8명</p>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
+                    <Link href={'/user/list?category=done'} className={cx(styles.detail_btn)}>
                         전체보기
                     </Link>
                 </li>
@@ -51,7 +51,7 @@ function NavEtcP() {
                             <p className={cx(styles.info_list)}>8명</p>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
+                    <Link href={'/user/list?category=leave'} className={cx(styles.detail_btn)}>
                         전체보기
                     </Link>
                 </li>

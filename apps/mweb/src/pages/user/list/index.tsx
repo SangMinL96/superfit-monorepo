@@ -12,7 +12,7 @@ function Page() {
     const { category } = router.query;
     const title = (() => {
         if (category === 'all') return '전체회원';
-        if (category === 'singin') return '최근 가입한 회원';
+        if (category === 'signup') return '최근 가입한 회원';
         if (category === 'done') return '곧, 수강권 만료되는 회원';
         if (category === 'leave') return '최근 탈퇴한 회원'
         return '';

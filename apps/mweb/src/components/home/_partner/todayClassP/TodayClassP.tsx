@@ -16,7 +16,7 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
+                    <Link href={'/class/123'} className={cx(styles.detail_btn)}>
                         상세보기
                     </Link>
                 </li>
@@ -28,7 +28,7 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
+                     <Link href={'/class/123'} className={cx(styles.detail_btn)}>
                         상세보기
                     </Link>
                 </li>
@@ -40,7 +40,7 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
+                     <Link href={'/class/123'} className={cx(styles.detail_btn)}>
                         상세보기
                     </Link>
                 </li>
@@ -52,7 +52,7 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
+                     <Link href={'/class/123'} className={cx(styles.detail_btn)}>
                         상세보기
                     </Link>
                 </li>
