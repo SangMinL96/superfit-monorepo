@@ -7,7 +7,7 @@ import { Button } from '@superfit/design/button';
 import BottomSheet from '@superfit/design/BottomSheet';
 import Link from 'next/link';
 function ClassIdPage() {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     return (
         <div>
             <h3 className={cx(styles.tit)}>그룹수업</h3>
@@ -16,7 +16,7 @@ function ClassIdPage() {
             <h5 className={cx(styles.sub_tit)}>회원</h5>
             <ul className={cx(styles.list)}>
                 <li>
-                    <div className={cx(styles.flex_left)}>
+                    <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
                             <Svgs name='avatarMan' />
                         </div>
@@ -24,7 +24,7 @@ function ClassIdPage() {
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
                             <p className={cx(styles.info_etc)}>96년12월6일 | 010-3794-3914</p>
                         </div>
-                    </div>
+                    </Link>
                     <div className={cx(styles.flex_right)}>
                         <button type='button' className={cx(styles.btn)}>
                             출석하기
@@ -32,7 +32,7 @@ function ClassIdPage() {
                     </div>
                 </li>
                 <li>
-                    <div className={cx(styles.flex_left)}>
+                    <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
                             <Svgs name='avatarMan' />
                         </div>
@@ -40,14 +40,14 @@ function ClassIdPage() {
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
                             <p className={cx(styles.info_etc)}>96년12월6일 | 010-3794-3914</p>
                         </div>
-                    </div>
+                    </Link>
                     <div className={cx(styles.flex_right)}>
                         <span className={cx(styles.txt)}>수동</span>
                         <em className={cx(styles.status)}>출석완료</em>
                     </div>
                 </li>
                 <li>
-                    <div className={cx(styles.flex_left)}>
+                    <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
                             <Svgs name='avatarMan' />
                         </div>
@@ -55,7 +55,7 @@ function ClassIdPage() {
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
                             <p className={cx(styles.info_etc)}>96년12월6일 | 010-3794-3914</p>
                         </div>
-                    </div>
+                    </Link>
                     <div className={cx(styles.flex_right)}>
                         <button type='button' className={cx(styles.btn, styles.status)}>
                             출석하기

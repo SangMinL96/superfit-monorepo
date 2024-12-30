@@ -1,160 +1,169 @@
 .fc_calencar {
-  :global {
-    .react-calendar {
-      width: 100%;
-      border: none;
-      .react-calendar__navigation {
-        display: none;
-      }
-      .react-calendar__month-view__weekdays {
-        font-size: 1.2rem;
-      }
-      //오늘 날짜 스타일
-      .react-calendar__tile--now {
-        background: none;
-        > abbr {
-          width: 28px;
-          height: 28px;
-          background-color: #262626 !important;
-          border-radius: 50px;
-          color: white !important;
-        }
-      }
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    :global {
+        .react-calendar {
+            width: 100%;
+            border: none;
+            .react-calendar__navigation {
+                display: none;
+            }
+            .react-calendar__month-view__weekdays {
+                font-size: 1.2rem;
+            }
+            //오늘 날짜 스타일
+            .react-calendar__tile--now {
+                background: none;
+                > abbr {
+                    width: 28px;
+                    height: 28px;
+                    background-color: #262626 !important;
+                    border-radius: 50px;
+                    color: white !important;
+                }
+            }
 
-      // 빨간날 스타일
-      .react-calendar__month-view__days__day--weekend {
-        > abbr {
-          color: #ff4e4e;
-        }
-      }
-      // 비활성 날짜 스타일
-      .react-calendar__month-view__days__day--neighboringMonth {
-        > abbr {
-          color: #cecece !important;
-        }
-      }
-      //   요일 row
-      .react-calendar__month-view__weekdays {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 1px solid #e8e8e8;
-        height: 47px;
-      
-        font-weight: 400;
-        margin-bottom: 16px;
-        color: #cecece;
-        abbr[title] {
-          text-decoration: none;
-          font-size: 1.3rem;
-        }
-        > div {
-          //토요일
-          &:nth-child(1) {
-            color: #fd4381;
-          }
-          //일요일
-          &:nth-child(7) {
-            color: #369afc;
-          }
-        }
-      }
-      .react-calendar__month-view__days {
-        & > button {
-          line-height: 2;
-          display: flex;
-          align-items: center;
-          position: relative;
-          flex-direction: column;
-          justify-content: flex-start;
-          height: 70px;
-          padding: 0;
-          border-radius: 3px;
-          > abbr {
-            height: 28px;
-            font-size: 1.3rem;
-            color: #000;
-          }
-          &:nth-child(1) {
-            > abbr {
-              color: #ff4e4e;
+            // 빨간날 스타일
+            .react-calendar__month-view__days__day--weekend {
+                > abbr {
+                    color: #ff4e4e;
+                }
             }
-          }
-          &:nth-child(8) {
-            > abbr {
-              color: #ff4e4e;
+            // 비활성 날짜 스타일
+            .react-calendar__month-view__days__day--neighboringMonth {
+                > abbr {
+                    color: #cecece !important;
+                }
             }
-          }
+            //   요일 row
+            .react-calendar__month-view__weekdays {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 1px solid #e8e8e8;
+                height: 47px;
 
-          &:nth-child(15) {
-            > abbr {
-              color: #ff4e4e;
+                font-weight: 400;
+                margin-bottom: 16px;
+                color: #cecece;
+                abbr[title] {
+                    text-decoration: none;
+                    font-size: 1.3rem;
+                }
+                > div {
+                    //토요일
+                    &:nth-child(1) {
+                        color: #fd4381;
+                    }
+                    //일요일
+                    &:nth-child(7) {
+                        color: #369afc;
+                    }
+                }
             }
-          }
-          &:nth-child(22) {
-            > abbr {
-              color: #ff4e4e;
-            }
-          }
-          &:nth-child(29) {
-            > abbr {
-              color: #ff4e4e;
-            }
-          }
-          &:nth-child(36) {
-            > abbr {
-              color: #ff4e4e;
-            }
-          }
-          &:nth-child(43) {
-            > abbr {
-              color: #ff4e4e;
-            }
-          }
-          &:nth-child(7) {
-            > abbr {
-              color: #369afc;
-            }
-          }
-          &:nth-child(14) {
-            > abbr {
-              color: #369afc;
-            }
-          }
-          &:nth-child(21) {
-            > abbr {
-              color: #369afc;
-            }
-          }
-          &:nth-child(28) {
-            > abbr {
-              color: #369afc;
-            }
-          }
-          &:nth-child(35) {
-            > abbr {
-              color: #369afc;
-            }
-          }
-          &:nth-child(42) {
-            > abbr {
-              color: #369afc;
-            }
-          }
-        }
-        button:disabled {
-          background-color: white;
-          > abbr {
-            color: #cecece;
-          }
-        }
+            .react-calendar__month-view__days {
+                & > button {
+                    line-height: 2;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    height: 70px;
+                    padding: 0;
+                    border-radius: 3px;
+                    > abbr {
+                        height: 28px;
+                        font-size: 1.3rem;
+                        color: #000;
+                    }
+                    &:nth-child(1) {
+                        > abbr {
+                            color: #ff4e4e;
+                        }
+                    }
+                    &:nth-child(8) {
+                        > abbr {
+                            color: #ff4e4e;
+                        }
+                    }
 
-        & > button.react-calendar__month-view__days__day--neighboringMonth {
-          > abbr {
-            color: #cecece;
-          }
+                    &:nth-child(15) {
+                        > abbr {
+                            color: #ff4e4e;
+                        }
+                    }
+                    &:nth-child(22) {
+                        > abbr {
+                            color: #ff4e4e;
+                        }
+                    }
+                    &:nth-child(29) {
+                        > abbr {
+                            color: #ff4e4e;
+                        }
+                    }
+                    &:nth-child(36) {
+                        > abbr {
+                            color: #ff4e4e;
+                        }
+                    }
+                    &:nth-child(43) {
+                        > abbr {
+                            color: #ff4e4e;
+                        }
+                    }
+                    &:nth-child(7) {
+                        > abbr {
+                            color: #369afc;
+                        }
+                    }
+                    &:nth-child(14) {
+                        > abbr {
+                            color: #369afc;
+                        }
+                    }
+                    &:nth-child(21) {
+                        > abbr {
+                            color: #369afc;
+                        }
+                    }
+                    &:nth-child(28) {
+                        > abbr {
+                            color: #369afc;
+                        }
+                    }
+                    &:nth-child(35) {
+                        > abbr {
+                            color: #369afc;
+                        }
+                    }
+                    &:nth-child(42) {
+                        > abbr {
+                            color: #369afc;
+                        }
+                    }
+                }
+                button:disabled {
+                    background-color: white;
+                    > abbr {
+                        color: #cecece;
+                    }
+                }
+
+                & > button.react-calendar__month-view__days__day--neighboringMonth {
+                    > abbr {
+                        color: #cecece;
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
