@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './UserEtc.module.scss';
 import cx from 'clsx';
+import { useRouter } from 'next/router';
 function UserEtc() {
+    const router = useRouter();
+
     return (
         <div className={cx(styles.wrap)}>
             <div className={cx(styles.flex_box)}>
                 <h3 className={cx(styles.tit)}>회원메모</h3>
-                <button type='button' className={cx(styles.edit_btn)}>
+                <button type='button' className={cx(styles.edit_btn)} onClick={() => router.push("/form/textarea?id=123")}>
                     수정
                 </button>
             </div>

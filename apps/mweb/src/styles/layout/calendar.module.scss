@@ -11,6 +11,12 @@
         .react-calendar {
             width: 100%;
             border: none;
+            .tile_select {
+                // background-color: var(--themeColor);
+                color: #fff;
+                padding: 0 5px;
+                border-radius: 4px;
+            }
             .react-calendar__navigation {
                 display: none;
             }

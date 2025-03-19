@@ -47,7 +47,7 @@ function SigninPage() {
           비밀번호찾기
         </a>
         <Divide isVertical={{ margin: '0 15px' }} value={14} />
-        <a href='#' className={clsx(styles.link)}>
+        <a href='#' className={clsx(styles.link)}> 
           회원가입
         </a>
       </div>
