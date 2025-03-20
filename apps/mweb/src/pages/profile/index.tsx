@@ -1,5 +1,5 @@
 import BottomSheet from '@superfit/design/BottomSheet';
-import { Button } from '@superfit/design/button';
+import { Button } from '@superfit/design';
 import Input from '@superfit/design/Input';
 import React, { useState } from 'react';
 
@@ -7,7 +7,7 @@ function ProfileIndex() {
   const [open, setOpen] = useState(true);
   return (
     <div style={{ padding: 100 }}>
-      <Button />
+      <Button name='test' type='button'>teset</Button>
       <div style={{ padding: 100 }}>
         <Input
           type='text'

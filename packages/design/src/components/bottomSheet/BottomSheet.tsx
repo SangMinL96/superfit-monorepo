@@ -1,5 +1,5 @@
 import { clsx } from 'clsx';
-import React, { TouchEvent, useEffect, useRef, useState } from 'react';
+import { TouchEvent, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './BottomSheet.module.scss';
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
@@ -11,7 +11,7 @@ type Props = {
     title: string;
 };
 
-function BottomSheet({ open, onClose, children, title }: Props) {
+function BottomSheet({ open, onClose, children, title }: Props): any {
     const [hasMounted, setHasMounted] = useState(false);
 
     useEffect(() => {
@@ -54,30 +54,29 @@ function BottomSheet({ open, onClose, children, title }: Props) {
     if (!hasMounted) return null;
     const potalEl = document.getElementById('potal-modal') as HTMLDivElement;
     return (
-        <>
-            {open &&
-                createPortal(
-                    <div className={clsx(styles.wrap)}>
-                        <button
-                            className={clsx(styles.background)}
-                            onTouchStart={onTouchStart}
-                            onTouchMove={onTouchMove}
-                            onTouchEnd={onTouchEnd}
-                        />
-                        <div className={clsx(styles.sheet_wrap)} ref={ref}>
-                            <button
-                                className={clsx(styles.close_bar)}
-                                onTouchStart={onTouchStart}
-                                onTouchMove={onTouchMove}
-                                onTouchEnd={onTouchEnd}
-                            />
-                            <strong className={clsx(styles.tit)}>{title}</strong>
-                            {children}
-                        </div>
-                    </div>,
-                    potalEl as Element | DocumentFragment,
-                )}
-        </>
+        open &&
+        createPortal(
+            <div className={clsx(styles.wrap)}>
+                <button
+                    className={clsx(styles.background)}
+                    onClick={() => onClose()}
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}
+                />
+                <div className={clsx(styles.sheet_wrap)} ref={ref}>
+                    <button
+                        className={clsx(styles.close_bar)}
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
+                    />
+                    <strong className={clsx(styles.tit)}>{title}</strong>
+                    {children}
+                </div>
+            </div>,
+            potalEl as Element | DocumentFragment,
+        )
     );
 }
 

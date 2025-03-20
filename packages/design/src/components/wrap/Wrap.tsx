@@ -8,9 +8,10 @@ type Props = {
     gap?: string;
     margin?: string;
     padding?: string;
+    width?: string;
 };
 
-function Wrap({ children, justify, align = 'center', direction = 'column', gap, margin, padding }: Props) {
+function Wrap({ children, justify, align = 'center', direction = 'column', gap, margin, padding, width = '100%' }: Props) {
     const ref = useRef<HTMLDivElement>(null);
 
     const inlineStyle = {
@@ -18,6 +19,7 @@ function Wrap({ children, justify, align = 'center', direction = 'column', gap, 
         'flex-direction': direction,
         ' align-items': align,
         'justify-content': justify,
+        width,
         gap,
         margin,
         padding,
