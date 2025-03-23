@@ -5,7 +5,7 @@ type Props = {
 };
 
 function GlobalLayout({ children }: Props) {
-  // console.log("")
+  console.log("")
   return <div>{children}</div>;
 }
 
