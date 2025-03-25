@@ -14,6 +14,7 @@ import arrowRight from '../svgs/arrow_right.svg';
 import circleCheck from '../svgs/circle_check.svg';
 import search from '../svgs/search.svg';
 import arrowBottom from '../svgs/arrow_bottom.svg';
+import timer from '../svgs/timer.svg';
 export const svgList = {
     checkFill,
     checkFillActive,
@@ -31,4 +32,5 @@ export const svgList = {
     circleCheck,
     search,
     arrowBottom,
+    timer,
 };

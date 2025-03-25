@@ -1,16 +1,13 @@
 import TeacherSelectBottom from '@src/components/bottomSheet/teacherSelectBottom/TeacherSelectBottom';
-import styles from '@src/styles/form/ClassModify.module.scss';
+import styles from '@src/styles/form/ClassCreate.module.scss';
 import BottomSheet from '@superfit/design/BottomSheet';
 import { Button } from '@superfit/design/button';
 import Input from '@superfit/design/Input';
 import { getParticle } from '@superfit/shared';
 import cx from 'clsx';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-function ClassModify() {
-    const router = useRouter();
-    const { id } = router.query;
+function ClassCreate() {
     const [sheetType, setSheetType] = useState<'강사' | null>(null);
 
     return (
@@ -46,4 +43,4 @@ function ClassModify() {
     );
 }
 
-export default ClassModify;
+export default ClassCreate;

@@ -71,21 +71,20 @@ function ClassCreate() {
                     name='class'
                     type='text'
                     readOnly
-                    placeholder={{ text: '수업 선택/직접입력' }}
-                    label='수업'
+                    placeholder={{ text: '00:00' }}
+                    label='시작시간'
                     required
-                    onClick={() => setSheetType("수업")}
+                    onClick={() => setSheetType("시작시간")}
                 />
                 <Input
                     width='100%'
                     name='class'
                     type='text'
                     readOnly
-                    placeholder={{ text: '수업 선택/직접입력' }}
-                    label='수업'
+                    placeholder={{ text: '00:00' }}
+                    label='종료시간'
                     required
-                    defaultValue={"이상민 강사"}
-                    onClick={() => setSheetType("수업")}
+                    onClick={() => setSheetType("종료시간")}
                 />
             </Wrap>
             <Button name='btn' type='submit'>

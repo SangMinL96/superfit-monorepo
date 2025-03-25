@@ -1,0 +1,48 @@
+.tit {
+    padding: 0 20px;
+    font-size: 1.8rem;
+    margin-top: 15px;
+    line-height: 32px;
+    font-weight: 700;
+}
+.card_box {
+    display: flex;
+    align-items: center;
+}
+.desc {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--grey500);
+}
+
+.group_tit {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.class_list {
+    margin-top: 15px;
+    .txt_box {
+        display: flex;
+        align-items: center;
+    }
+    .txt {
+        font-size: 1.4rem;
+        margin-left: 8px;
+        font-weight: 600;
+        color: var(--grey500);
+    }
+    & > li + li {
+        margin-top: 10px;
+    }
+    & > li {
+        .btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

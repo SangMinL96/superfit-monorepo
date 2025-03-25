@@ -162,6 +162,7 @@ input {
 button {
     border: none;
     outline: none;
+    padding: 0;
 }
 ::-webkit-scrollbar {
     width: 5px;

@@ -7,11 +7,12 @@ type Props = {
     title?: string;
 };
 function Card({ children, onClick, title }: Props) {
+    const Tag = onClick ? 'button' : 'div';
     return (
-        <div className={clsx(styles.wrap)} onClick={onClick}>
+        <Tag className={clsx(styles.wrap)} {...(Tag === 'button' && { type: 'button' })} onClick={onClick}>
             {title && <strong className={clsx(styles.tit)}>{title}</strong>}
             {children}
-        </div>
+        </Tag>
     );
 }
 
