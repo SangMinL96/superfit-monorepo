@@ -2,9 +2,10 @@ import React from 'react';
 import styles from './StaffMgtP.module.scss';
 import cx from 'clsx';
 import Svgs from '@superfit/design/Svgs';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 function StaffMgtP() {
+    const router = useRouter();
     return (
         <div className={cx(styles.wrap)}>
             <ul className={cx(styles.list)}>
@@ -18,9 +19,6 @@ function StaffMgtP() {
                             </div>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
-                        수정
-                    </Link>
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
@@ -32,9 +30,6 @@ function StaffMgtP() {
                             </div>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
-                        수정
-                    </Link>
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
@@ -46,13 +41,10 @@ function StaffMgtP() {
                             </div>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
-                        수정
-                    </Link>
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='avatarGirl' /> 
+                        <Svgs name='avatarGirl' />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>이다슬 트레이너</em>
                             <div className={cx(styles.status)}>
@@ -60,12 +52,9 @@ function StaffMgtP() {
                             </div>
                         </div>
                     </div>
-                    <Link href={'/'} className={cx(styles.detail_btn)}>
-                        수정
-                    </Link>
                 </li>
             </ul>
-            <button type='button' className={cx(styles.bottom_btn)}>
+            <button type='button' className={cx(styles.bottom_btn)} onClick={() => router.push('/staff/list')}>
                 직원 추가/수정하기
             </button>
         </div>

@@ -1,14 +1,21 @@
 .wrap {
-    width: 100%;
-    text-align: left;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow:
-        rgba(158, 167, 174, 0.1) 0px 1px 2px 0px,
+    position:relative;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    background-color:#fff;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:rgba(158, 167, 174, 0.1) 0px 1px 2px 0px,
         rgba(156, 166, 173, 0.15) 0px 1px 3px 1px;
     .tit {
-        font-size: 1.6rem;
-        font-weight: 700;
+        font-size:1.6rem;
+        font-weight:700;
+    }
+    .onclick_icon {
+        position:absolute;
+        right:15px;
+        top:50%;
+        transform:translateY(-50%);
     }
 }
