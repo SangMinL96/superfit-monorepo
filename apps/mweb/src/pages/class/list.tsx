@@ -32,7 +32,7 @@ function Index() {
                 <h5 className={cx(styles.group_tit)}>이상민 강사</h5>
                 <ul className={cx(styles.class_list)}>
                     <li>
-                        <button type='button' className={cx(styles.btn)}>
+                        <button type='button' className={cx(styles.btn)} onClick={()=>router.push(`/form/classmodify/${123}`)}>
                             <span className={cx(styles.txt_box)}>
                                 <Svgs name='messageEdit' />
                                 <em className={cx(styles.txt)}>그룹수업</em>
@@ -41,7 +41,7 @@ function Index() {
                         </button>
                     </li>
                     <li>
-                        <button type='button' className={cx(styles.btn)}>
+                        <button type='button' className={cx(styles.btn)} onClick={()=>router.push(`/form/classmodify/${123}`)}>
                             <span className={cx(styles.txt_box)}>
                                 <Svgs name='messageEdit' />
                                 <em className={cx(styles.txt)}>그룹수업</em>
@@ -53,7 +53,7 @@ function Index() {
                 <h5 className={cx(styles.group_tit)}>이다슬 강사</h5>
                 <ul className={cx(styles.class_list)}>
                     <li>
-                        <button type='button' className={cx(styles.btn)}>
+                        <button type='button' className={cx(styles.btn)} onClick={()=>router.push(`/form/classmodify/${123}`)}>
                             <span className={cx(styles.txt_box)}>
                                 <Svgs name='messageEdit' />
                                 <em className={cx(styles.txt)}>그룹수업</em>
@@ -62,7 +62,7 @@ function Index() {
                         </button>
                     </li>
                     <li>
-                        <button type='button' className={cx(styles.btn)}>
+                        <button type='button' className={cx(styles.btn)} onClick={()=>router.push(`/form/classmodify/${123}`)}>
                             <span className={cx(styles.txt_box)}>
                                 <Svgs name='messageEdit' />
                                 <em className={cx(styles.txt)}>그룹수업</em>

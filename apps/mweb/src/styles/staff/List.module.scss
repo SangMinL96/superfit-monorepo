@@ -1,0 +1,56 @@
+.tit {
+    padding: 0 20px;
+    font-size: 1.8rem;
+    margin-top: 15px;
+    line-height: 32px;
+    font-weight: 700;
+}
+.card_box {
+    display: flex;
+    align-items: center;
+}
+.desc {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--grey500);
+}
+
+.tit_box {
+    display: flex;
+    align-items: center;
+}
+.name_box {
+    text-align: left;
+    margin-left: 8px;
+    .name {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    .tag_box {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .tag_box > .tag {
+        padding: 3px 5px;
+        background-color: var(--grey100);
+        font-weight: 500;
+        border-radius: 4px;
+        margin-right: 4px;
+    }
+}
+.self_ppt {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: var(--grey600);
+    line-height: 1.4;
+    white-space: pre-wrap;
+    text-align: start;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 최대 3줄까지 표시 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

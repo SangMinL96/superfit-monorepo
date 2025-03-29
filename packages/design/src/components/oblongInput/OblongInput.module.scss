@@ -21,14 +21,15 @@
     font-weight: 600;
 }
 .input {
+    overflow: hidden;
     opacity: 0;
     transition: opacity 0.3s ease-in;
     width: 100%;
-    color: var(--block400);
+    color: var(--black300);
     height: 100%;
     border-radius: 8px;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.7rem;
+    font-weight: 500;
     border: 1px solid var(--grey100);
     padding: 0 20px;
     &::placeholder {

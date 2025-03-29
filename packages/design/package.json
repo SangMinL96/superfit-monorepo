@@ -7,6 +7,7 @@
     "./header": "./src/components/header/Header.tsx",
     "./OblongInput": "./src/components/oblongInput/OblongInput.tsx",
     "./Input": "./src/components/input/Input.tsx",
+    "./TextArea": "./src/components/textarea/TextArea.tsx",
     "./BottomSheet": "./src/components/bottomSheet/BottomSheet.tsx",
     "./Divide": "./src/components/divide/Divide.tsx",
     "./Card": "./src/components/card/Card.tsx",

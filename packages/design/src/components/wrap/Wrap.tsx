@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 type Props = {
     children: React.ReactNode;
+    position?: 'relative' | 'absolute' | 'static' | 'sticky' | 'fixed';
     justify?: 'flex-start' | 'flex-end' | 'space-between' | 'center';
     direction?: 'row' | 'column';
     align?: 'center' | 'flex-start' | 'flex-end';
@@ -11,10 +12,21 @@ type Props = {
     width?: string;
 };
 
-function Wrap({ children, justify, align = 'center', direction = 'column', gap, margin, padding, width = '100%' }: Props) {
+function Wrap({
+    position = 'relative',
+    children,
+    justify,
+    align = 'center',
+    direction = 'column',
+    gap,
+    margin,
+    padding,
+    width = '100%',
+}: Props) {
     const ref = useRef<HTMLDivElement>(null);
 
     const inlineStyle = {
+        position,
         display: 'flex',
         'flex-direction': direction,
         ' align-items': align,

@@ -8,7 +8,7 @@ import cx from 'clsx';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-function ClassModify() {
+function Index() {
     const router = useRouter();
     const { id } = router.query;
     const [sheetType, setSheetType] = useState<'강사' | null>(null);
@@ -34,7 +34,7 @@ function ClassModify() {
                 required
                 onClick={() => setSheetType('강사')}
             />
-            <Button type='submit'>생성하기</Button>
+            <Button type='submit'>수정하기</Button>
             <BottomSheet
                 title={`${getParticle(String(sheetType))} 선택해주세요`}
                 open={!!sheetType}
@@ -46,4 +46,4 @@ function ClassModify() {
     );
 }
 
-export default ClassModify;
+export default Index;
