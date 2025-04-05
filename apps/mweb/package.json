@@ -12,6 +12,7 @@
     "@next/font": "^14.2.13",
     "@superfit/design": "*",
     "@superfit/shared": "*",
+    "@superfit/types": "*",
     "add": "^2.0.6",
     "body-scroll-lock": "^4.0.0-beta.0",
     "dayjs": "^1.11.13",
