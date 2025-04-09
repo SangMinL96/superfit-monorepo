@@ -1,43 +1,45 @@
 {
-  "name": "@superfit/shared",
-  "version": "0.0.0",
-  "exports": {
-    ".": "./src/index.tsx"
-  },
-  "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "test": "jest"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.4",
-    "@babel/preset-react": "^7.24.7",
-    "@babel/preset-typescript": "^7.24.7",
-    "@jest/globals": "^29.7.0",
-    "@superfit/eslint-config": "*",
-    "@superfit/typescript-config": "*",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.5.0",
-    "@testing-library/react": "^16.0.1",
-    "@types/body-scroll-lock": "^3.1.2",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.24",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
-    "babel-jest": "^29.7.0",
-    "body-scroll-lock": "^4.0.0-beta.0",
-    "clsx": "^2.1.1",
-    "eslint": "^8.57.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "react-test-renderer": "^18.3.1",
-    "sass": "^1.78.0",
-    "ts-jest": "^29.2.5",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "name": "@superfit/shared",
+    "version": "0.0.0",
+    "exports": {
+        ".": "./src/index.tsx"
+    },
+    "scripts": {
+        "lint": "eslint . --max-warnings 0",
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.25.2",
+        "@babel/preset-env": "^7.25.4",
+        "@babel/preset-react": "^7.24.7",
+        "@babel/preset-typescript": "^7.24.7",
+        "@jest/globals": "^29.7.0",
+        "@superfit/eslint-config": "*",
+        "@superfit/shared": "*",
+        "@superfit/types": "*",
+        "@superfit/typescript-config": "*",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.5.0",
+        "@testing-library/react": "^16.0.1",
+        "@types/body-scroll-lock": "^3.1.2",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.24",
+        "@types/react": "^18.2.61",
+        "@types/react-dom": "^18.2.19",
+        "babel-jest": "^29.7.0",
+        "body-scroll-lock": "^4.0.0-beta.0",
+        "clsx": "^2.1.1",
+        "eslint": "^8.57.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "react-test-renderer": "^18.3.1",
+        "sass": "^1.78.0",
+        "ts-jest": "^29.2.5",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
 }

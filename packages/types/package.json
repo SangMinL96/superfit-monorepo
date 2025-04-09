@@ -1,0 +1,18 @@
+{
+  "name": "@superfit/types",
+  "version": "0.0.0",
+  "exports": {
+    "./fetcher": "./src/fetcher.ts",
+    "./auth": "./src/auth.ts",
+    "./login": "./src/login.ts",
+    "./user": "./src/user.ts"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint \"**/*.ts\""
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
