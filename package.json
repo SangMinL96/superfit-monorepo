@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --filter=@superfit/mweb --filter=@superfit/server",
     "lint": "turbo run lint"
   },
   "devDependencies": {

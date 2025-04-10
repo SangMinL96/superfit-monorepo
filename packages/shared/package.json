@@ -15,7 +15,6 @@
         "@babel/preset-typescript": "^7.24.7",
         "@jest/globals": "^29.7.0",
         "@superfit/eslint-config": "*",
-        "@superfit/shared": "*",
         "@superfit/types": "*",
         "@superfit/typescript-config": "*",
         "@testing-library/dom": "^10.4.0",

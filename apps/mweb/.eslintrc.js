@@ -6,4 +6,10 @@ module.exports = {
   parserOptions: {
     project: true,
   },
+  ignorePatterns: [
+    'next.config.js', // 여기에 추가
+    'node_modules/',
+    '.eslintrc.js',
+  ],
+  overrides: [{ files: ["*.js?(x)", "*.ts?(x)"] }],
 };
