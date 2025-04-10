@@ -38,7 +38,6 @@ export const signupSuccess = async ({ loginType, snsId, userHp }: signupSuccessP
 export const phoneLoginStart = async (hp: string) => {
   try {
     const result = await phoneLoginApi({ hp });
-    alert(JSON.stringify(result));
     if (result.result === 'success') {
       setAccessToken(result.data?.access_token);
       setRefreshToken(result.data?.refresh_token);

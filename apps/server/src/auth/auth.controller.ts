@@ -16,12 +16,11 @@ export class AuthController {
     }
     @Post('hpAuthNum-send')
     async hpAuthNumSend(@Body() body: { hp: string }): Promise<ExecResultItf> {
-        const randomNum = Math.floor(1000 + Math.random() * 9000);
+        const randomNum = Math.floor(100000 + Math.random() * 900000);
         const params = {
             ...body,
             randomNum: String(randomNum),
         };
-        // myCache.set(`authNum_${params.hp}`, params.randomNum, 60 * 3);
         const result = await this.authService.hpAuthNumberSend(params);
         return result;
     }
@@ -30,12 +29,7 @@ export class AuthController {
         const params = {
             ...body,
         };
-        const get = true; //myCache.get(`authNum_${params.hp}`);
-        if (String(get) === params.authNum) {
-            return { result: 'success' };
-        } else {
-            return { result: 'fail' };
-        }
+        return await this.authService.hpAuthNumberCheck(params);
     }
 
     @Post('/sendMail')

@@ -11,8 +11,8 @@ function NaverOauthCallbackPage({ code, state }: { code: string; state: string }
             const result = await oAuthLoginApi({ snsId: data.id, loginType: 'naver' });
             if (result.result === 'notFound_user') {
                 const postData = {
-                    snsId: data?.id,
-                    loginType: 'naver',
+                    sns_id: data?.id,
+                    login_type: 'naver',
                     type: 'gotoSignup',
                 };
                 window.ReactNativeWebView.postMessage(JSON.stringify(postData));

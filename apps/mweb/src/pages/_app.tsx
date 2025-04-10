@@ -21,11 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     content='user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width'
                 />
             </Head>
-            <SWRConfig
-                value={{
-                    suspense: true,
-                }}
-            >
+            <SWRConfig>
                 <GlobalLayout>
                     <Component {...pageProps} />
                 </GlobalLayout>
