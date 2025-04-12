@@ -11,6 +11,17 @@ export interface signupParamsItf {
     centerHp?: string;
 }
 
+export interface oAuthSignupParamsItf {
+    userName: string;
+    userNickname: string;
+    userGender: string;
+    userHp: string;
+    userBirthday: string;
+    userEmail: string;
+    snsId?: string;
+    loginType: 'kakao' | 'naver' | 'apple';
+}
+
 export interface naverOauthInfoItf {
     id: string;
     gender: string;

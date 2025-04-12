@@ -1,5 +1,5 @@
 import { ExecResultItf } from '@superfit/types/fetcher';
-import { signupParamsItf } from '@superfit/types/auth';
+import { oAuthSignupParamsItf, signupParamsItf } from '@superfit/types/auth';
 import { Body, Controller, Get, Headers, Post } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { SmtpService } from '@src/_common/SMTP/smtp.service';
@@ -52,6 +52,13 @@ export class AuthController {
         }
     }
 
+    @Post('/oauth/user-signup')
+    async oauthUserSignup(@Body() body: oAuthSignupParamsItf): Promise<ExecResultItf> {
+        const params = {
+            ...body,
+        };
+        return await this.authService.oAuthUserSignup(params);
+    }
     @Post('/naver-userinfo')
     async naverToken(@Body() body: { code: string; state: string }): Promise<ExecResultItf> {
         const params = {

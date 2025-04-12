@@ -1,26 +1,31 @@
 import { execFetcher } from '@src/common/fetcher/fetcher';
-import { naverOauthInfoItf, signupParamsItf } from '@superfit/types/auth';
+import { naverOauthInfoItf, oAuthSignupParamsItf, signupParamsItf } from '@superfit/types/auth';
 import { ExecResultItf } from '@superfit/types/fetcher';
 import { LoginParamsItf, LoginResultItf, oAuthLoginParamsItf } from '@superfit/types/login';
 import axios from 'axios';
 
 const getKakaoTokenApi = async (code: string): Promise<any> => {
-    const result = axios.post(
-        'https://kauth.kakao.com/oauth/token',
-        {
-            client_id: process.env.NEXT_PUBLIC_KAKAO_REST_API_KEY,
-            grant_type: 'authorization_code',
-            client_secret: process.env.NEXT_PUBLIC_KAKAO_KEY,
-            code,
-        },
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+    try {
+        const result = axios.post(
+            'https://kauth.kakao.com/oauth/token',
+            {
+                client_id: process.env.NEXT_PUBLIC_KAKAO_REST_API_KEY,
+                grant_type: 'authorization_code',
+                client_secret: process.env.NEXT_PUBLIC_KAKAO_KEY,
+                code,
             },
-        },
-    );
-    return result;
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            },
+        );
+        return result;
+    } catch (e: any) {
+        const errorMessage = e.response?.data ? JSON.stringify(e.response.data) : e.message;
+        alert(errorMessage);
+    }
 };
 
 const getKakaoUserInfoApi = async (token: string): Promise<any> => {
@@ -59,12 +64,18 @@ const oAuthLoginApi = async (params: oAuthLoginParamsItf): Promise<LoginResultIt
         method: 'post',
         body: JSON.stringify(params),
     });
-    console.log(result);
     return result;
 };
 
 const userSignUpApi = async (params: signupParamsItf): Promise<ExecResultItf> => {
     const result = await execFetcher('/auth/user-signup', {
+        method: 'post',
+        body: JSON.stringify(params),
+    });
+    return result;
+};
+const userOauthSignUpApi = async (params: oAuthSignupParamsItf): Promise<ExecResultItf> => {
+    const result = await execFetcher('/auth/oauth/user-signup', {
         method: 'post',
         body: JSON.stringify(params),
     });
@@ -96,5 +107,6 @@ export {
     userSignUpApi,
     postHpAuthNumSend,
     postAuthCheckApi,
+    userOauthSignUpApi,
     phoneLoginApi,
 };

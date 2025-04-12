@@ -98,7 +98,7 @@ function AgreeCheck() {
       </ul>
       <Divide marginOnly value={30} />
       <Button name='btn' type='submit' disabled={!(state[1] && state[2])} onClick={() => router.push({ step: 3 })}>
-        가입완료하기
+        다음단계로 이동
       </Button>
       <Divide marginOnly value={30} />
     </div>

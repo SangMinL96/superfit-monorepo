@@ -37,6 +37,7 @@ module.exports = {
     'unused-imports',
   ],
   rules: {
+    "semi": [2, 'always'],
     "import/namespace": "off",
     "import/order": "off",
     "import/default": "off",

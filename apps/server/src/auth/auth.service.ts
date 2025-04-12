@@ -1,7 +1,7 @@
 import { MysqlService } from '@common/DB/mysql.service';
 import { ExecResultItf } from '@superfit/types/fetcher';
 import { UserInfoItf } from '@superfit/types/user';
-import { signupParamsItf } from '@superfit/types/auth';
+import { oAuthSignupParamsItf, signupParamsItf } from '@superfit/types/auth';
 
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
@@ -9,6 +9,7 @@ import * as CryptoJS from 'crypto-js';
 import {
     businessUserSignupQuery,
     getRefreshTokenQuery,
+    oAuthUserSignupQuery,
     phoneAuthNumQuery,
     postPhoneAuthCheck,
     userSignupQuery,
@@ -21,6 +22,10 @@ export class AuthService {
 
     async userSignup(params: signupParamsItf): Promise<ExecResultItf> {
         const result = await this.mysqlService.execQuery(userSignupQuery(), params);
+        return result;
+    }
+    async oAuthUserSignup(params: oAuthSignupParamsItf): Promise<ExecResultItf> {
+        const result = await this.mysqlService.execQuery(oAuthUserSignupQuery(), params);
         return result;
     }
 

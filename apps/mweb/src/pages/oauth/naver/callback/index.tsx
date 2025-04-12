@@ -2,10 +2,10 @@ import { getNaverUserCheckApi, oAuthLoginApi } from '@src/api/auth/api';
 import { setAccessToken, setRefreshToken } from '@src/common/webStorage/storage';
 import Spinner from '@src/components/common/spinner/Spinner';
 import { GetServerSidePropsContext } from 'next';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 function NaverOauthCallbackPage({ code, state }: { code: string; state: string }) {
-    const getToken = async () => {
+    const getToken = useCallback(async () => {
         try {
             const { data } = await getNaverUserCheckApi(String(code), String(state));
             const result = await oAuthLoginApi({ snsId: data.id, loginType: 'naver' });
@@ -26,10 +26,10 @@ function NaverOauthCallbackPage({ code, state }: { code: string; state: string }
             // alert(JSON.stringify(err));
             console.log(err);
         }
-    };
+    }, [code, state]);
     useEffect(() => {
         getToken();
-    }, []);
+    }, [getToken]);
     return (
         <section>
             <Spinner />

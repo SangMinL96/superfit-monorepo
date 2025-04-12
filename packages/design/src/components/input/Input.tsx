@@ -3,6 +3,7 @@ import { HTMLInputTypeAttribute, useEffect, useRef } from 'react';
 import styles from './Input.module.scss';
 import Svgs from '../svgs/Svgs';
 type Props = {
+    id?: string;
     label?: string;
     value?: string | number;
     type: HTMLInputTypeAttribute;
@@ -17,7 +18,7 @@ type Props = {
         color?: string;
     };
     disabled?: boolean;
-    name: string;
+    name?: string;
     max?: string | number;
     min?: string | number;
     maxLength?: number;
@@ -33,6 +34,7 @@ type Props = {
     unit?: React.ReactNode | string;
 };
 function Input({
+    id,
     label,
     type,
     placeholder,
@@ -95,7 +97,7 @@ function Input({
                     defaultValue={defaultValue}
                     ref={inputRef}
                     className={cx(styles.input)}
-                    id='oblong_input'
+                    id={id}
                     onClick={onClick}
                     onChange={onChange}
                     disabled={disabled}

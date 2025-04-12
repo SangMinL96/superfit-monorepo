@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import cx from 'clsx';
 import Input from '@superfit/design/Input';
 import styles from './SignupForm.module.scss';
@@ -8,10 +8,16 @@ import { motion } from 'framer-motion';
 import { mountFadeIn } from '@src/styles/motion';
 import BottomSheet from '@superfit/design/BottomSheet';
 import PhoneVerification from '@src/components/bottomSheet/phoneVerification/PhoneVerification';
+import { useRouter } from 'next/router';
 function SignupForm() {
+    const router = useRouter();
     const [hpCheck, setHpCheck] = useState(false);
+    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log(e.target);
+    };
     return (
-        <div className={cx(styles.wrap)}>
+        <form onSubmit={onSubmit} className={cx(styles.wrap)}>
             <motion.h5 {...mountFadeIn} className={cx(styles.tit)}>
                 회원정보입력
             </motion.h5>
@@ -19,7 +25,7 @@ function SignupForm() {
             <Input name='name' type='text' height='35px' placeholder={{ text: '실명 입력' }} label='이름' required />
             <Divide marginOnly value={30} />
             <Input
-                name='age'
+                name='userBirthday'
                 type='text'
                 height='35px'
                 placeholder={{ text: '예)20020108' }}
@@ -39,7 +45,7 @@ function SignupForm() {
             </div>
             <Divide marginOnly value={30} />
             <Input
-                name='age'
+                name='userId'
                 type='text'
                 placeholder={{ text: '영문 소문자와 숫자 조합 4~12자리' }}
                 label='아이디'
@@ -48,7 +54,7 @@ function SignupForm() {
             />
             <Divide marginOnly value={30} />
             <Input
-                name='age'
+                name='userPw'
                 type='text'
                 placeholder={{ text: '비밀번호 입력하세요' }}
                 label='비밀번호'
@@ -120,7 +126,7 @@ function SignupForm() {
                     <PhoneVerification timeover={() => setHpCheck(false)} />
                 </BottomSheet>
             )}
-        </div>
+        </form>
     );
 }
 
