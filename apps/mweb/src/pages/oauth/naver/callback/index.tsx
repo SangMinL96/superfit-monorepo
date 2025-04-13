@@ -9,11 +9,18 @@ function NaverOauthCallbackPage({ code, state }: { code: string; state: string }
         try {
             const { data } = await getNaverUserCheckApi(String(code), String(state));
             const result = await oAuthLoginApi({ snsId: data.id, loginType: 'naver' });
+            const infoData = {
+                email: data?.email || '',
+                gender: data?.gender || '',
+                nickname: data?.name || '',
+                hp: data?.mobile.replace(/-/g, "")
+            };
             if (result.result === 'notFound_user') {
                 const postData = {
-                    sns_id: data?.id,
-                    login_type: 'naver',
+                    snsId: data?.id,
+                    loginType: 'naver',
                     type: 'gotoSignup',
+                    infoData,
                 };
                 window.ReactNativeWebView.postMessage(JSON.stringify(postData));
             }

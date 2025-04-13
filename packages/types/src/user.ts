@@ -1,16 +1,14 @@
 // shared/src/user.ts
 export interface UserInfoItf {
-    id: number;
-    user_hp?: string;
-    user_email?: string;
-    user_name?: string;
-    login_type?: string;
-    user_birthday?: string;
-    refresh_token?: string;
-    current_center?: string;
-    center_id?: number;
-    isBusiness?: boolean;
-    is_teacher?: 'Y' | 'N';
-    user_text?: string;
-  }
-  
+  id: number;
+  login_type: "basic" | "business" | "kakao" | "naver";
+  user_id?: string;
+  user_hp: string;
+  user_name: string;
+  user_nickname: string;
+  user_email: string;
+  user_gender: "M" | "G";
+  user_birthday: string;
+  pw_salt?: string;
+  user_pw?: string;
+}

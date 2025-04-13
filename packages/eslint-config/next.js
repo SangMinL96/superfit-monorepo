@@ -25,7 +25,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'prettier',
+    // 'plugin:prettier/recommended',
   ],
   plugins: [
     "only-warn",
@@ -37,6 +37,7 @@ module.exports = {
     'unused-imports',
   ],
   rules: {
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }], // 빈줄 최대 1개
     "semi": [2, 'always'],
     "import/namespace": "off",
     "import/order": "off",

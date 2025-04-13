@@ -17,7 +17,7 @@ function KakaoOauthCallbackPage({ access_token, refresh_token, isError = false }
             const result = await oAuthLoginApi({ snsId: data?.id, loginType: 'kakao' });
             const infoData = {
                 email: data.kakao_account?.email || '',
-                gender: data.kakao_account?.gender || '',
+                gender: !data.kakao_account?.gender ? "" : data.kakao_account?.gender === 'male' ? "M" : "G",
                 nickname: data.properties?.nickname || ''
             };
             if (result.result === 'notFound_user') {
