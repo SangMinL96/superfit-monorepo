@@ -3,7 +3,7 @@ import { ExecResultItf } from "@superfit/types/fetcher";
 import { UserInfoItf } from "@superfit/types/user";
 import { oAuthSignupParamsItf, signupParamsItf } from "@superfit/types/auth";
 
-import { Injectable } from "@nestjs/common";
+import { Injectable, InternalServerErrorException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import * as CryptoJS from "crypto-js";
 import {
@@ -12,6 +12,8 @@ import {
   oAuthUserSignupQuery,
   phoneAuthNumQuery,
   postPhoneAuthCheck,
+  postUserHpDupCheckQuery,
+  postUserIdDupCheckQuery,
   userSignupQuery,
 } from "./query";
 import { createHashedPassword } from "@src/_common/utils/crypto";
@@ -23,7 +25,32 @@ export class AuthService {
   ) {
     //
   }
-
+  async userHpDupCheck(params: { userHp: string }): Promise<ExecResultItf> {
+    const result = await this.mysqlService.execQuery(
+      postUserHpDupCheckQuery(),
+      params
+    );
+    const resultData = result.data;
+    if (resultData.length > 0) {
+      const type = {
+        kakao: "카카오톡 계정으로 이미 가입되어 있습니다",
+        naver: "네이버 계정으로 이미 가입되어 있습니다",
+        basic: `"${resultData[0]}" 계정으로 이미 가입되어 있습니다`,
+      };
+      return { result: "fail", data: type[resultData[0].login_type] };
+    }
+    return result;
+  }
+  async userIdDupCheck(params: { userId: string }): Promise<ExecResultItf> {
+    const result = await this.mysqlService.execQuery(
+      postUserIdDupCheckQuery(),
+      params
+    );
+    if (result.data.length > 0) {
+      return { result: "fail" };
+    }
+    return result;
+  }
   async userSignup(params: signupParamsItf): Promise<ExecResultItf> {
     console.log(params);
     const { password, salt } = (await createHashedPassword(params.userPw)) as {

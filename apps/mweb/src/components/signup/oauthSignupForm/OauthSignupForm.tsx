@@ -5,13 +5,13 @@ import styles from './OauthSignupForm.module.scss';
 import Divide from '@superfit/design/Divide';
 import { Button } from '@superfit/design/button';
 import { motion } from 'framer-motion';
-import { mountFadeIn } from '@src/styles/motion';
 import BottomSheet from '@superfit/design/BottomSheet';
 import PhoneVerification from '@src/components/bottomSheet/phoneVerification/PhoneVerification';
 import { useRouter } from 'next/router';
 import { userOauthSignUpApi } from '@src/api/auth/api';
 import { oAuthSignupParamsItf } from '@superfit/types/auth';
 import { signupSuccess } from '@src/common/auth';
+import { mountFadeIn } from '@superfit/design/motion';
 
 type FormStateType = {
     gender: 'M' | 'G';

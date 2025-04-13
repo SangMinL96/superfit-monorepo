@@ -68,3 +68,19 @@ export const postAuthCheckApi = async (hp: string, authNum: string): Promise<Exe
     });
     return result;
 };
+
+export const postUserIdDup = async (userId: string): Promise<ExecResultItf> => {
+    const result = await execFetcher('/auth/user-id/dup-check', {
+        method: 'POST',
+        data: { userId },
+    });
+    return result;
+};
+
+export const postUserHpDupCheck = async (userHp: string): Promise<ExecResultItf> => {
+    const result = await execFetcher('/auth/user-hp/dup-check', {
+        method: 'POST',
+        data: { userHp },
+    });
+    return result;
+};

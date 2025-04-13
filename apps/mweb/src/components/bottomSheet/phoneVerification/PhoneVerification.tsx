@@ -13,7 +13,6 @@ const PhoneVerification = ({ timeover, userHp, onResult }: Props) => {
     const timerRef = useRef<any>(null);
     const startTimer = useCallback(async () => {
         setTimeLeft(180);
-
         if (timerRef.current) clearInterval(timerRef.current);
         timerRef.current = setInterval(() => {
             setTimeLeft(prev => {
@@ -78,15 +77,6 @@ const PhoneVerification = ({ timeover, userHp, onResult }: Props) => {
         <div className={clsx(styles.wrap)}>
             <p className={clsx(styles.txt)}>남은 시간: {formatTime(timeLeft)}</p>
             <OblongInput placeholder={{ text: '인증번호 입력해주세요' }} onChange={onChange} />
-            {/* <div style={{ marginTop: '1rem', fontSize: '1.5rem' }}>
-                {isRunning ? (
-                    <span>남은 시간: {formatTime(timeLeft)}</span>
-                ) : timeLeft === 0 ? (
-                    <span style={{ color: 'red' }}>인증시간 만료</span>
-                ) : (
-                    <span>인증 대기 중</span>
-                )}
-            </div> */}
         </div>
     );
 };

@@ -14,6 +14,20 @@ export class AuthController {
   ) {
     // private readonly connectionService: MysqlService, // private readonly authService: AuthService,
   }
+  @Post("user-hp/dup-check")
+  async userHpDupCheck(
+    @Body() body: { userHp: string }
+  ): Promise<ExecResultItf> {
+    const result = await this.authService.userHpDupCheck(body);
+    return result;
+  }
+  @Post("user-id/dup-check")
+  async userIdDupCheck(
+    @Body() body: { userId: string }
+  ): Promise<ExecResultItf> {
+    const result = await this.authService.userIdDupCheck(body);
+    return result;
+  }
   @Post("hpAuthNum-send")
   async hpAuthNumSend(@Body() body: { hp: string }): Promise<ExecResultItf> {
     const randomNum = Math.floor(100000 + Math.random() * 900000);

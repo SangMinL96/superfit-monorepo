@@ -35,6 +35,12 @@
     font-weight: 600;
     color: var(--grey200);
 }
+.dup_btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
 .input_desc.warning {
     color: var(--red400);
 }

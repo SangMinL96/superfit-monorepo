@@ -5,13 +5,15 @@ import styles from './SignupForm.module.scss';
 import Divide from '@superfit/design/Divide';
 import { Button } from '@superfit/design/button';
 import { motion } from 'framer-motion';
-import { mountFadeIn } from '@src/styles/motion';
 import BottomSheet from '@superfit/design/BottomSheet';
 import PhoneVerification from '@src/components/bottomSheet/phoneVerification/PhoneVerification';
 import { signupParamsItf } from '@superfit/types/auth';
-import { userSignUpApi } from '@src/api/auth/api';
+import { postUserHpDupCheck, postUserIdDup, userSignUpApi } from '@src/api/auth/api';
 import { signupSuccess } from '@src/common/auth';
 import { useRouter } from 'next/router';
+import { mountFadeIn } from '@superfit/design/motion';
+import Wrap from '@superfit/design/wrap';
+import axios from 'axios';
 
 function SignupForm() {
     const router = useRouter();
@@ -19,7 +21,8 @@ function SignupForm() {
     const [formState, setFormState] = useState<signupParamsItf>({} as signupParamsItf);
     const [userPwCheck, setUserPwCheck] = useState('');
     const [phoneAuth, setPhoneAuth] = useState(false);
-    const [hpCheck, setHpCheck] = useState(false);
+    const [viewBottomHpCheck, setViewBottomHpCheck] = useState(false);
+    const [userIdDup, setUserIdDup] = useState(false);
     const validatePassword = (password: string) => {
         const passwordRegex =
             /^(?:(?=(?:.*[A-Za-z])(?=.*\d)|(?=.*[A-Za-z])(?=.*[~!@#$%^&*()_+|])|(?=.*\d)(?=.*[~!@#$%^&*()_+|]))(?!.*[^A-Za-z\d~!@#$%^&*()_+|]).{10,16}|(?=(?:.*[A-Za-z]))(?=(?:.*\d))(?=(?:.*[~!@#$%^&*()_+|]))(?!.*[^A-Za-z\d~!@#$%^&*()_+|]).{8,16})$/;
@@ -30,6 +33,7 @@ function SignupForm() {
         // if (!formState.userName) return alert('이름 입력해주세요.');
         // if (!formState.userNickname) return alert('닉네임 입력해주세요.');
         // if (!formState.userBirthday) return alert('생년월일 입력해주세요.');
+        // if (!userIdDup) return alert('아이디 중복 확인해주세요');
         // if (!formState.userGender) return alert('성별 입력해주세요.');
         // if (!formState.userId) return alert('아이디 입력해주세요.');
         // if (!formState.userPw) return alert('비밀번호 입력해주세요.');
@@ -50,7 +54,49 @@ function SignupForm() {
     };
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         const id = e.target.id;
+        if (id === 'userId') {
+            setUserIdDup(false);
+        }
         setFormState(prev => ({ ...prev, [id]: e.target.value }));
+    };
+
+    const onUserIdDup = async () => {
+        try {
+            const { result } = await postUserIdDup(formState.userId);
+            if (result === 'success') {
+                alert('사용 가능한 아이디 입니다');
+                setUserIdDup(true);
+            } else {
+                alert('중복된 아이디가 존재합니다');
+                setUserIdDup(false);
+            }
+        } catch (e) {
+            if (axios.isAxiosError(e) && e.response) {
+                const { data } = e.response;
+                alert(data.message);
+            }
+        }
+    };
+
+    const onUserHpCheck = async (bottomResult: boolean) => {
+        const { result, data } = await postUserHpDupCheck(formState.userHp);
+        if (bottomResult) {
+            if (result === 'success') {
+                alert('휴대폰 인증 완료되었습니다.');
+                setPhoneAuth(true);
+                setViewBottomHpCheck(false);
+                setUserIdDup(true);
+            } else {
+                alert(data);
+                setViewBottomHpCheck(false);
+                setPhoneAuth(false);
+                setUserIdDup(false);
+            }
+        } else {
+            alert('인증번호가 틀렸습니다.');
+            setPhoneAuth(false);
+            setViewBottomHpCheck(false);
+        }
     };
 
     return (
@@ -61,6 +107,21 @@ function SignupForm() {
                     <br />
                     간단한 정보를 받아둘게요!
                 </motion.h5>
+                <div className={cx(styles.input_box)}>
+                    <Input
+                        id='userHp'
+                        type='text'
+                        placeholder={{ text: '‘-’ 제외하고 숫자만 입력' }}
+                        label='휴대폰번호'
+                        required
+                        height='38px'
+                        readOnly={phoneAuth}
+                        onChange={onChange}
+                    />
+                    <button type='button' disabled={phoneAuth} className={cx(styles.input_btn)} onClick={() => setViewBottomHpCheck(true)}>
+                        {phoneAuth ? '인증완료' : '인증번호 요청'}
+                    </button>
+                </div>
                 <Divide marginOnly value={20} />
                 <Input id='userName' type='text' height='38px' placeholder={{ text: '실명 입력' }} label='이름' required onChange={onChange} />
                 <Divide marginOnly value={30} />
@@ -103,15 +164,22 @@ function SignupForm() {
                     </Button>
                 </div>
                 <Divide marginOnly value={30} />
-                <Input
-                    id='userId'
-                    type='text'
-                    placeholder={{ text: '영문 소문자와 숫자 조합 4~12자리' }}
-                    label='아이디'
-                    required
-                    height='38px'
-                    onChange={onChange}
-                />
+                <Wrap position='relative'>
+                    <Input
+                        id='userId'
+                        type='text'
+                        placeholder={{ text: '영문 소문자와 숫자 조합 4~12자리' }}
+                        label='아이디'
+                        required
+                        height='38px'
+                        onChange={onChange}
+                    />
+                    <div className={cx(styles.dup_btn)}>
+                        <Button type='button' width='60px' size={32} onClick={onUserIdDup}>
+                            {userIdDup ? '확인완료' : '중복확인'}
+                        </Button>
+                    </div>
+                </Wrap>
                 <Divide marginOnly value={30} />
                 <Input
                     id='userPw'
@@ -137,20 +205,7 @@ function SignupForm() {
                 {formState.userPw !== userPwCheck && userPwCheck.length > 1 && (
                     <p className={cx(styles.input_desc, styles.warning)}>설정하신 비밀번호와 일치하지 않습니다</p>
                 )}
-                <div className={cx(styles.input_box)}>
-                    <Input
-                        id='userHp'
-                        type='text'
-                        placeholder={{ text: '‘-’ 제외하고 숫자만 입력' }}
-                        label='휴대폰번호'
-                        required
-                        height='38px'
-                        onChange={onChange}
-                    />
-                    <button type='button' className={cx(styles.input_btn)} onClick={() => setHpCheck(true)}>
-                        인증번호 요청
-                    </button>
-                </div>
+
                 <Divide marginOnly value={30} />
                 <Input
                     id='userEmail'
@@ -191,9 +246,9 @@ function SignupForm() {
                 <Button type='submit'>가입완료하기</Button>
                 <Divide marginOnly value={30} />
             </form>
-            {hpCheck && (
-                <BottomSheet title='휴대폰인증' open={hpCheck} onClose={() => setHpCheck(false)}>
-                    <PhoneVerification onResult={result => setPhoneAuth(result)} userHp={formState.userHp} timeover={() => setHpCheck(false)} />
+            {viewBottomHpCheck && (
+                <BottomSheet title='휴대폰인증' open={viewBottomHpCheck} onClose={() => setViewBottomHpCheck(false)}>
+                    <PhoneVerification onResult={onUserHpCheck} userHp={formState.userHp} timeover={() => setViewBottomHpCheck(false)} />
                 </BottomSheet>
             )}
         </>

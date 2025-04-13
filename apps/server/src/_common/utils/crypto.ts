@@ -1,3 +1,4 @@
+import { InternalServerErrorException } from "@nestjs/common";
 import { randomBytes, pbkdf2 } from "crypto";
 
 export const createSalt = () =>
@@ -9,11 +10,15 @@ export const createSalt = () =>
   });
 export const createHashedPassword = (plainPassword: any) =>
   new Promise(async (resolve, reject) => {
-    const salt = (await createSalt()) as any; // 소금 만들어서 대입
-    pbkdf2(plainPassword, salt, 9999, 64, "sha512", (err, key) => {
-      if (err) reject(err);
-      resolve({ password: key.toString("base64"), salt });
-    });
+    try {
+      const salt = (await createSalt()) as any; // 소금 만들어서 대입
+      pbkdf2(plainPassword, salt, 9999, 64, "sha512", (err, key) => {
+        if (err) reject(err);
+        resolve({ password: key.toString("base64"), salt });
+      });
+    } catch (e) {
+      throw new InternalServerErrorException("비밀번호 생성 실패");
+    }
   });
 
 export const getHashePassword = (plainPassword, salt) =>

@@ -3,7 +3,7 @@ import styles from './SelectUserType.module.scss';
 import cx from 'clsx';
 import { motion } from 'framer-motion';
 import { useShallowRouter } from '@src/hooks/useShallowRouter';
-import { mountFadeIn } from '@src/styles/motion';
+import { mountFadeIn } from '@superfit/design/motion';
 function SelectUserType() {
     const router = useShallowRouter();
 
