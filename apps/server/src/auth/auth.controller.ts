@@ -63,12 +63,11 @@ export class AuthController {
   async userSignup(@Body() body: signupParamsItf): Promise<ExecResultItf> {
     const params = {
       ...body,
+      businessNum: body.businessNum || "",
+      centerName: body.centerName || "",
     };
-    if (params.loginType === "business") {
-      return await this.authService.businessUserSignup(params);
-    } else {
-      return await this.authService.userSignup(params);
-    }
+    console.log(params);
+    return await this.authService.userSignup(params);
   }
 
   @Post("/oauth/user-signup")

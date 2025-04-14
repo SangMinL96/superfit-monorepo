@@ -6,7 +6,6 @@ import { useShallowRouter } from '@src/hooks/useShallowRouter';
 import { mountFadeIn } from '@superfit/design/motion';
 function SelectUserType() {
     const router = useShallowRouter();
-
     return (
         <div className={cx(styles.wrap)}>
             <motion.h5 {...mountFadeIn} className={cx(styles.tit)}>

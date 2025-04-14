@@ -16,6 +16,26 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
+                    <button
+                        type='button'
+                        className={cx(styles.detail_btn)}
+                        onClick={() =>
+                            window.ReactNativeWebView.postMessage(
+                                JSON.stringify({ type: 'gotoStack', url: '/class/123', headerName: '그룹수업 3/10' }),
+                            )
+                        }
+                    >
+                        상세보기
+                    </button>
+                </li>
+                <li>
+                    <div className={cx(styles.row_left)}>
+                        <Svgs name='classMark' size={24} />
+                        <div className={cx(styles.class_info)}>
+                            <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
+                            <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
+                        </div>
+                    </div>
                     <Link href={'/class/123'} className={cx(styles.detail_btn)}>
                         상세보기
                     </Link>
@@ -28,7 +48,7 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                     <Link href={'/class/123'} className={cx(styles.detail_btn)}>
+                    <Link href={'/class/123'} className={cx(styles.detail_btn)}>
                         상세보기
                     </Link>
                 </li>
@@ -40,19 +60,7 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                     <Link href={'/class/123'} className={cx(styles.detail_btn)}>
-                        상세보기
-                    </Link>
-                </li>
-                <li>
-                    <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={24} />
-                        <div className={cx(styles.class_info)}>
-                            <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
-                            <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
-                        </div>
-                    </div>
-                     <Link href={'/class/123'} className={cx(styles.detail_btn)}>
+                    <Link href={'/class/123'} className={cx(styles.detail_btn)}>
                         상세보기
                     </Link>
                 </li>

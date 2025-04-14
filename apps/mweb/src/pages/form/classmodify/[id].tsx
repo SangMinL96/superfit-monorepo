@@ -35,11 +35,7 @@ function Index() {
                 onClick={() => setSheetType('강사')}
             />
             <Button type='submit'>수정하기</Button>
-            <BottomSheet
-                title={`${getParticle(String(sheetType))} 선택해주세요`}
-                open={!!sheetType}
-                onClose={() => setSheetType(null)}
-            >
+            <BottomSheet title={`${getParticle(String(sheetType))} 선택해주세요`} open={!!sheetType} onClose={() => setSheetType(null)}>
                 {sheetType === '강사' && <TeacherSelectBottom />}
             </BottomSheet>
         </form>

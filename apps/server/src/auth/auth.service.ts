@@ -52,7 +52,6 @@ export class AuthService {
     return result;
   }
   async userSignup(params: signupParamsItf): Promise<ExecResultItf> {
-    console.log(params);
     const { password, salt } = (await createHashedPassword(params.userPw)) as {
       password: string;
       salt: string;
@@ -70,18 +69,6 @@ export class AuthService {
       params
     );
     return result;
-  }
-
-  async businessUserSignup(params: signupParamsItf): Promise<ExecResultItf> {
-    const result = await this.mysqlService.execQuery(userSignupQuery(), params);
-    if (result.data.insertId) {
-      return await this.mysqlService.execQuery(businessUserSignupQuery(), {
-        ...params,
-        user_id: result.data.insertId,
-      });
-    } else {
-      return { result: "fail" };
-    }
   }
 
   createToken(payload: UserInfoItf): string {

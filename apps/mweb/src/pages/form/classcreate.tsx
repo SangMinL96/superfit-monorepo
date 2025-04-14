@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 function ClassCreate() {
     const [sheetType, setSheetType] = useState<'강사' | null>(null);
-
+    const [bottom강사, setBottom강사] = useState('');
     return (
         <form className={cx(styles.wrap)}>
             <Input
@@ -32,13 +32,11 @@ function ClassCreate() {
                 onClick={() => setSheetType('강사')}
             />
             <Button type='submit'>생성하기</Button>
-            <BottomSheet
-                title={`${getParticle(String(sheetType))} 선택해주세요`}
-                open={!!sheetType}
-                onClose={() => setSheetType(null)}
-            >
-                {sheetType === '강사' && <TeacherSelectBottom />}
-            </BottomSheet>
+            {sheetType && (
+                <BottomSheet title={`${getParticle(String(sheetType))} 선택해주세요`} open={!!sheetType} onClose={() => setSheetType(null)}>
+                    {sheetType === '강사' && <TeacherSelectBottom />}
+                </BottomSheet>
+            )}
         </form>
     );
 }
