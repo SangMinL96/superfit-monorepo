@@ -40,14 +40,12 @@ function Index() {
                 <Wrap margin='10px 0 0'>
                     <div className={cx(styles.box)}>
                         {tags.map(item => (
-                            <>
-                                <span key={item} className={cx(styles.tag)}>
-                                    {item}
-                                    <button type='button' onClick={() => onTagsRemove(item)}>
-                                        <Svgs size={15} name='circleClose' />
-                                    </button>
-                                </span>
-                            </>
+                            <span key={item} className={cx(styles.tag)}>
+                                {item}
+                                <button type='button' onClick={() => onTagsRemove(item)}>
+                                    <Svgs size={15} name='circleClose' />
+                                </button>
+                            </span>
                         ))}
                     </div>
                 </Wrap>

@@ -8,7 +8,7 @@ type Props = {
     size?: number;
 };
 
-function Svgs({ name, cxStyles, size }: Props) {
+function Svgs({ name, cxStyles, size = 20 }: Props) {
     const ref = useRef<HTMLSpanElement>(null);
 
     const targetSvg = svgList[name] as any;

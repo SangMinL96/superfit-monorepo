@@ -1,0 +1,23 @@
+.wrap {
+    margin-top: 20px;
+}
+
+.tab_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 0 8px;
+    height: 32px;
+    max-height: 32px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow:
+        rgba(158, 167, 174, 0.1) 0px 1px 2px 0px,
+        rgba(156, 166, 173, 0.15) 0px 1px 3px 1px;
+}
+.tab_btn.active {
+    background-color: #1a1a1a;
+    color: #fff;
+}
