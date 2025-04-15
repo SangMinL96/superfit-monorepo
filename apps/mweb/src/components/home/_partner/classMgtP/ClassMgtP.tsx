@@ -1,11 +1,9 @@
-import React from 'react';
-import styles from './ClassMgtP.module.scss';
-import cx from 'clsx';
+import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import Svgs from '@superfit/design/Svgs';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import cx from 'clsx';
+import styles from './ClassMgtP.module.scss';
 function ClassMgtP() {
-    const router = useRouter();
+    const nativeRouter = useNativeRouter();
     return (
         <div className={cx(styles.wrap)}>
             <ul className={cx(styles.list)}>
@@ -34,7 +32,7 @@ function ClassMgtP() {
                     </div>
                 </li>
             </ul>
-            <button type='button' className={cx(styles.bottom_btn)} onClick={() => router.push('/class/list')}>
+            <button type='button' className={cx(styles.bottom_btn)} onClick={() => nativeRouter.push('/class/list')}>
                 수업 전체보기
             </button>
         </div>

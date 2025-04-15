@@ -2,9 +2,10 @@ import React from 'react';
 import styles from './TodayClassP.module.scss';
 import cx from 'clsx';
 import Svgs from '@superfit/design/Svgs';
-import Link from 'next/link';
+import { useNativeRouter } from '@src/hooks/useNativeRouter';
 
 function TodayClassP() {
+    const nativeRouter = useNativeRouter();
     return (
         <div className={cx(styles.wrap)}>
             <ul className={cx(styles.list)}>
@@ -16,15 +17,7 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                    <button
-                        type='button'
-                        className={cx(styles.detail_btn)}
-                        onClick={() =>
-                            window.ReactNativeWebView.postMessage(
-                                JSON.stringify({ type: 'gotoStack', url: '/class/123', headerName: '그룹수업 3/10' }),
-                            )
-                        }
-                    >
+                    <button type='button' className={cx(styles.detail_btn)} onClick={() => nativeRouter.push('/class/123')}>
                         상세보기
                     </button>
                 </li>
@@ -36,9 +29,9 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                    <Link href={'/class/123'} className={cx(styles.detail_btn)}>
+                    <button type='button' className={cx(styles.detail_btn)} onClick={() => nativeRouter.push('/class/123')}>
                         상세보기
-                    </Link>
+                    </button>
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
@@ -48,9 +41,9 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                    <Link href={'/class/123'} className={cx(styles.detail_btn)}>
+                    <button type='button' className={cx(styles.detail_btn)} onClick={() => nativeRouter.push('/class/123')}>
                         상세보기
-                    </Link>
+                    </button>
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
@@ -60,9 +53,9 @@ function TodayClassP() {
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
                         </div>
                     </div>
-                    <Link href={'/class/123'} className={cx(styles.detail_btn)}>
+                    <button type='button' className={cx(styles.detail_btn)} onClick={() => nativeRouter.push('/class/123')}>
                         상세보기
-                    </Link>
+                    </button>
                 </li>
             </ul>
             <button type='button' className={cx(styles.bottom_btn)}>

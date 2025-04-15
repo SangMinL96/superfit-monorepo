@@ -1,9 +1,9 @@
-import React from 'react';
-import styles from './NavEtcP.module.scss';
-import cx from 'clsx';
+import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import Svgs from '@superfit/design/Svgs';
-import Link from 'next/link';
+import cx from 'clsx';
+import styles from './NavEtcP.module.scss';
 function NavEtcP() {
+    const nativeRouter = useNativeRouter();
     return (
         <div className={cx(styles.wrap)}>
             <ul className={cx(styles.list)}>
@@ -15,9 +15,9 @@ function NavEtcP() {
                             <p className={cx(styles.info_list)}>69명</p>
                         </div>
                     </div>
-                    <Link href={'/user/list?category=all'} className={cx(styles.detail_btn)}>
+                    <button type='button' className={cx(styles.detail_btn)} onClick={() => nativeRouter.push('/user/list?category=all')}>
                         전체보기
-                    </Link>
+                    </button>
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
@@ -27,9 +27,9 @@ function NavEtcP() {
                             <p className={cx(styles.info_list)}>8명</p>
                         </div>
                     </div>
-                    <Link href={'/user/list?category=signup'} className={cx(styles.detail_btn)}>
+                    <button type='button' className={cx(styles.detail_btn)} onClick={() => nativeRouter.push('/user/list?category=all')}>
                         전체보기
-                    </Link>
+                    </button>
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
@@ -39,9 +39,9 @@ function NavEtcP() {
                             <p className={cx(styles.info_list)}>8명</p>
                         </div>
                     </div>
-                    <Link href={'/user/list?category=done'} className={cx(styles.detail_btn)}>
+                    <button type='button' className={cx(styles.detail_btn)} onClick={() => nativeRouter.push('/user/list?category=all')}>
                         전체보기
-                    </Link>
+                    </button>
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
@@ -51,9 +51,9 @@ function NavEtcP() {
                             <p className={cx(styles.info_list)}>8명</p>
                         </div>
                     </div>
-                    <Link href={'/user/list?category=leave'} className={cx(styles.detail_btn)}>
+                    <button type='button' className={cx(styles.detail_btn)} onClick={() => nativeRouter.push('/user/list?category=all')}>
                         전체보기
-                    </Link>
+                    </button>
                 </li>
             </ul>
         </div>

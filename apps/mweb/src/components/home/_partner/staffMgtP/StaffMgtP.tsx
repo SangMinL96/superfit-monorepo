@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './StaffMgtP.module.scss';
 import cx from 'clsx';
 import Svgs from '@superfit/design/Svgs';
-import { useRouter } from 'next/router';
+import { useNativeRouter } from '@src/hooks/useNativeRouter';
 
 function StaffMgtP() {
-    const router = useRouter();
+    const router = useNativeRouter();
     return (
         <div className={cx(styles.wrap)}>
             <ul className={cx(styles.list)}>
