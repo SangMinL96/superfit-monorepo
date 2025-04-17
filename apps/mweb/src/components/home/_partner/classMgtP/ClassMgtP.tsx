@@ -3,6 +3,7 @@ import Svgs from '@superfit/design/Svgs';
 import cx from 'clsx';
 import styles from './ClassMgtP.module.scss';
 function ClassMgtP() {
+    //
     const nativeRouter = useNativeRouter();
     return (
         <div className={cx(styles.wrap)}>
