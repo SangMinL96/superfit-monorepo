@@ -17,20 +17,21 @@
             margin-left: 8px;
         }
         .tit_list {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 600;
-            color: var(--grey700);
+            color: var(--themeColor);
         }
         .info_list {
             margin-top: 4px;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 500;
         }
         .detail_btn {
-            background-color: var(--grey100);
-            font-size: 0.9rem;
+            background-color: var(--themeColor);
+            color: var(--txtColor);
+            font-size: 1.1rem;
             font-weight: 500;
-            padding: 7px 10px;
+            padding: 8px 10px;
             border-radius: 4px;
         }
     }
@@ -38,7 +39,8 @@
         width: 100%;
         padding: 20px 0;
         margin: 20px 0 -20px;
-        font-size: 1.3rem;
+        color: var(--themeColor);
+        font-size: 1.5rem;
         font-weight: 500;
         border-top: 1px solid var(--grey100);
         background-color: #fff;

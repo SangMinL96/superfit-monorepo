@@ -13,7 +13,7 @@ function NaverOauthCallbackPage({ code, state }: { code: string; state: string }
                 email: data?.email || '',
                 gender: data?.gender || '',
                 nickname: data?.name || '',
-                hp: data?.mobile.replace(/-/g, "")
+                hp: data?.mobile.replace(/-/g, ''),
             };
             if (result.result === 'notFound_user') {
                 const postData = {
@@ -30,7 +30,6 @@ function NaverOauthCallbackPage({ code, state }: { code: string; state: string }
                 window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'gotoMain' }));
             }
         } catch (err) {
-            // alert(JSON.stringify(err));
             console.log(err);
         }
     }, [code, state]);

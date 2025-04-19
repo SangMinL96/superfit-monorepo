@@ -23,5 +23,13 @@ export const useNativeRouter = () => {
         }
         window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'gotoStack', url, headerName }));
     };
-    return { push };
+
+    const back = () => {
+        if (router.back() as any) {
+            return;
+        } else {
+            return window.ReactNativeWebView.postMessage('stackBack');
+        }
+    };
+    return { push, back };
 };

@@ -11,7 +11,7 @@ function TodayClassP() {
             <ul className={cx(styles.list)}>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={24} />
+                        <Svgs name='classMark' size={26} cxStyles={cx(styles.icon)} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
@@ -23,7 +23,7 @@ function TodayClassP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={24} />
+                        <Svgs name='classMark' size={26} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
@@ -35,7 +35,7 @@ function TodayClassP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={24} />
+                        <Svgs name='classMark' size={26} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
@@ -47,7 +47,7 @@ function TodayClassP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={24} />
+                        <Svgs name='classMark' size={26} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
@@ -58,7 +58,7 @@ function TodayClassP() {
                     </button>
                 </li>
             </ul>
-            <button type='button' className={cx(styles.bottom_btn)}>
+            <button type='button' className={cx(styles.bottom_btn)} onClick={() => nativeRouter.push('/class/create')}>
                 달력/리스트로 전체보기
             </button>
         </div>

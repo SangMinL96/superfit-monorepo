@@ -7,12 +7,22 @@ import Head from 'next/head';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import { SWRConfig } from 'swr';
+import { useRouter } from 'next/router';
 dayjs.locale('ko');
 export default function App({ Component, pageProps }: AppProps) {
+    const router = useRouter();
     useEffect(() => {
-        const body = document.body;
-        // body.style.setProperty('--grey100', 'red');
-    }, []);
+        const onRouterBack = (url: string) => {
+            if (typeof window !== 'undefined' && window.ReactNativeWebView) {
+                if (url !== router.asPath) {
+                    return router.back();
+                } else {
+                    return window.ReactNativeWebView.postMessage('stackBack');
+                }
+            }
+        };
+        window.routerBack = onRouterBack;
+    }, [router]);
     return (
         <>
             <Head>

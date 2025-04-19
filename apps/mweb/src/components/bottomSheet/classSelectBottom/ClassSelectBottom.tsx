@@ -4,12 +4,23 @@ import styles from './ClassSelectBottom.module.scss';
 import { Button } from '@superfit/design/button';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from 'next/router';
-function classSelectBottom() {
+import { useNativeRouter } from '@src/hooks/useNativeRouter';
+
+function ClassSelectBottom() {
     const router = useRouter();
+    const nRouter = useNativeRouter();
     if (!router.isReady) return null;
     return (
         <div className={cx(styles.wrap)}>
-            <Button margin='5px 0 10px' name='create' type='button' width='100%' color='shadow' size={40}>
+            <Button
+                margin='5px 0 10px'
+                name='create'
+                type='button'
+                width='100%'
+                color='shadow'
+                size={40}
+                onClick={() => nRouter.push('/form/classcreate')}
+            >
                 생성하러가기
             </Button>
             <Swiper
@@ -34,4 +45,4 @@ function classSelectBottom() {
     );
 }
 
-export default classSelectBottom;
+export default ClassSelectBottom;

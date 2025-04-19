@@ -10,10 +10,8 @@ import ClassSelectBottom from '@src/components/bottomSheet/classSelectBottom/Cla
 import TimeSelectBottom from '@src/components/bottomSheet/timeSelectBottom/TimeSelectBottom';
 import Wrap from '@superfit/design/wrap';
 function ClassCreate() {
-    const [sheetType, setSheetType] = useState<"수업" | '강사' | '시작시간' | '종료시간' | null>(null);
-    const onInputClick = () => {
-
-    }
+    const [sheetType, setSheetType] = useState<'수업' | '강사' | '시작시간' | '종료시간' | null>(null);
+    const onInputClick = () => {};
     // function getParticle(word) {
     //     if (typeof word !== "string" || word.length === 0) {
     //         throw new Error("단어를 입력하세요.");
@@ -36,55 +34,42 @@ function ClassCreate() {
             <Input
                 height='50px'
                 margin='0 0 30px'
-                name='class'
                 type='text'
                 readOnly
                 placeholder={{ text: '수업 선택/직접입력' }}
                 label='수업'
                 required
-                onClick={() => setSheetType("수업")}
+                onClick={() => setSheetType('수업')}
             />
             <Input
                 margin='0 0 30px'
                 height='50px'
-                name='teacher'
                 type='text'
                 placeholder={{ text: '강사 선택/직접입력' }}
                 label='강사'
                 required
-                onClick={() => setSheetType("강사")}
+                readOnly
+                onClick={() => setSheetType('강사')}
             />
-            <Input
-                defaultValue={0}
-                width='60px'
-                height='50px'
-                margin='0 0 30px'
-                name='person'
-                type='number'
-                label='최대인원'
-                required
-                unit="명"
-            />
+            <Input defaultValue={0} width='60px' height='50px' margin='0 0 30px' type='number' label='최대인원' required unit='명' />
             <Wrap direction='row' margin='0 0 60px' gap='10px'>
                 <Input
                     width='100%'
-                    name='class'
                     type='text'
                     readOnly
                     placeholder={{ text: '00:00' }}
                     label='시작시간'
                     required
-                    onClick={() => setSheetType("시작시간")}
+                    onClick={() => setSheetType('시작시간')}
                 />
                 <Input
                     width='100%'
-                    name='class'
                     type='text'
                     readOnly
                     placeholder={{ text: '00:00' }}
                     label='종료시간'
                     required
-                    onClick={() => setSheetType("종료시간")}
+                    onClick={() => setSheetType('종료시간')}
                 />
             </Wrap>
             <Button name='btn' type='submit'>
@@ -97,7 +82,7 @@ function ClassCreate() {
                 {sheetType === '종료시간' && <TimeSelectBottom />}
             </BottomSheet>
         </form>
-    )
+    );
 }
 
-export default ClassCreate
+export default ClassCreate;

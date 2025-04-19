@@ -15,10 +15,11 @@
     margin-bottom: 15px;
 }
 .day {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    background-color: var(--grey100);
+    background-color: var(--themeColor);
+    color: var(--txtColor);
     padding: 3px 5px;
     margin: 0 10px 4px 0;
-    border-radius: 8px;
+    border-radius: 3px;
 }

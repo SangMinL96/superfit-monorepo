@@ -9,7 +9,7 @@ function NavEtcP() {
             <ul className={cx(styles.list)}>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='people' size={24} cxStyles={cx(styles.icon)} />
+                        <Svgs name='people' size={26} cxStyles={cx(styles.icon)} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>총 회원</em>
                             <p className={cx(styles.info_list)}>69명</p>
@@ -21,7 +21,7 @@ function NavEtcP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='profileAdd' size={24} cxStyles={cx(styles.icon)} />
+                        <Svgs name='profileAdd' size={26} cxStyles={cx(styles.icon)} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>최근 가입한 회원</em>
                             <p className={cx(styles.info_list)}>8명</p>
@@ -33,7 +33,7 @@ function NavEtcP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='clipboardClose' size={24} cxStyles={cx(styles.icon)} />
+                        <Svgs name='clipboardClose' size={26} cxStyles={cx(styles.icon)} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>곧, 만료되는 회원</em>
                             <p className={cx(styles.info_list)}>8명</p>
@@ -45,7 +45,7 @@ function NavEtcP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='profileDelete' size={24} cxStyles={cx(styles.icon)} />
+                        <Svgs name='profileDelete' size={26} cxStyles={cx(styles.icon)} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>최근 탈퇴한 회원</em>
                             <p className={cx(styles.info_list)}>8명</p>

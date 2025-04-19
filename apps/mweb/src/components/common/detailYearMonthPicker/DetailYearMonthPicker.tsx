@@ -20,9 +20,9 @@ function DetailYearMonthPicker({ value = dayjs(new Date()).format('YYYY-MM-DD'),
     };
     return (
         <div className={cx(styles.wrap)}>
-            <div onClick={() => onDateArrowClick('prev')} className={cx(styles.prev_icon)}>
+            <button onClick={() => onDateArrowClick('prev')} className={cx(styles.prev_icon)}>
                 {prevIcon}
-            </div>
+            </button>
             <ReactDatePicker
                 locale={ko}
                 disabledKeyboardNavigation
@@ -38,9 +38,9 @@ function DetailYearMonthPicker({ value = dayjs(new Date()).format('YYYY-MM-DD'),
                     e.currentTarget.blur();
                 }}
             />
-            <div onClick={() => onDateArrowClick('next')} className={cx(styles.next_icon)}>
+            <button onClick={() => onDateArrowClick('next')} className={cx(styles.next_icon)}>
                 {nextIcon}
-            </div>
+            </button>
         </div>
     );
 }

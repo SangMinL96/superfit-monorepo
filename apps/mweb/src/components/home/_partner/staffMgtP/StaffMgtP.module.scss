@@ -17,10 +17,10 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
-            margin-left: 8px;
+            margin-left: 10px;
         }
         .tit_list {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 600;
             color: var(--grey700);
         }
@@ -29,17 +29,10 @@
             gap: 4px;
         }
         .status .tag {
-            padding: 3px 6px;
-            background-color: var(--grey100);
-            color: var(--black300);
-            font-size: 0.9rem;
-            border-radius: 4px;
-        }
-        .detail_btn {
-            background-color: var(--grey100);
-            font-size: 0.9rem;
-            font-weight: 500;
-            padding: 7px 10px;
+            padding: 4px 7px;
+            background-color: var(--themeColor);
+            color: var(--txtColor);
+            font-size: 1.1rem;
             border-radius: 4px;
         }
     }
@@ -47,8 +40,9 @@
         width: 100%;
         padding: 20px 0;
         margin: 20px 0 -20px;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: 500;
+        color: var(--themeColor);
         border-top: 1px solid var(--grey100);
         background-color: #fff;
     }

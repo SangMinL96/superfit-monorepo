@@ -139,7 +139,8 @@ table {
 body {
     line-height: 1;
     font-family: 'Pretendard', sans-serif;
-    --themeColor: #0028ef;
+    --themeColor: #343b55;
+    --txtColor: #f7f7f7;
     --blue400: #0028ef;
     --red200: #ff5d5d;
     --red300: #ff2424;
