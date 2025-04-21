@@ -1,5 +1,5 @@
 import BottomSheet from '@superfit/design/BottomSheet';
-import { Button } from '@superfit/design';
+import { Button } from '@superfit/design/button';
 import Input from '@superfit/design/Input';
 import React, { useState } from 'react';
 

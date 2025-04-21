@@ -1,0 +1,11 @@
+.wrap {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wrap.inline {
+    position: inherit;
+    transform: none;
+}
