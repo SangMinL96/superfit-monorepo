@@ -16,14 +16,14 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
-        margin-left: 8px;
+        margin-left: 12px;
     }
     .tit_list {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 600;
         color: var(--grey500);
     }
     .desc {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 }

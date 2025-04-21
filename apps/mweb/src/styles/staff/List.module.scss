@@ -35,7 +35,8 @@
     }
     .tag_box > .tag {
         padding: 3px 5px;
-        background-color: var(--grey100);
+        background-color: var(--themeColor);
+        color: var(--txtColor);
         font-weight: 500;
         border-radius: 4px;
         margin-right: 4px;

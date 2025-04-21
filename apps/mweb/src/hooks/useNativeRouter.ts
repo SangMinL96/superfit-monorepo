@@ -20,6 +20,7 @@ export const useNativeRouter = () => {
             if (window.confirm('웹사이트 이동하겠습니까?')) {
                 return router.push(url);
             }
+            return;
         }
         window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'gotoStack', url, headerName }));
     };

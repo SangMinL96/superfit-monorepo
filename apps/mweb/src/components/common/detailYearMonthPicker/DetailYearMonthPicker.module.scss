@@ -127,12 +127,12 @@
             }
         }
         .react-datepicker__month-text--keyboard-selected {
-            background-color: #4866e4;
+            background-color: var(--themeColor);
             color: white !important;
             padding: 2px;
         }
         .react-datepicker__month--selected {
-            background-color: #4866e4;
+            background-color: var(--themeColor);
             color: white !important;
             padding: 2px;
         }
@@ -142,7 +142,7 @@
         }
         .react-datepicker__month-text--selected {
             color: #fff !important;
-            background-color: #4866e4;
+            background-color: var(--themeColor);
         }
         .react-datepicker-year-header {
             font-size: 1.4rem;

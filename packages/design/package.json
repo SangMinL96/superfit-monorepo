@@ -9,6 +9,7 @@
     "./Input": "./src/components/input/Input.tsx",
     "./TextArea": "./src/components/textarea/TextArea.tsx",
     "./BottomSheet": "./src/components/bottomSheet/BottomSheet.tsx",
+    "./EmptyBox": "./src/components/emptyBox/EmptyBox.tsx",
     "./Divide": "./src/components/divide/Divide.tsx",
     "./Card": "./src/components/card/Card.tsx",
     "./CheckBox": "./src/components/checkBox/CheckBox.tsx",

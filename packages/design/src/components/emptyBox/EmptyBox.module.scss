@@ -1,0 +1,14 @@
+.wrap {
+    position: relative;
+    padding: 0px 20px 15px 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--themeColor);
+    background-color: rgba(52, 59, 85, 0.05);
+    border-radius: 8px;
+    text-align: center;
+    .icon {
+        display: block;
+        text-align: center;
+    }
+}
