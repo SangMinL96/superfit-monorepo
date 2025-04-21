@@ -12,7 +12,6 @@ function StaffForm() {
     const firstTag = useRef(false);
     const [tagValue, setTabValue] = useState('');
     const [tags, setTags] = useState<string[]>(['예) PT전문']);
-    const [gender, setGender] = useState<'M' | "G" | null>(null);
     const onInsertTag = () => {
         if (!firstTag.current && tags[0].includes('예)')) {
             setTags([tagValue]);
@@ -27,21 +26,7 @@ function StaffForm() {
     };
     return (
         <form className={cx(styles.wrap)}>
-            <Input
-                name='name'
-                height='40px'
-                type='text'
-                placeholder={{ text: '예) 김아무개 트레이너' }}
-                label='직원이름'
-                required
-            />
-            <Wrap margin='20px 0 0'>
-                <p className={cx(styles.sub_tit)}>성별</p>
-            </Wrap>
-            <Wrap margin='10px 0 0' direction='row' gap='10px'>
-                <Button type='button' size={40} color={gender === 'M' ? 'primary' : 'grey'} onClick={() => setGender('M')}>남자</Button>
-                <Button type='button' size={40} color={gender === 'G' ? 'primary' : 'grey'} onClick={() => setGender('G')}>여자</Button>
-            </Wrap>
+            <Input name='name' height='40px' type='text' placeholder={{ text: '예) 김아무개 트레이너' }} label='직원이름' required />
             <Wrap margin='20px 0 0'>
                 <p className={cx(styles.sub_tit)}>특징태그</p>
                 <Wrap margin='10px 0 0'>
@@ -78,7 +63,9 @@ function StaffForm() {
                     }}
                 />
             </Wrap>
-            <Button margin='20px 0 0' type='submit'>생성하기</Button>
+            <Button margin='20px 0 0' type='submit'>
+                생성하기
+            </Button>
         </form>
     );
 }

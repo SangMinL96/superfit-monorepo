@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useClientSideCheck } from '@src/hooks/useClientSideCheck';
-import ClassCreate from '@src/components/class/classCreate/ClassCreate';
+import ClassStepCreate from '@src/components/class/classStepCreate/ClassStepCreate';
 import { useClassCreateState } from '@src/hooks/state/useClassCreateState';
 const DateCalendar = dynamic(() => import('@src/components/class/dateCalendar/DateCalendar'), { ssr: false });
 
@@ -20,7 +20,7 @@ function Index() {
     return (
         <div>
             {step === '1' && <DateCalendar />}
-            {step === '2' && <ClassCreate />}
+            {step === '2' && <ClassStepCreate />}
         </div>
     );
 }

@@ -6,14 +6,12 @@
     justify-content: center;
     align-items: center;
     .prev_icon {
-        z-index: 99;
         position: absolute;
-        left: calc(50% - 70px);
+        left: calc(50% - 75px);
         top: 11px;
         cursor: pointer;
     }
     .next_icon {
-        z-index: 99;
         position: absolute;
         right: calc(50% - 70px);
         top: 11px;
@@ -85,7 +83,7 @@
         }
         .react-datepicker-wrapper {
             input {
-                width: 110px;
+                width: 120px;
                 border-radius: 6px;
                 height: 36px;
                 padding-left: 10px;

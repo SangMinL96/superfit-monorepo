@@ -33,6 +33,8 @@ import 이모지_돋보기 from "../svgs/이모지
 import 이모지_달력 from "../svgs/이모지_달력.svg";
 import 이모지_느낌표 from "../svgs/이모지_느낌표.svg";
 import 밝은사이클닫기 from "../svgs/밝은사이클닫기.svg";
+import 수업생성 from "../svgs/수업생성.svg";
+import 직원생성 from "../svgs/직원생성.svg";
 
 export const svgList = {
   checkFill,
@@ -70,4 +72,6 @@ export const svgList = {
   이모지_달력,
   이모지_느낌표,
   밝은사이클닫기,
+  수업생성,
+  직원생성,
 };
