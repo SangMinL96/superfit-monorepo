@@ -1,4 +1,4 @@
-import TeacherSelectBottom from '@src/components/bottomSheet/teacherSelectBottom/TeacherSelectBottom';
+import StaffSelectBottom from '@src/components/bottomSheet/staffSelectBottom/StaffSelectBottom';
 import styles from '@src/styles/form/ClassModify.module.scss';
 import BottomSheet from '@superfit/design/BottomSheet';
 import { Button } from '@superfit/design/button';
@@ -36,7 +36,7 @@ function Index() {
             />
             <Button type='submit'>수정하기</Button>
             <BottomSheet title={`${getParticle(String(sheetType))} 선택해주세요`} open={!!sheetType} onClose={() => setSheetType(null)}>
-                {sheetType === '강사' && <TeacherSelectBottom />}
+                {sheetType === '강사' && <StaffSelectBottom />}
             </BottomSheet>
         </form>
     );

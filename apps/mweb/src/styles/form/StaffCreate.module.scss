@@ -18,18 +18,22 @@
     justify-content: center;
     align-items: center;
     padding: 8px 25px 8px 10px;
-    background-color: var(--grey100);
+    background-color: var(--themeColor);
+
     border-radius: 4px;
     font-size: 1.3rem;
     font-weight: 500;
-    color: var(--grey500);
+    color: var(--txtColor);
     button {
         position: absolute;
         right: 5px;
         top: 0;
         height: 100%;
         margin-left: 4px;
-        background-color: var(--grey100);
+        background-color: var(--themeColor);
+    }
+    .close_icon {
+        background-color: var(--themeColor);
     }
 }
 .oblong_input {

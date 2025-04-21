@@ -6,7 +6,8 @@
     "./auth": "./src/auth.ts",
     "./login": "./src/login.ts",
     "./user": "./src/user.ts",
-    "./class": "./src/class.ts"
+    "./class": "./src/class.ts",
+    "./staff": "./src/staff.ts"
   },
   "license": "MIT",
   "scripts": {

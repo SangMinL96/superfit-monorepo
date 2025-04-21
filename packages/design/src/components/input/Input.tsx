@@ -46,6 +46,7 @@ function Input({
   min,
   maxLength,
   minLength,
+  value,
   defaultValue,
   onClick,
   onChange,
@@ -112,6 +113,7 @@ function Input({
           onChange={onChange}
           disabled={disabled}
           type={type}
+          value={value}
           readOnly={readOnly}
           placeholder={placeholder?.text}
           name={name}

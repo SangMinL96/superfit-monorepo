@@ -14,9 +14,7 @@ export const Jwt = createParamDecorator((_, context: ExecutionContext) => {
     tokenPayload.user_email = request.user.user_email;
     tokenPayload.user_gender = request.user.user_gender;
     tokenPayload.user_birthday = request.user.user_birthday;
-    console.log(tokenPayload);
     return tokenPayload;
   }
-  console.log();
   return null;
 });

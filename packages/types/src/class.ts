@@ -3,7 +3,8 @@ export interface ClassCreateItf {
 }
 
 export interface getClassItf {
-  class_name: string;
-  create_date: string;
-  modify_date: string;
+  classId: number;
+  className: string;
+  createDate: string;
+  modifyDate: string;
 }

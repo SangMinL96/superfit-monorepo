@@ -5,41 +5,58 @@ import { Button } from '@superfit/design/button';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from 'next/router';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
+import { getClassItf } from '@superfit/types/class';
+import Svgs from '@superfit/design/Svgs';
+import { useClassCreateState } from '@src/hooks/state/useClassCreateState';
 
-function ClassSelectBottom() {
+type Props = {
+    data?: getClassItf[];
+    onSheetClose: () => void;
+};
+
+function ClassSelectBottom({ onSheetClose, data }: Props) {
     const router = useRouter();
     const nRouter = useNativeRouter();
+    const { formData, setFormData } = useClassCreateState();
+
+    const onClassClick = (id: number) => {
+        setFormData({ ...formData, classId: id });
+        onSheetClose();
+    };
+
     if (!router.isReady) return null;
     return (
         <div className={cx(styles.wrap)}>
+            {(data?.length || 0) < 1 && (
+                <p className={cx(styles.empty)}>
+                    <Svgs name='이모지_전구' size={30} cxStyles={cx(styles.icon)} />
+                    수업이 존재하지 않아요
+                    <br />
+                    생성하기 버튼을 눌러 생성해주세요
+                </p>
+            )}
             <Button
-                margin='5px 0 10px'
+                margin='10px 0'
                 name='create'
                 type='button'
                 width='100%'
                 color='shadow'
-                size={40}
+                size={44}
                 onClick={() => nRouter.push('/form/classcreate')}
             >
                 생성하러가기
             </Button>
-            <Swiper
-                slidesPerView={4}
-                direction={'vertical'}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={swiper => console.log(swiper)}
-            >
-                <SwiperSlide className={cx(styles.item)} onClick={() => console.log('Test')}>
-                    그룹 수업(기본유형)
-                </SwiperSlide>
-                <SwiperSlide className={cx(styles.item)}>1대1 수업(기본유형)</SwiperSlide>
-                <SwiperSlide className={cx(styles.item)}>그룹 수업(기본유형)</SwiperSlide>
-                <SwiperSlide className={cx(styles.item)}>그룹 수업(기본유형)</SwiperSlide>
-                <SwiperSlide className={cx(styles.item)}>1대1 수업(기본유형)</SwiperSlide>
-                <SwiperSlide className={cx(styles.item)}>그룹 수업(기본유형)</SwiperSlide>
-                <SwiperSlide className={cx(styles.item)}>그룹 수업(기본유형)</SwiperSlide>
-                <SwiperSlide className={cx(styles.item)}>1대1 수업(기본유형)</SwiperSlide>
-                <SwiperSlide className={cx(styles.item)}>그룹 수업(기본유형)</SwiperSlide>
+            <Swiper slidesPerView={4} direction={'vertical'}>
+                {data?.map((item: getClassItf) => {
+                    return (
+                        <SwiperSlide key={`${item.classId}`} className={cx(styles.item)}>
+                            <button type='button' onClick={() => onClassClick(item.classId)}>
+                                {item.className}
+                                {item.classId === formData.classId && <Svgs name='checkFillActive' />}
+                            </button>
+                        </SwiperSlide>
+                    );
+                })}
             </Swiper>
         </div>
     );

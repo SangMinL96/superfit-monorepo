@@ -2,34 +2,34 @@ import { Body, Controller, Get, Post, UseGuards } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { Jwt } from "@src/_common/jwt/jwt";
 import { JwtAuthGuard } from "@src/_common/jwt/jwt-auth.guard";
-import { ClassCreateItf } from "@superfit/types/class";
+import { StaffCreateItf } from "@superfit/types/staff";
 import { UserInfoItf } from "@superfit/types/user";
-import { ClassService } from "./class.service";
-@Controller("/api/v1/class")
-export class ClassController {
+import { StaffService } from "./staff.service";
+@Controller("/api/v1/staff")
+export class StaffController {
   constructor(
-    private readonly classService: ClassService,
+    private readonly staffService: StaffService,
     private jwtService: JwtService
   ) {
-    // private readonly connectionService: MysqlService, // private readonly ClassService: ClassService,
+    // private readonly connectionService: MysqlService, // private readonly StaffService: StaffService,
   }
 
   @Get("/list")
   @UseGuards(JwtAuthGuard)
   async list(): Promise<any> {
-    const result = await this.classService.getClass();
+    const result = await this.staffService.getStaff();
     return result;
   }
   @Post("/create")
   @UseGuards(JwtAuthGuard)
   async create(
     @Jwt() jwt: UserInfoItf,
-    @Body() body: ClassCreateItf
+    @Body() body: StaffCreateItf
   ): Promise<any> {
     const params = {
       ...body,
     };
-    const result = await this.classService.insertClassCreate(params);
+    const result = await this.staffService.insertStaffCreate(params);
     return result;
   }
 }

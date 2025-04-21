@@ -8,6 +8,7 @@ import {
   getClassCreateQuery,
   insertClassCreateQuery,
 } from "./query";
+import snakeToCamel from "@src/_common/utils/snakeToCamel";
 
 @Injectable()
 export class ClassService {
@@ -18,12 +19,11 @@ export class ClassService {
     //
   }
 
-  async getClass(params: ClassCreateItf): Promise<ExecResultItf> {
-    const result = await this.mysqlService.execQuery(
-      getClassCreateQuery(),
-      params
+  async getClass() {
+    const result = await this.mysqlService.getQuery<getClassItf[]>(
+      getClassCreateQuery()
     );
-    return result;
+    return snakeToCamel(result);
   }
   async insertClassCreate(params: ClassCreateItf): Promise<ExecResultItf> {
     const get = await this.mysqlService.getQuery<getClassItf[]>(
