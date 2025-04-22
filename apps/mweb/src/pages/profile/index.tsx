@@ -1,26 +1,15 @@
-import BottomSheet from '@superfit/design/BottomSheet';
-import { Button } from '@superfit/design/button';
-import Input from '@superfit/design/Input';
-import React, { useState } from 'react';
+import ProfileHeader from '@src/components/profile/profileHeader/ProfileHeader';
+import ProfileInfo from '@src/components/profile/ProfileInfo/ProfileInfo';
+import ProfileNav from '@src/components/profile/ProfileNav/ProfileNav';
+import ProfileTicket from '@src/components/profile/ProfileTicket/ProfileTicket';
 
 function ProfileIndex() {
-  const [open, setOpen] = useState(true);
   return (
-    <div style={{ padding: 100 }}>
-      <Button name='test' type='button'>teset</Button>
-      <div style={{ padding: 100 }}>
-        <Input
-          type='text'
-          label='이름'
-          name='id'
-          fontSize='1.8rem'
-          color='var(--block300)'
-          placeholder={{ text: '아이디를 입력하세요.' }}
-        />
-      </div>
-      <BottomSheet title='' open={open} onClose={() => setOpen(false)}>
-        <div>test</div>
-      </BottomSheet>
+    <div>
+      <ProfileHeader />
+      <ProfileInfo />
+      <ProfileTicket />
+      <ProfileNav />
     </div>
   );
 }

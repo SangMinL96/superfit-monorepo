@@ -1,0 +1,15 @@
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.txt {
+    font-size: 1.4rem;
+    color: var(--grey400);
+}

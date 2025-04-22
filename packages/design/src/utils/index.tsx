@@ -33,8 +33,26 @@ import 이모지_돋보기 from "../svgs/이모지
 import 이모지_달력 from "../svgs/이모지_달력.svg";
 import 이모지_느낌표 from "../svgs/이모지_느낌표.svg";
 import 밝은사이클닫기 from "../svgs/밝은사이클닫기.svg";
-import 수업생성 from "../svgs/수업생성.svg";
-import 직원생성 from "../svgs/직원생성.svg";
+import 이모지_수업생성 from "../svgs/이모지_수업생성.svg";
+import 이모지_검은닫기 from "../svgs/이모지_검은닫기.svg";
+import 이모지_못 from "../svgs/이모지_못.svg";
+import 이모지_불꽃 from "../svgs/이모지_불꽃.svg";
+import 이모지_빨간닫기 from "../svgs/이모지_빨간닫기.svg";
+import 이모지_우편없음 from "../svgs/이모지_우편없음.svg";
+import 이모지_우편있음 from "../svgs/이모지_우편있음.svg";
+import 이모지_집 from "../svgs/이모지_집.svg";
+import 이모지_집숲 from "../svgs/이모지_집숲.svg";
+import 이모지_직원생성 from "../svgs/이모지_직원생성.svg";
+import 설정 from "../svgs/설정.svg";
+import 종 from "../svgs/종.svg";
+import 종2 from "../svgs/종2.svg";
+import 단일회원 from "../svgs/단일회원.svg";
+import 여러명회원 from "../svgs/여러명회원.svg";
+import 이모지_여러명 from "../svgs/이모지_여러명.svg";
+import 이모지_여자맥북 from "../svgs/이모지_여자맥북.svg";
+import 이모지_편지하트 from "../svgs/이모지_편지하트.svg";
+import 책 from "../svgs/책.svg";
+
 
 export const svgList = {
   checkFill,
@@ -58,6 +76,7 @@ export const svgList = {
   circleClose,
   이모지_편지,
   이모지_카드,
+  이모지_수업생성,
   이모지_팡파레,
   이모지_체크,
   이모지_책,
@@ -72,6 +91,22 @@ export const svgList = {
   이모지_달력,
   이모지_느낌표,
   밝은사이클닫기,
-  수업생성,
-  직원생성,
+  이모지_검은닫기,
+  이모지_못,
+  이모지_불꽃,
+  이모지_빨간닫기,
+  이모지_우편없음,
+  이모지_우편있음,
+  이모지_집,
+  이모지_집숲,
+  이모지_직원생성,
+  설정,
+  종,
+  종2,
+  단일회원,
+  여러명회원,
+  이모지_여러명,
+  이모지_여자맥북,
+  이모지_편지하트,
+  책,
 };

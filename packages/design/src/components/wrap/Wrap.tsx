@@ -35,6 +35,7 @@ function Wrap({
         gap,
         margin,
         padding,
+        boxSizing: "border-box"
     };
     useEffect(() => {
         if (ref.current) {

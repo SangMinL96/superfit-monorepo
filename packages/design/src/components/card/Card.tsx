@@ -6,16 +6,17 @@ type Props = {
     children: ReactNode;
     onClick?: () => void;
     title?: string;
+    margin?: string;
 };
-function Card({ children, onClick, title }: Props) {
+function Card({ children, onClick, title, margin }: Props) {
     const Tag = onClick ? 'button' : 'div';
     return (
-        <Tag className={clsx(styles.wrap)} {...(Tag === 'button' && { type: 'button' })} onClick={onClick}>
+        <Tag className={clsx(styles.wrap)} {...(Tag === 'button' && { type: 'button' })} style={{ margin }} onClick={onClick}>
             {title && <strong className={clsx(styles.tit)}>{title}</strong>}
             {children}
             {Tag === 'button' && (
                 <span className={clsx(styles.onclick_icon)}>
-                    <Svgs name='arrowRight'/>
+                    <Svgs name='arrowRight' />
                 </span>
             )}
         </Tag>

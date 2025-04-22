@@ -1,0 +1,40 @@
+.tabs {
+    display: flex;
+    position: relative;
+    background-color: #f3f4f6;
+    border-radius: 20px;
+}
+
+.tab_button {
+    position: relative;
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    strong {
+        position: relative;
+        z-index: 10;
+        font-size: 16px;
+        color: var(--grey200);
+    }
+}
+
+.tab_button.active {
+    font-weight: 600;
+    strong {
+        color: var(--themeColor);
+    }
+}
+
+.tab_indicator {
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 3px;
+    right: 3px;
+    top: 3px;
+    background-color: #fff;
+    border-radius: 20px;
+}

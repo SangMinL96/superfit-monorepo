@@ -15,13 +15,13 @@ function Index() {
             <p className={cx(styles.desc)}>2. 본인이 대표여도 직원 등록을 해야해요</p>
             <Wrap margin='20px 0 0'>
                 <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/form/classcreate')}>
-                    <Svgs name='수업생성' size={40} />
+                    <Svgs name='이모지_수업생성' size={40} />
                     <em>수업 생성하러가기</em>
                 </button>
             </Wrap>
             <Wrap margin='20px 0 0'>
                 <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/form/staffcreate')}>
-                    <Svgs name='직원생성' size={40} />
+                    <Svgs name='이모지_직원생성' size={40} />
                     <em>직원 생성하러가기</em>
                 </button>
             </Wrap>

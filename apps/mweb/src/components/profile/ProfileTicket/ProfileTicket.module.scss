@@ -1,0 +1,44 @@
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.class_name {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.class_date {
+    font-size: 1.4rem;
+    color: var(--grey300);
+}
+.staff {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    color: var(--themeColor);
+}
+.remain_class {
+    color: var(--themeColor);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.remain_count {
+    color: var(--themeColor);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.progress_bar_background {
+    margin-top: 10px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress_bar_fill {
+    height: 100%;
+    background-color: var(--themeColor);
+    border-radius: 8px;
+}

@@ -1,0 +1,20 @@
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+}
+.tit {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--themeColor);
+}
+.btn{
+    width: 30px;
+    height:30px;
+}
+.icon_box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

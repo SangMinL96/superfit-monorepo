@@ -3,7 +3,7 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true
   },
-  transpilePackages: ['ui'],
+  transpilePackages: ['@superfit/design', "@superfit/shared", "@superfit/type"],
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
