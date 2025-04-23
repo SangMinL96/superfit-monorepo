@@ -18,7 +18,7 @@ function ClassIdPage() {
                 <li>
                     <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
-                            <Svgs name='avatarMan' />
+                            <Svgs name='남자캐릭터' />
                         </div>
                         <div className={cx(styles.info)}>
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
@@ -34,7 +34,7 @@ function ClassIdPage() {
                 <li>
                     <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
-                            <Svgs name='avatarMan' />
+                            <Svgs name='남자캐릭터' />
                         </div>
                         <div className={cx(styles.info)}>
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
@@ -49,7 +49,7 @@ function ClassIdPage() {
                 <li>
                     <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
-                            <Svgs name='avatarMan' />
+                            <Svgs name='남자캐릭터' />
                         </div>
                         <div className={cx(styles.info)}>
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
@@ -65,7 +65,7 @@ function ClassIdPage() {
                 <li>
                     <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
-                            <Svgs name='avatarMan' />
+                            <Svgs name='남자캐릭터' />
                         </div>
                         <div className={cx(styles.info)}>
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>

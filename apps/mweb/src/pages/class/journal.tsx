@@ -9,19 +9,19 @@ function Index() {
     const onClick = (index: string) => {
         setIsOpen((prev) => {
             if (prev.find(f => f === index)) {
-                return prev.filter(f => f !== index)
+                return prev.filter(f => f !== index);
             }
-            return prev.concat(index)
-        })
-    }
-    const maps = [1, 2, 3, 4, 5, 6, 7]
+            return prev.concat(index);
+        });
+    };
+    const maps = [1, 2, 3, 4, 5, 6, 7];
     return (
         <div className={cx(styles.wrap)}>
             <h3 className={cx(styles.tit)}>수업일지</h3>
             <Button margin='20px 0 0' type='button' name='white' color='light' size={40}>작성하기</Button>
             <ul className={cx(styles.list)}>
                 {maps.map((item, index) => {
-                    const key = `item_${item}_${index}`
+                    const key = `item_${item}_${index}`;
                     return (
                         <motion.li key={key} animate={isOpen.includes(`${index}`) ? "open" : "closed"}>
                             <motion.button type='button' className={cx(styles.accordion_btn)} onClick={() => onClick(`${index}`)}
@@ -51,7 +51,7 @@ function Index() {
                                 className={cx(styles.content)}>
                                 평소처럼 진행함
                             </motion.p>
-                        </motion.li>)
+                        </motion.li>);
                 })}
             </ul>
         </div >

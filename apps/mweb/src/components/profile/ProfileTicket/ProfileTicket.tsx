@@ -11,9 +11,8 @@ function ProfileTicket() {
     return (
         <Wrap padding='0 20px 20px'>
             <Card>
-
-                <Tabs data={['내 수강권', "이용 내역"]} value={activeTab} onChange={tab => setActiveTab(tab)} />
-                <AnimatePresence mode="wait">
+                <Tabs layoutId='profile_ticket' data={['내 수강권', "이용 내역"]} value={activeTab} onChange={tab => setActiveTab(tab)} />
+                <AnimatePresence mode="wait" propagate >
                     <motion.div
                         key={activeTab}
                         initial={{ opacity: 0, y: 10 }}
@@ -66,7 +65,6 @@ function ProfileTicket() {
                         <Button type='button' size={36} margin='20px 0 0' color='grey'>모든 수강권 보기</Button>
                     </motion.div>
                 </AnimatePresence>
-
             </Card>
         </Wrap>
     );

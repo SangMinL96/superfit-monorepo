@@ -8,8 +8,8 @@ import people from "../svgs/people.svg";
 import information from "../svgs/information.svg";
 import clipboardClose from "../svgs/clipboard_close.svg";
 import messageEdit from "../svgs/message_edit.svg";
-import avatarGirl from "../svgs/avatar_girl.svg";
-import avatarMan from "../svgs/avatar_man.svg";
+import 여자캐릭터 from "../svgs/여자캐릭터.png";
+import 남자캐릭터 from "../svgs/남자캐릭터.png";
 import arrowRight from "../svgs/arrow_right.svg";
 import circleCheck from "../svgs/circle_check.svg";
 import search from "../svgs/search.svg";
@@ -52,16 +52,24 @@ import 이모지_여러명 from "../svgs/이모지_여러명.svg";
 import 이모지_여자맥북 from "../svgs/이모지_여자맥북.svg";
 import 이모지_편지하트 from "../svgs/이모지_편지하트.svg";
 import 책 from "../svgs/책.svg";
-
-
+import 필터 from "../svgs/필터.svg";
+import 이모지_입장관리 from "../svgs/이모지_입장관리.svg";
+import qr코드 from "../svgs/qr코드.svg";
+import 텍스트표시 from "../svgs/텍스트표시.svg";
+import 새로고침 from "../svgs/새로고침.svg";
+import 공유 from "../svgs/공유";
 export const svgList = {
+  공유,
+  새로고침,
+  qr코드,
+  텍스트표시,
   checkFill,
   checkFillActive,
   checkFillDisabled,
   classMark,
   profileDelete,
-  avatarMan,
-  avatarGirl,
+  남자캐릭터,
+  여자캐릭터,
   profileAdd,
   information,
   people,
@@ -109,4 +117,6 @@ export const svgList = {
   이모지_여자맥북,
   이모지_편지하트,
   책,
+  필터,
+  이모지_입장관리,
 };

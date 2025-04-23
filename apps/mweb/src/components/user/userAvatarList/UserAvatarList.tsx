@@ -8,7 +8,7 @@ function UserAvatarList() {
           <li className={cx(styles.avatar_list)}>
                <Link href={'/user/123'} className={cx(styles.detail_btn)}>
                     <span className={cx(styles.row_left)}>
-                         <Svgs name='avatarMan'size={35} />
+                         <Svgs name='남자캐릭터'size={35} />
                          <span className={cx(styles.class_info)}>
                               <em className={cx(styles.tit_list)}>이상민 트레이너</em>
                               <span className={cx(styles.desc)}>

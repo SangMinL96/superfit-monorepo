@@ -13,6 +13,7 @@ type Props = {
     margin?: string;
     fontSize?: string;
     padding?: string;
+    borderRadius?: string;
 };
 export const Button = ({
     width,
@@ -26,10 +27,11 @@ export const Button = ({
     size = 50,
     margin,
     padding,
+    borderRadius,
 }: Props) => {
     return (
         <button
-            style={{ width, margin, padding, fontSize }}
+            style={{ width, margin, padding, fontSize, borderRadius }}
             type={type}
             name={name}
             className={clsx(styles.wrap, styles[`size_${size}`], styles[color])}

@@ -2,6 +2,8 @@ import { clsx } from 'clsx';
 import { HTMLInputTypeAttribute, useEffect, useRef } from 'react';
 import styles from './OblongInput.module.scss';
 import Svgs from '../svgs/Svgs';
+import { motion } from "framer-motion";
+
 type Props = {
     label?: string;
     value?: string | number;
@@ -69,12 +71,11 @@ function OblongInput({
             Object.entries(inputInlineStyle).forEach(([key, cssValue]) => {
                 cssValue && inputRef.current && inputRef.current.style.setProperty(key, cssValue || '');
             });
-            inputRef.current.style.setProperty('opacity', '1');
         }
     }, [inputInlineStyle]);
 
     return (
-        <div className={clsx(styles.wrap, isSearch ? styles.search_type : '')}>
+        <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} className={clsx(styles.wrap, isSearch ? styles.search_type : '')}>
             {isSearch && <Svgs name='search' cxStyles={clsx(styles.search)} />}
             <label
                 style={{ margin: label ? ' 0 0 8px 3px' : '0' }}
@@ -100,7 +101,7 @@ function OblongInput({
                 maxLength={maxLength}
                 minLength={minLength}
             />
-        </div>
+        </motion.div>
     );
 }
 

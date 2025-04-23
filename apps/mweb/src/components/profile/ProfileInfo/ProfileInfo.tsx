@@ -11,10 +11,9 @@ function ProfileInfo() {
             <Card>
                 <Wrap direction='row'>
                     <div className={cx(s.avartar)}>
-                        <Svgs name='avatarMan' size={70} />
-                        {/* <img src='' alt='내이미지' /> */}
+                        <Svgs name='여자캐릭터' size={70} />
                     </div>
-                    <Wrap justify='center' margin='0 0 0 15px' gap='5px'>
+                    <Wrap align='flex-start' margin='0 0 0 15px' gap='5px'>
                         <strong className={cx(s.name)}>김민수</strong>
                         <em className={cx(s.txt)}>hwon3794@gmail.com</em>
                         <em className={cx(s.txt)}>010-3794-3814</em>

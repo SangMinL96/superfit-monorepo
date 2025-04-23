@@ -10,9 +10,11 @@ type Props = {
     margin?: string;
     padding?: string;
     width?: string;
+    wrapClassName?: string;
 };
 
 function Wrap({
+    wrapClassName,
     position = 'relative',
     children,
     justify,
@@ -29,7 +31,7 @@ function Wrap({
         position,
         display: 'flex',
         'flex-direction': direction,
-        ' align-items': align,
+        'align-items': align,
         'justify-content': justify,
         width,
         gap,
@@ -44,7 +46,7 @@ function Wrap({
             });
         }
     }, [inlineStyle]);
-    return <div ref={ref}>{children}</div>;
+    return <div ref={ref} className={wrapClassName}>{children}</div>;
 }
 
 export default Wrap;

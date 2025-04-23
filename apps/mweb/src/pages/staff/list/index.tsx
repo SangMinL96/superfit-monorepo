@@ -35,7 +35,7 @@ function Index() {
                 <Card onClick={() => nRouter.push("/form/staffmodify/123")}>
                     <span className={cx(styles.tit_box)}>
                         <span className={cx(styles.img)}>
-                            <Svgs name='avatarMan' size={50} />
+                            <Svgs name='남자캐릭터' size={50} />
                         </span>
                         <span className={cx(styles.name_box)}>
                             <em className={cx(styles.name)}>이상민 강사</em>
@@ -52,7 +52,7 @@ function Index() {
                 <Card onClick={() => nRouter.push("/form/staffmodify/123")}>
                     <span className={cx(styles.tit_box)}>
                         <span className={cx(styles.img)}>
-                            <Svgs name='avatarMan' size={50} />
+                            <Svgs name='남자캐릭터' size={50} />
                         </span>
                         <span className={cx(styles.name_box)}>
                             <em className={cx(styles.name)}>이다슬 강사</em>

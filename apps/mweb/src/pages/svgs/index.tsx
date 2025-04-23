@@ -2,11 +2,7 @@ import SvgsPage from '@superfit/design/SvgsPage';
 import React from 'react';
 
 function Index() {
-    return (
-        <div>
-            <SvgsPage />
-        </div>
-    );
+    return <SvgsPage />;
 }
 
 export default Index;

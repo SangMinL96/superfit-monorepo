@@ -8,6 +8,14 @@ declare module '*.svg' {
     const src: string;
     export default src;
 }
+declare module '*.tsx' {
+    const content: { src: any };
+    export default content;
+}
+declare module '*.png' {
+    const content: { src: any };
+    export default content;
+}
 
 declare module '*.gif' {
     const content: { src: any };
