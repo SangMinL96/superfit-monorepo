@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import { useClassCreateState } from '@src/hooks/state/useClassCreateState';
 import { getStaffItf } from '@superfit/types/staff';
-import Svgs from '@superfit/design/Svgs';
+import Icons from '@superfit/design/Icons';
 
 type Props = {
     onSheetClose: () => void;
@@ -41,7 +41,7 @@ function StaffSelectBottom({ onSheetClose, data }: Props) {
                         <SwiperSlide key={`${item.staffId}`} className={cx(styles.item)}>
                             <button type='button' onClick={() => onStaffClick(item.staffId)}>
                                 {item.staffName}
-                                {item.staffId === formData.classId && <Svgs name='checkFillActive' />}
+                                {item.staffId === formData.classId && <Icons name='checkFillActive' />}
                             </button>
                         </SwiperSlide>
                     );

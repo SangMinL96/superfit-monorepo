@@ -4,9 +4,9 @@ import Wrap from '@superfit/design/wrap';
 import cx from 'clsx';
 import { useRef, useState } from 'react';
 import OblongInput from '@superfit/design/OblongInput';
-import Svgs from '@superfit/design/Svgs';
 import TextArea from '@superfit/design/TextArea';
 import { Button } from '@superfit/design/button';
+import Icons from '@superfit/design/Icons';
 
 function StaffForm() {
     const firstTag = useRef(false);
@@ -35,7 +35,7 @@ function StaffForm() {
                             <span key={item} className={cx(styles.tag)}>
                                 {item}
                                 <button type='button' onClick={() => onTagsRemove(item)}>
-                                    <Svgs size={15} name='circleClose' />
+                                    <Icons size={15} name='circle_close' />
                                 </button>
                             </span>
                         ))}
@@ -51,7 +51,7 @@ function StaffForm() {
                     placeholder={{ text: '트레이너의 특징을 입력. 예)PT전문' }}
                 />
                 <button type='button' className={cx(styles.icon_box)} onClick={onInsertTag}>
-                    <Svgs name='directUp' />
+                    <Icons name='direct_up' />
                 </button>
             </Wrap>
             <Wrap margin='20px 0 0'>

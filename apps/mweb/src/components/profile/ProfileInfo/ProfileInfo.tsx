@@ -4,14 +4,14 @@ import cx from 'clsx';
 import Wrap from '@superfit/design/wrap';
 import Card from '@superfit/design/Card';
 import { Button } from '@superfit/design/button';
-import Svgs from '@superfit/design/Svgs';
+import Icons from '@superfit/design/Icons';
 function ProfileInfo() {
     return (
         <Wrap padding='0 20px 20px'>
             <Card>
                 <Wrap direction='row'>
                     <div className={cx(s.avartar)}>
-                        <Svgs name='여자캐릭터' size={70} />
+                        <Icons name='여자캐릭터' size={70} />
                     </div>
                     <Wrap align='flex-start' margin='0 0 0 15px' gap='5px'>
                         <strong className={cx(s.name)}>김민수</strong>
@@ -19,7 +19,9 @@ function ProfileInfo() {
                         <em className={cx(s.txt)}>010-3794-3814</em>
                     </Wrap>
                 </Wrap>
-                <Button type='button' margin='20px 0 0' size={40}>프로필 수정</Button>
+                <Button type='button' margin='20px 0 0' size={40}>
+                    프로필 수정
+                </Button>
             </Card>
         </Wrap>
     );

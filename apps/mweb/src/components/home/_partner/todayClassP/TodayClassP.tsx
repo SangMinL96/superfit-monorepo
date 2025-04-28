@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './TodayClassP.module.scss';
 import cx from 'clsx';
-import Svgs from '@superfit/design/Svgs';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
+import Icons from '@superfit/design/Icons';
 
 function TodayClassP() {
     const nativeRouter = useNativeRouter();
@@ -11,7 +11,7 @@ function TodayClassP() {
             <ul className={cx(styles.list)}>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={26} cxStyles={cx(styles.icon)} />
+                        <Icons name='class_mark' size={26} cxStyles={cx(styles.icon)} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
@@ -23,7 +23,7 @@ function TodayClassP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={26} />
+                        <Icons name='class_mark' size={26} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
@@ -35,7 +35,7 @@ function TodayClassP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={26} />
+                        <Icons name='class_mark' size={26} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>
@@ -47,7 +47,7 @@ function TodayClassP() {
                 </li>
                 <li>
                     <div className={cx(styles.row_left)}>
-                        <Svgs name='classMark' size={26} />
+                        <Icons name='class_mark' size={26} />
                         <div className={cx(styles.class_info)}>
                             <em className={cx(styles.tit_list)}>그룹수업 3/10</em>
                             <p className={cx(styles.info_list)}>10:00 ~ 11:00</p>

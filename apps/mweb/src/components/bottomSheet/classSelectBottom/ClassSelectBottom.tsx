@@ -6,8 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from 'next/router';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import { getClassItf } from '@superfit/types/class';
-import Svgs from '@superfit/design/Svgs';
 import { useClassCreateState } from '@src/hooks/state/useClassCreateState';
+import Icons from '@superfit/design/Icons';
 
 type Props = {
     data?: getClassItf[];
@@ -29,7 +29,7 @@ function ClassSelectBottom({ onSheetClose, data }: Props) {
         <div className={cx(styles.wrap)}>
             {(data?.length || 0) < 1 && (
                 <p className={cx(styles.empty)}>
-                    <Svgs name='이모지_전구' size={30} cxStyles={cx(styles.icon)} />
+                    <Icons name='이모지_전구' size={30} cxStyles={cx(styles.icon)} />
                     수업이 존재하지 않아요
                     <br />
                     생성하기 버튼을 눌러 생성해주세요
@@ -52,7 +52,7 @@ function ClassSelectBottom({ onSheetClose, data }: Props) {
                         <SwiperSlide key={`${item.classId}`} className={cx(styles.item)}>
                             <button type='button' onClick={() => onClassClick(item.classId)}>
                                 {item.className}
-                                {item.classId === formData.classId && <Svgs name='checkFillActive' />}
+                                {item.classId === formData.classId && <Icons name='check_fill_active' />}
                             </button>
                         </SwiperSlide>
                     );

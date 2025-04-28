@@ -1,9 +1,9 @@
 import cx from "clsx";
 import { HTMLInputTypeAttribute, useEffect, useRef } from "react";
 import styles from "./Input.module.scss";
-import Svgs from "../svgs/Svgs";
 import { motion } from "framer-motion";
 import { fadeInOpacity } from "../motion";
+import Icons from "../Icons/Icons";
 type Props = {
   id?: string;
   label?: string;
@@ -123,7 +123,7 @@ function Input({
           minLength={minLength}
         />
         {unit && <div className={cx(styles.unit)}>{unit}</div>}
-        {onClick && <Svgs name="arrowRight" cxStyles={cx(styles.icon)} />}
+        {onClick && <Icons name="arrow_right" cxStyles={cx(styles.icon)} />}
       </div>
     </motion.div>
   );

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
 import Card from '@superfit/design/Card';
 import Wrap from '@superfit/design/wrap';
 import Tabs from '@superfit/design/Tabs';
 import styles from '@src/styles/manage/manage.module.scss';
 import cx from 'clsx';
-import Svgs from '@superfit/design/Svgs';
-import QRCode from "react-qr-code";
+import Icons from '@superfit/design/Icons';
+import QRCode from 'react-qr-code';
 import { Button } from '@superfit/design/button';
 function Index() {
     const [tab, setTab] = useState('QR코드');
@@ -14,21 +14,21 @@ function Index() {
         {
             name: (
                 <span className={cx(styles.tab_name)}>
-                    <Svgs name='qr코드' size={16} />
+                    <Icons name='qr코드' size={16} />
                     QR 코드
                 </span>
             ),
-            value: "QR코드",
-
-        }, {
+            value: 'QR코드',
+        },
+        {
             name: (
                 <span className={cx(styles.tab_name)}>
-                    <Svgs name='텍스트표시' size={16} />
+                    <Icons name='텍스트표시' size={16} />
                     텍스트 코드
                 </span>
             ),
-            value: "텍스트코드",
-        }
+            value: '텍스트코드',
+        },
     ];
     return (
         <motion.div
@@ -41,11 +41,11 @@ function Index() {
             <Wrap padding='20px'>
                 <Card title='위드필라테스 입장'>
                     <Wrap margin='20px 0 0'>
-                        <Tabs data={tabData} value={tab} onChange={(e) => setTab(e)} layoutId='manage_code' />
+                        <Tabs data={tabData} value={tab} onChange={e => setTab(e)} layoutId='manage_code' />
                     </Wrap>
-                    <AnimatePresence mode="wait" >
+                    <AnimatePresence mode='wait'>
                         <motion.div
-                            style={{ width: "100%", display: "flex", alignItems: "center", flexDirection: "column", gap: 10 }}
+                            style={{ width: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 10 }}
                             key={tab}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ function Index() {
                                 <Card margin='20px 0 0'>
                                     <QRCode
                                         size={200}
-                                        style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                                        style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
                                         value={'http://10.18.1.38:3000/home/partner'}
                                         viewBox={`0 0 200 200`}
                                     />
@@ -65,18 +65,10 @@ function Index() {
                             {tab === '텍스트코드' && (
                                 <Wrap margin='20px 0 0'>
                                     <Wrap width='250px' direction='row' justify='space-between'>
-                                        <span className={cx(styles.num_box)}>
-                                            Y
-                                        </span>
-                                        <span className={cx(styles.num_box)}>
-                                            Y
-                                        </span>
-                                        <span className={cx(styles.num_box)}>
-                                            Y
-                                        </span>
-                                        <span className={cx(styles.num_box)}>
-                                            Y
-                                        </span>
+                                        <span className={cx(styles.num_box)}>Y</span>
+                                        <span className={cx(styles.num_box)}>Y</span>
+                                        <span className={cx(styles.num_box)}>Y</span>
+                                        <span className={cx(styles.num_box)}>Y</span>
                                     </Wrap>
                                 </Wrap>
                             )}
@@ -87,7 +79,8 @@ function Index() {
             </Wrap>
             <Wrap>
                 <Button type='button' width='150px' borderRadius={'30px'} size={36}>
-                    <Svgs name='공유'margin='0 5px 0 0' />코드 공유하기
+                    <Icons name='공유' margin='0 5px 0 0' />
+                    코드 공유하기
                 </Button>
             </Wrap>
         </motion.div>

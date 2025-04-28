@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'clsx';
 import styles from '@src/styles/create/CreateIndex.module.scss';
 import Wrap from '@superfit/design/wrap';
-import Svgs from '@superfit/design/Svgs';
+import Icons from '@superfit/design/Icons';
 import Loading from '@superfit/design/Loading';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 function Index() {
@@ -15,13 +15,13 @@ function Index() {
             <p className={cx(styles.desc)}>2. 본인이 대표여도 직원 등록을 해야해요</p>
             <Wrap margin='20px 0 0'>
                 <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/form/classcreate')}>
-                    <Svgs name='이모지_수업생성' size={40} />
+                    <Icons name='이모지_수업생성' size={40} />
                     <em>수업 생성하러가기</em>
                 </button>
             </Wrap>
             <Wrap margin='20px 0 0'>
                 <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/form/staffcreate')}>
-                    <Svgs name='이모지_직원생성' size={40} />
+                    <Icons name='이모지_직원생성' size={40} />
                     <em>직원 생성하러가기</em>
                 </button>
             </Wrap>

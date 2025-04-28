@@ -2,7 +2,7 @@ import UserSearchInput from '@src/components/user/userSearchInput/UserSearchInpu
 import React from 'react';
 import styles from '@src/styles/user/userListAll.module.scss';
 import cx from 'clsx';
-import Svgs from '@superfit/design/Svgs';
+import Icons from '@superfit/design/Icons';
 import UserAvatarList from '@src/components/user/userAvatarList/UserAvatarList';
 import { useRouter } from 'next/router';
 import { Button } from '@superfit/design/button';
@@ -22,16 +22,16 @@ function Page() {
         <div>
             <Loading inline />
             <UserSearchInput />
-            <Wrap margin='10px 0 0' padding="0 20px">
-                <Button type='button' name='all' size={36} padding='0 20px' color='light'>전체회원 보기</Button>
+            <Wrap margin='10px 0 0' padding='0 20px'>
+                <Button type='button' name='all' size={36} padding='0 20px' color='light'>
+                    전체회원 보기
+                </Button>
             </Wrap>
             <Wrap direction='row' justify='space-between' padding='0 20px' margin='20px 0'>
-                <h5 className={cx(styles.sec_tit)}>
-                    {title}
-                </h5>
+                <h5 className={cx(styles.sec_tit)}>{title}</h5>
                 <button type='button' className={cx(styles.order_by)}>
                     <em className={cx(styles.tit)}>이름 순</em>
-                    <Svgs name='arrowBottom' />
+                    <Icons name='arrow_bottom' />
                 </button>
             </Wrap>
             <ul className={cx(styles.list_box)}>

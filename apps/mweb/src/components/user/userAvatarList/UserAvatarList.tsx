@@ -1,27 +1,25 @@
 import React from 'react';
 import styles from './UserAvatarList.module.scss';
 import cx from 'clsx';
-import Svgs from '@superfit/design/Svgs';
+import Icons from '@superfit/design/Icons';
 import Link from 'next/link';
 function UserAvatarList() {
-     return (
-          <li className={cx(styles.avatar_list)}>
-               <Link href={'/user/123'} className={cx(styles.detail_btn)}>
-                    <span className={cx(styles.row_left)}>
-                         <Svgs name='남자캐릭터'size={35} />
-                         <span className={cx(styles.class_info)}>
-                              <em className={cx(styles.tit_list)}>이상민 트레이너</em>
-                              <span className={cx(styles.desc)}>
-                                   96년 12월5일, 010-3794-3814
-                              </span>
-                         </span>
+    return (
+        <li className={cx(styles.avatar_list)}>
+            <Link href={'/user/123'} className={cx(styles.detail_btn)}>
+                <span className={cx(styles.row_left)}>
+                    <Icons name='남자캐릭터' size={35} />
+                    <span className={cx(styles.class_info)}>
+                        <em className={cx(styles.tit_list)}>이상민 트레이너</em>
+                        <span className={cx(styles.desc)}>96년 12월5일, 010-3794-3814</span>
                     </span>
-                    <span>
-                         <Svgs name='arrowRight'  size={25}/>
-                    </span>
-               </Link>
-          </li>
-     );
+                </span>
+                <span>
+                    <Icons name='arrow_right' size={25} />
+                </span>
+            </Link>
+        </li>
+    );
 }
 
 export default UserAvatarList;

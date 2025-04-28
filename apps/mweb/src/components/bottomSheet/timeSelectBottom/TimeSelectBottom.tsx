@@ -3,9 +3,9 @@ import cx from 'clsx';
 import styles from './TimeSelectBottom.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from 'next/router';
-import Svgs from '@superfit/design/Svgs';
 import { Button } from '@superfit/design/button';
 import Wrap from '@superfit/design/wrap';
+import Icons from '@superfit/design/Icons';
 
 type Props = {
     value: string;
@@ -27,7 +27,7 @@ function StaffSelectBottom({ value, onResult }: Props) {
                             return (
                                 <SwiperSlide key={`time_${item}`} className={cx(styles.item)}>
                                     <button type='button' onClick={() => set시(item)}>
-                                        {item}시{시 === item && <Svgs name='checkFillActive' size={16} />}
+                                        {item}시{시 === item && <Icons name='check_fill_active' size={16} />}
                                     </button>
                                 </SwiperSlide>
                             );
@@ -40,7 +40,7 @@ function StaffSelectBottom({ value, onResult }: Props) {
                             return (
                                 <SwiperSlide key={`minutes_${item}`} className={cx(styles.item)}>
                                     <button type='button' onClick={() => set분(item)}>
-                                        {item}분{분 === item && <Svgs name='checkFillActive' size={16} />}
+                                        {item}분{분 === item && <Icons name='check_fill_active' size={16} />}
                                     </button>
                                 </SwiperSlide>
                             );

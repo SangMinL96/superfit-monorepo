@@ -8,7 +8,7 @@ declare global {
     }
     declare module '*.svg' {
         import React = require('react');
-        export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
+        export const ReactComponent: React.FC<React.SVGProps<IconsVGElement>>;
         const src: string;
         export default src;
     }

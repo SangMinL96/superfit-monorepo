@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import styles from '@src/styles/class/classId.module.scss';
 import cx from 'clsx';
 import Divide from '@superfit/design/Divide';
-import Svgs from '@superfit/design/Svgs';
+import Icons from '@superfit/design/Icons';
 import { Button } from '@superfit/design/button';
 import BottomSheet from '@superfit/design/BottomSheet';
 import Link from 'next/link';
 function ClassIdPage() {
-    const [출석, set출석] = useState<string | null>(null)
+    const [출석, set출석] = useState<string | null>(null);
     return (
         <div>
             <h3 className={cx(styles.tit)}>그룹수업</h3>
@@ -18,7 +18,7 @@ function ClassIdPage() {
                 <li>
                     <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
-                            <Svgs name='남자캐릭터' />
+                            <Icons name='남자캐릭터' />
                         </div>
                         <div className={cx(styles.info)}>
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
@@ -34,7 +34,7 @@ function ClassIdPage() {
                 <li>
                     <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
-                            <Svgs name='남자캐릭터' />
+                            <Icons name='남자캐릭터' />
                         </div>
                         <div className={cx(styles.info)}>
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
@@ -49,7 +49,7 @@ function ClassIdPage() {
                 <li>
                     <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
-                            <Svgs name='남자캐릭터' />
+                            <Icons name='남자캐릭터' />
                         </div>
                         <div className={cx(styles.info)}>
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
@@ -65,7 +65,7 @@ function ClassIdPage() {
                 <li>
                     <Link href={'/user/123'} className={cx(styles.flex_left)}>
                         <div className={cx(styles.avatar)}>
-                            <Svgs name='남자캐릭터' />
+                            <Icons name='남자캐릭터' />
                         </div>
                         <div className={cx(styles.info)}>
                             <strong className={cx(styles.info_name)}>이상민 회원</strong>
@@ -91,7 +91,9 @@ function ClassIdPage() {
                             를 클릭하여 취소 하세요
                         </li>
                     </ul>
-                    <Button name='' type='button'>출석하기</Button>
+                    <Button name='' type='button'>
+                        출석하기
+                    </Button>
                 </BottomSheet>
             )}
         </div>
