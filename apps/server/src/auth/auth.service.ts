@@ -147,15 +147,14 @@ export class AuthService {
     const [result] = await this.mysqlService.getQuery<
       { hp: string; auth_num }[]
     >(postPhoneAuthCheck(), params);
-    console.log(params);
-    console.log(result, "result");
-    if (result) return { result: "success" };
-    return { result: "fail" };
+    if (result) return { result: "success" } as ExecResultItf;
+    return { result: "fail" } as ExecResultItf;
   }
-  async refreshTokenUser(params: { ent_code: string; name: string }) {
-    const [result] = await this.mysqlService.getQuery<
-      { refresh_token: string }[]
-    >(getRefreshTokenQuery(), params);
+  async refreshTokenUser(id) {
+    const [result] = await this.mysqlService.getQuery<{ token: string }[]>(
+      getRefreshTokenQuery(),
+      { id }
+    );
     return result;
   }
 }

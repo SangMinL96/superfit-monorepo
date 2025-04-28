@@ -1,0 +1,36 @@
+.wrap {
+    padding: 20px 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+.wrap::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.txt {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.btn {
+    width: 100%;
+    border-top: 1px solid #eee;
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: 60px;
+    color: var(--themeColor);
+}
+.btn + .btn {
+    border-left: 1px solid #eee;
+    color: var(--grey200);
+}

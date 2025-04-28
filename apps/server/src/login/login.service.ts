@@ -14,6 +14,7 @@ import {
   updateRefreshTokenQuery,
   userInfoQuery,
 } from "./query";
+import { setPayload } from "@src/_common/jwt/utils";
 @Injectable()
 export class LoginService {
   constructor(
@@ -36,17 +37,7 @@ export class LoginService {
       password: string;
     };
     if (password === user.user_pw) {
-      const tokenPayload = {
-        id: user.id,
-        login_type: user.login_type,
-        user_id: user.user_id,
-        user_hp: user.user_hp,
-        user_name: user.user_name,
-        user_nickname: user.user_nickname,
-        user_email: user.user_email,
-        user_gender: user.user_gender,
-        user_birthday: user.user_birthday,
-      };
+      const tokenPayload = setPayload(user);
       const access_token = await this.authService.createToken(tokenPayload);
       const refresh_token = await this.authService.createRefreshToken(
         tokenPayload
@@ -80,17 +71,7 @@ export class LoginService {
     if (!user) {
       return { result: "notFound_user" };
     }
-    const tokenPayload = {
-      id: user.id,
-      login_type: user.login_type,
-      user_id: user.user_id,
-      user_hp: user.user_hp,
-      user_name: user.user_name,
-      user_nickname: user.user_nickname,
-      user_email: user.user_email,
-      user_gender: user.user_gender,
-      user_birthday: user.user_birthday,
-    };
+    const tokenPayload = setPayload(user);
     const access_token = await this.authService.createToken(tokenPayload);
     const refresh_token = await this.authService.createRefreshToken(
       tokenPayload

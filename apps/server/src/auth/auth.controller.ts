@@ -4,13 +4,19 @@ import { Body, Controller, Get, Headers, Post } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { SmtpService } from "@src/_common/SMTP/smtp.service";
 import { AuthService } from "./auth.service";
+import { MysqlService } from "@src/_common/DB/mysql.service";
+import { UserInfoItf } from "@superfit/types/user";
+import { userInfoQuery } from "@src/login/query";
+import { findByIdUserInfoQuery } from "./query";
+import { setPayload } from "@src/_common/jwt/utils";
 
 @Controller("/api/v1/auth")
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
     private jwtService: JwtService,
-    private smtpService: SmtpService
+    private smtpService: SmtpService,
+    private readonly mysqlService: MysqlService
   ) {
     // private readonly connectionService: MysqlService, // private readonly authService: AuthService,
   }
@@ -63,10 +69,7 @@ export class AuthController {
   async userSignup(@Body() body: signupParamsItf): Promise<ExecResultItf> {
     const params = {
       ...body,
-      businessNum: body.businessNum || "",
-      centerName: body.centerName || "",
     };
-    console.log(params);
     return await this.authService.userSignup(params);
   }
 
@@ -105,9 +108,7 @@ export class AuthController {
     }
   }
   @Post("refresh-validate")
-  async authRefreshToken(
-    @Headers() Headers: any
-  ): Promise<ExecResultItf & { access_token }> {
+  async authRefreshToken(@Headers() Headers: any): Promise<ExecResultItf> {
     const clientRefreshToken = String(Headers.authorization).replace(
       "Bearer ",
       ""
@@ -116,28 +117,29 @@ export class AuthController {
       const clientTokenInfo = await this.jwtService.verify(clientRefreshToken, {
         publicKey: process.env.JWT_SECRET,
       });
-      const params = {
-        name: clientTokenInfo.name,
-        ent_code: clientTokenInfo.ent_code,
-        cont_yn: clientTokenInfo.cont_yn,
-        contact_yn: clientTokenInfo.contact_yn,
-      } as any;
-      const { refresh_token } = await this.authService.refreshTokenUser(params);
-      const verified = (await this.jwtService.verify(refresh_token, {
+      const { token } = await this.authService.refreshTokenUser(
+        clientTokenInfo.id
+      );
+      const verified = (await this.jwtService.verify(token, {
         publicKey: process.env.JWT_SECRET,
       })) as any;
-      if (
-        params.name === verified.name &&
-        params.ent_code === verified.ent_code
-      ) {
-        const access_token = await this.authService.createToken(params);
 
-        return { result: "success", access_token };
+      if (clientTokenInfo.id === verified.id) {
+        const [user] = await this.mysqlService.getQuery<UserInfoItf[]>(
+          findByIdUserInfoQuery(),
+          {
+            id: clientTokenInfo.id,
+          }
+        );
+        const access_token = await this.authService.createToken(
+          setPayload(user)
+        );
+        return { result: "success", data: access_token };
       } else {
-        return { result: "fail", access_token: "" };
+        return { result: "fail", data: "" };
       }
     } catch (err) {
-      return { result: "fail", access_token: "" };
+      return { result: "fail", data: "" };
     }
   }
 }

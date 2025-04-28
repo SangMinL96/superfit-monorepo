@@ -19,7 +19,7 @@ function Icons({ name, cxStyles, size = 20, margin }: Props) {
       ref={ref}
       className={`${cx(styles.wrap)} ${cxStyles || ""}`.trim()}
     >
-      <img src={targetSvg.src || targetSvg} alt={`${name}_icon`} />
+      <img src={targetSvg?.src || targetSvg} alt={`${name}_icon`} />
     </span>
   );
 }

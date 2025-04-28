@@ -1,6 +1,6 @@
 import GlobalLayout from '@src/layout/GlobalLayout';
 import '@src/styles/globals.css';
-import type { AppProps } from 'next/app';
+import type { AppContext, AppProps } from 'next/app';
 import { useEffect } from 'react';
 import 'swiper/css';
 import Head from 'next/head';
@@ -8,8 +8,18 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import { SWRConfig } from 'swr';
 import { useRouter } from 'next/router';
+import { parseJwt } from '@src/common/webStorage/storage';
+import nookies from 'nookies';
+import { UserInfoItf } from '@superfit/types/user';
+import BusinessCheck from '@src/components/common/businessCheck/BusinessCheck';
 dayjs.locale('ko');
+
+type Props = {
+    userInfo?: UserInfoItf;
+};
 export default function App({ Component, pageProps }: AppProps) {
+    const { userInfo } = pageProps as Props;
+    console.log(userInfo);
     const router = useRouter();
     useEffect(() => {
         const onRouterBack = (url: string) => {
@@ -42,6 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 </style>
             </Head>
             <SWRConfig>
+                {userInfo?.login_type === 'business' && !userInfo?.center_id && <BusinessCheck />}
                 <GlobalLayout>
                     <Component {...pageProps} />
                 </GlobalLayout>
@@ -49,3 +60,14 @@ export default function App({ Component, pageProps }: AppProps) {
         </>
     );
 }
+
+App.getInitialProps = async (appContext: AppContext) => {
+    const { ctx } = appContext;
+    const cookies = nookies.get(ctx);
+    const token = cookies.access_token;
+    return {
+        pageProps: {
+            userInfo: token && token.length > 10 ? (parseJwt(token) as UserInfoItf) : ({} as UserInfoItf),
+        },
+    };
+};

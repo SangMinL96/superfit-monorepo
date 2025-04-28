@@ -7,14 +7,15 @@ type Props = {
   onClick?: () => void;
   title?: string;
   margin?: string;
+  padding?: string;
 };
-function Card({ children, onClick, title, margin }: Props) {
+function Card({ children, onClick, title, margin, padding }: Props) {
   const Tag = onClick ? "button" : "div";
   return (
     <Tag
       className={clsx(styles.wrap)}
       {...(Tag === "button" && { type: "button" })}
-      style={{ margin }}
+      style={{ margin, padding }}
       onClick={onClick}
     >
       {title && <strong className={clsx(styles.tit)}>{title}</strong>}

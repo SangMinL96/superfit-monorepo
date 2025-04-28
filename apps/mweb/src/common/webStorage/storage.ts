@@ -1,4 +1,5 @@
 import { parseJson } from '@superfit/shared';
+import { UserInfoItf } from '@superfit/types/user';
 import { destroyCookie, parseCookies, setCookie } from 'nookies';
 
 export const getStorage = (key: string) => {
@@ -37,4 +38,17 @@ export const getAccessToken = (): string => {
 export const getRefreshToken = (): string => {
     const cookies = parseCookies();
     return cookies.refresh_token;
+};
+
+export const parseJwt = (token: string) => {
+    const base64Url = token.split('.')[1]; // 페이로드 부분만 가져오기
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+        atob(base64)
+            .split('')
+            .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+            .join(''),
+    );
+
+    return JSON.parse(jsonPayload) as UserInfoItf; // JSON 객체로 변환
 };

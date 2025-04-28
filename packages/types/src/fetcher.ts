@@ -1,5 +1,4 @@
 export interface ExecResultItf {
-    result: string;
-    data?: any;
-  }
-  
+  result: "success" | "fail";
+  data?: any;
+}

@@ -1,4 +1,5 @@
 import { execFetcher } from '@src/common/fetcher/fetcher';
+import { getRefreshToken } from '@src/common/webStorage/storage';
 import { naverOauthInfoItf, oAuthSignupParamsItf, signupParamsItf } from '@superfit/types/auth';
 import { ExecResultItf } from '@superfit/types/fetcher';
 import { LoginResultItf, oAuthLoginParamsItf } from '@superfit/types/login';
@@ -81,6 +82,13 @@ export const postUserHpDupCheck = async (userHp: string): Promise<ExecResultItf>
     const result = await execFetcher('/auth/user-hp/dup-check', {
         method: 'POST',
         data: { userHp },
+    });
+    return result;
+};
+export const postRefreshValidate = async (): Promise<ExecResultItf> => {
+    const result = await execFetcher('/auth/refresh-validate', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${getRefreshToken()}` },
     });
     return result;
 };

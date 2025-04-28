@@ -11,4 +11,5 @@ export interface UserInfoItf {
   user_birthday: string;
   pw_salt?: string;
   user_pw?: string;
+  center_id?: number;
 }

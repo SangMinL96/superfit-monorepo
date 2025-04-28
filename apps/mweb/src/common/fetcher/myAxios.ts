@@ -42,20 +42,18 @@ myAxios.interceptors.response.use(
                         ? `${process.env.NEXT_PUBLIC_API_HOST_DEV}/api/v1`
                         : `${process.env.NEXT_PUBLIC_API_HOST_DEV}/api/v1`;
                 // 리프레쉬 토큰을 보내 검증후 엑세트 토큰 재발급
-                const res = await fetch(`${apiURL}/api/v1/auth/refresh-validate`, {
+                const res = await fetch(`${apiURL}/auth/refresh-validate`, {
                     method: 'post',
                     headers: { Authorization: `Bearer ${getRefreshToken()}` },
                 });
-                const { result, access_token } = (await res.json()) as ExecResultItf & {
-                    access_token: string;
-                };
+                const { result, data } = (await res.json()) as ExecResultItf;
                 if (result === 'success') {
-                    setAccessToken(access_token);
-                    originalRequest.headers['Authorization'] = `Bearer ${access_token}`;
+                    setAccessToken(data);
+                    originalRequest.headers['Authorization'] = `Bearer ${data}`;
                     return myAxios(originalRequest);
                 }
                 // 재발급중 에러 로그인페이지로 보냄\
-                return (location.href = '/login');
+                return (location.href = '/signin');
             }
             // 401에러를 제외한 에러
             return Promise.reject(error);
