@@ -1,21 +1,21 @@
-import { svgList } from '../../utils';
+import * as svgList from '../../utils/base64';
 import cx from 'clsx';
 import styles from './SvgsPage.module.scss';
 function SvgsPage() {
-    const svgArr = Object.values(svgList) as any[];
+    console.log();
     return (
         <div className={cx(styles.wrap)}>
-            {svgArr.map(item => {
-                const name = item.src.split('media/')[1];
+            {Object.entries(svgList).map(([name, value]) => {
                 return (
                     <div key={name} className={cx(styles.box)}>
-                        <p>{name.split('.')[0]}</p>
-                        <img width={30} src={item.src} alt={`${String(name)}_icon`} />
+                        <p>{name}</p>
+                        <img width={30} src={value} alt={`${String(name)}`} />
                     </div>
                 );
-            })};
+            })}
+            ;
         </div>
-    )
+    );
 }
 
 export default SvgsPage;
