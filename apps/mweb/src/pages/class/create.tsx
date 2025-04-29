@@ -5,7 +5,7 @@ import { useClientSideCheck } from '@src/hooks/useClientSideCheck';
 import ClassStepCreate from '@src/components/class/classStepCreate/ClassStepCreate';
 import { useClassCreateState } from '@src/hooks/state/useClassCreateState';
 const DateCalendar = dynamic(() => import('@src/components/class/dateCalendar/DateCalendar'), { ssr: false });
-import { motion } from "framer-motion";
+import MotionWrap from '@superfit/design/MotionWrap';
 function Index() {
     const router = useRouter();
     const { step = '1' } = router.query;
@@ -18,16 +18,10 @@ function Index() {
     }, [router, step, 선택날짜.length]);
     if (!isClient || !router.isReady) return null;
     return (
-        <motion.div
-            style={{ width: "100%" }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
-        >
+        <MotionWrap>
             {step === '1' && <DateCalendar />}
             {step === '2' && <ClassStepCreate />}
-        </motion.div>
+        </MotionWrap>
     );
 }
 

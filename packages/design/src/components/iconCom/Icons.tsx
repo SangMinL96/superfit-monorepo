@@ -11,11 +11,12 @@ type Props = {
 };
 
 function Icons({ name, cxStyles, size = 20, margin }: Props) {
+  console.log(size)
   const ref = useRef<HTMLSpanElement>(null);
   const targetSvg = svgList[name] as any;
   return (
     <span
-      style={{ width: size, height: size, margin }}
+      style={{ width: `${size}px`, height: `${size}px`, margin }}
       ref={ref}
       className={`${cx(styles.wrap)} ${cxStyles || ""}`.trim()}
     >

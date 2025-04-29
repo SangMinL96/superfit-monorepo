@@ -3,7 +3,7 @@ import styles from './ClassTicketList.module.scss';
 import cx from 'clsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from '@superfit/design/Card';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 import { useRouter } from 'next/router';
 function ClassTicketList() {
     const router = useRouter();

@@ -7,16 +7,10 @@ import Divide from '@superfit/design/Divide';
 import NavEtcP from '@src/components/home/_partner/navEtcP/NavEtcP';
 import ClassMgtP from '@src/components/home/_partner/classMgtP/ClassMgtP';
 import StaffMgtP from '@src/components/home/_partner/staffMgtP/StaffMgtP';
-import { motion } from "framer-motion";
+import MotionWrap from '@superfit/design/MotionWrap';
 function PartnerIndexPage() {
     return (
-        <motion.div
-            className={cx(styles.wrap)}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
-        >
+        <MotionWrap styleClass={cx(styles.wrap)}>
             <Divide marginOnly value={15} />
             <Card title='오늘의 수업'>
                 <TodayClassP />
@@ -33,7 +27,7 @@ function PartnerIndexPage() {
             <Card title='직원관리'>
                 <StaffMgtP />
             </Card>
-        </motion.div>
+        </MotionWrap>
     );
 }
 

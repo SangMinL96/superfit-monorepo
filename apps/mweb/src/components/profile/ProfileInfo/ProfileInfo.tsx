@@ -4,7 +4,7 @@ import cx from 'clsx';
 import Wrap from '@superfit/design/wrap';
 import Card from '@superfit/design/Card';
 import { Button } from '@superfit/design/button';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 function ProfileInfo() {
     return (
         <Wrap padding='0 20px 20px'>

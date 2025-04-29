@@ -3,7 +3,7 @@ import Wrap from '@superfit/design/wrap';
 import React, { useState } from 'react';
 import styles from '@src/styles/schedule/Schedulepage.module.scss';
 import clsx from 'clsx';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../packages/design/src/components/iconCom/Icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
 const ScheduleCalendar = dynamic(() => import('@src/components/schedule/calendar/ScheduleCalendar'), { ssr: false });

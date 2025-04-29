@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './BusinessCheck.module.scss';
+import styles from './PartnerCheck.module.scss';
 import cx from 'clsx';
 import Card from '@superfit/design/Card';
 import Wrap from '@superfit/design/wrap';
@@ -7,7 +7,7 @@ import { postTempCenter } from '@src/api/user/api';
 import { postRefreshValidate } from '@src/api/auth/api';
 import { setAccessToken } from '@src/common/webStorage/storage';
 import { useRouter } from 'next/router';
-function BusinessCheck() {
+function PartnerCheck() {
     const router = useRouter();
     const tempCenterClick = async () => {
         try {
@@ -44,4 +44,4 @@ function BusinessCheck() {
     );
 }
 
-export default BusinessCheck;
+export default PartnerCheck;

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import { useClassCreateState } from '@src/hooks/state/useClassCreateState';
 import { getStaffItf } from '@superfit/types/staff';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 
 type Props = {
     onSheetClose: () => void;

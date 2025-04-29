@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './UserAvatarList.module.scss';
 import cx from 'clsx';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 import Link from 'next/link';
 function UserAvatarList() {
     return (

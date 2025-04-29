@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import { getClassItf } from '@superfit/types/class';
 import { useClassCreateState } from '@src/hooks/state/useClassCreateState';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 
 type Props = {
     data?: getClassItf[];

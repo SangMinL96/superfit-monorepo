@@ -6,7 +6,7 @@ import { useRef, useState } from 'react';
 import OblongInput from '@superfit/design/OblongInput';
 import TextArea from '@superfit/design/TextArea';
 import { Button } from '@superfit/design/button';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 
 function StaffForm() {
     const firstTag = useRef(false);

@@ -6,19 +6,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import cx from 'clsx';
 import Tabs from '@superfit/design/Tabs';
 import Card from '@superfit/design/Card';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../packages/design/src/components/iconCom/Icons';
 import Divide from '@superfit/design/Divide';
+import MotionWrap from '@superfit/design/MotionWrap';
 function Index() {
     const [tab, setTab] = useState('대기중');
     return (
         <Wrap padding='0 20px' wrapClassName={cx(styles.enter_wrap)}>
-            <motion.div
-                style={{ width: '100%' }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.25 }}
-            >
+            <MotionWrap>
                 <OblongInput placeholder={{ text: '이름, 휴대폰번호로 검색' }} isSearch height='45px' inputClass={cx(styles.search_input)} />
                 <Wrap margin='20px 0 0'>
                     <Tabs layoutId='manage_enter' data={['대기중', '수락됨', '거절됨', '전체']} value={tab} onChange={value => setTab(value)} />
@@ -60,7 +55,7 @@ function Index() {
                         </motion.div>
                     </AnimatePresence>
                 </Wrap>
-            </motion.div>
+            </MotionWrap>
         </Wrap>
     );
 }

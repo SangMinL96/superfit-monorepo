@@ -1,17 +1,18 @@
 import React from 'react';
 import cx from 'clsx';
 import styles from '@src/styles/staff/List.module.scss';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 import { Button } from '@superfit/design/button';
 import Wrap from '@superfit/design/wrap';
 import Divide from '@superfit/design/Divide';
 import Card from '@superfit/design/Card';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import EmptyBox from '@superfit/design/EmptyBox';
+import MotionWrap from '@superfit/design/MotionWrap';
 function Index() {
     const nRouter = useNativeRouter();
     return (
-        <div className={cx(styles.wrap)}>
+        <MotionWrap styleClass={cx(styles.wrap)}>
             <h3 className={cx(styles.tit)}>직원 관리</h3>
             <Wrap padding='0 20px' direction='row' justify='space-between' align='flex-end'>
                 <p className={cx(styles.desc)}>
@@ -64,7 +65,7 @@ function Index() {
                     >{`<수상경력>\n\n- 인하대학교 스포츠과학과 졸업\n- 생활 스포츠지도사2급 보디빌딩\n- 프로보디빌딩 챔피언\n\n\n<자격증명>\n\n- 인하대학교 스포츠과학과 졸업\n- 생활 스포츠지도사2급 보디빌딩\n- 프로보디빌딩 챔피언`}</span>
                 </Card>
             </Wrap>
-        </div>
+        </MotionWrap>
     );
 }
 

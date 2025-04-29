@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'clsx';
 import styles from '@src/styles/create/CreateIndex.module.scss';
 import Wrap from '@superfit/design/wrap';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../packages/design/src/components/iconCom/Icons';
 import Loading from '@superfit/design/Loading';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 function Index() {

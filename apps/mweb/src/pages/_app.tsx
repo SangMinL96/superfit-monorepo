@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 import { parseJwt } from '@src/common/webStorage/storage';
 import nookies from 'nookies';
 import { UserInfoItf } from '@superfit/types/user';
-import BusinessCheck from '@src/components/common/businessCheck/BusinessCheck';
+import PartnerCheck from '@src/components/common/partnerCheck/PartnerCheck';
 dayjs.locale('ko');
 
 type Props = {
@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 </style>
             </Head>
             <SWRConfig>
-                {userInfo?.login_type === 'business' && !userInfo?.center_id && <BusinessCheck />}
+                {userInfo?.login_type === 'business' && !userInfo?.center_id && <PartnerCheck />}
                 <GlobalLayout>
                     <Component {...pageProps} />
                 </GlobalLayout>

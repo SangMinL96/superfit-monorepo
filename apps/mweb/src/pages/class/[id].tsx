@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '@src/styles/class/classId.module.scss';
 import cx from 'clsx';
 import Divide from '@superfit/design/Divide';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../packages/design/src/components/iconCom/Icons';
 import { Button } from '@superfit/design/button';
 import BottomSheet from '@superfit/design/BottomSheet';
 import Link from 'next/link';

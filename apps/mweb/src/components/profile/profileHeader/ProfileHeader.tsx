@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './ProfileHeader.module.scss';
 import cx from 'clsx';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 function ProfileHeader() {
     return (
         <div className={cx(s.wrap)}>

@@ -9,6 +9,7 @@
     "./Input": "./src/components/input/Input.tsx",
     "./TextArea": "./src/components/textarea/TextArea.tsx",
     "./BottomSheet": "./src/components/bottomSheet/BottomSheet.tsx",
+    "./MotionWrap": "./src/components/motionWrap/MotionWrap.tsx",
     "./EmptyBox": "./src/components/emptyBox/EmptyBox.tsx",
     "./Loading": "./src/components/loading/Loading.tsx",
     "./Divide": "./src/components/divide/Divide.tsx",

@@ -2,12 +2,12 @@ import UserSearchInput from '@src/components/user/userSearchInput/UserSearchInpu
 import React from 'react';
 import styles from '@src/styles/user/userListAll.module.scss';
 import cx from 'clsx';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 import UserAvatarList from '@src/components/user/userAvatarList/UserAvatarList';
 import { useRouter } from 'next/router';
 import { Button } from '@superfit/design/button';
-import Loading from '@superfit/design/Loading';
 import Wrap from '@superfit/design/wrap';
+import MotionWrap from '@superfit/design/MotionWrap';
 function Page() {
     const router = useRouter();
     const { category } = router.query;
@@ -19,8 +19,7 @@ function Page() {
         return '';
     })();
     return (
-        <div>
-            <Loading inline />
+        <MotionWrap>
             <UserSearchInput />
             <Wrap margin='10px 0 0' padding='0 20px'>
                 <Button type='button' name='all' size={36} padding='0 20px' color='light'>
@@ -39,7 +38,7 @@ function Page() {
                 <UserAvatarList />
                 <UserAvatarList />
             </ul>
-        </div>
+        </MotionWrap>
     );
 }
 

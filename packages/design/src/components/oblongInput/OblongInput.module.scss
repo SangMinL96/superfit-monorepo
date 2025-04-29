@@ -1,5 +1,7 @@
 .wrap {
+    width: 100%;
     position: relative;
+
 }
 .wrap.search_type {
     .search {
@@ -15,8 +17,8 @@
 }
 
 .label {
-    display: inline-block;
-    font-size: 1.3rem;
+    display: block;
+    font-size: 1.7rem;
     color: var(--grey500);
     font-weight: 600;
 }
@@ -26,7 +28,7 @@
     color: var(--black300);
     height: 100%;
     border-radius: 8px;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 500;
     border: 1px solid var(--grey100);
     padding: 0 20px;

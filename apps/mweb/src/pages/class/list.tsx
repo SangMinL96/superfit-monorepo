@@ -1,16 +1,17 @@
 import React from 'react';
 import cx from 'clsx';
-import styles from '@src/styles/class/list.module.scss';
-import Icons from '@superfit/design/Icons';
+import styles from '@src/styles/class/List.module.scss';
+import Icons from '../../../../../packages/design/src/components/iconCom/Icons';
 import { Button } from '@superfit/design/button';
 import Wrap from '@superfit/design/wrap';
 import Divide from '@superfit/design/Divide';
 import { useRouter } from 'next/router';
+import MotionWrap from '@superfit/design/MotionWrap';
 
 function Index() {
     const router = useRouter();
     return (
-        <div className={cx(styles.wrap)}>
+        <MotionWrap styleClass={cx(styles.wrap)}>
             <h3 className={cx(styles.tit)}>수업 관리</h3>
             <Wrap padding='0 20px' direction='row' justify='space-between' align='flex-end'>
                 <p className={cx(styles.desc)}>
@@ -22,13 +23,13 @@ function Index() {
                 </Button>
             </Wrap>
             <Divide value={10} margin='30px 0 0' />
-            <Wrap margin='10px 0 0' padding='0 20px'>
+            <Wrap margin='10px 0 0' padding='0 20px' align='flex-start'>
                 <h5 className={cx(styles.group_tit)}>이상민 강사</h5>
                 <ul className={cx(styles.class_list)}>
                     <li>
                         <button type='button' className={cx(styles.btn)} onClick={() => router.push(`/form/classmodify/${123}`)}>
                             <span className={cx(styles.txt_box)}>
-                                <Icons name='message_edit' />
+                                <Icons name='message_edit' size={25} />
                                 <em className={cx(styles.txt)}>그룹수업</em>
                             </span>
                             <Icons name='arrow_right' />
@@ -37,7 +38,7 @@ function Index() {
                     <li>
                         <button type='button' className={cx(styles.btn)} onClick={() => router.push(`/form/classmodify/${123}`)}>
                             <span className={cx(styles.txt_box)}>
-                                <Icons name='message_edit' />
+                                <Icons name='message_edit' size={25} />
                                 <em className={cx(styles.txt)}>그룹수업</em>
                             </span>
                             <Icons name='arrow_right' />
@@ -49,7 +50,7 @@ function Index() {
                     <li>
                         <button type='button' className={cx(styles.btn)} onClick={() => router.push(`/form/classmodify/${123}`)}>
                             <span className={cx(styles.txt_box)}>
-                                <Icons name='message_edit' />
+                                <Icons name='message_edit' size={25} />
                                 <em className={cx(styles.txt)}>그룹수업</em>
                             </span>
                             <Icons name='arrow_right' />
@@ -58,7 +59,7 @@ function Index() {
                     <li>
                         <button type='button' className={cx(styles.btn)} onClick={() => router.push(`/form/classmodify/${123}`)}>
                             <span className={cx(styles.txt_box)}>
-                                <Icons name='message_edit' />
+                                <Icons name='message_edit' size={25} />
                                 <em className={cx(styles.txt)}>그룹수업</em>
                             </span>
                             <Icons name='arrow_right' />
@@ -66,7 +67,7 @@ function Index() {
                     </li>
                 </ul>
             </Wrap>
-        </div>
+        </MotionWrap>
     );
 }
 

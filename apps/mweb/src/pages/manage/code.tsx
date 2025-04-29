@@ -5,9 +5,10 @@ import Wrap from '@superfit/design/wrap';
 import Tabs from '@superfit/design/Tabs';
 import styles from '@src/styles/manage/manage.module.scss';
 import cx from 'clsx';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../packages/design/src/components/iconCom/Icons';
 import QRCode from 'react-qr-code';
 import { Button } from '@superfit/design/button';
+import MotionWrap from '@superfit/design/MotionWrap';
 function Index() {
     const [tab, setTab] = useState('QR코드');
     const tabData = [
@@ -31,13 +32,7 @@ function Index() {
         },
     ];
     return (
-        <motion.div
-            className={cx(styles.code_wrap)}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
-        >
+        <MotionWrap styleClass={cx(styles.code_wrap)}>
             <Wrap padding='20px'>
                 <Card title='위드필라테스 입장'>
                     <Wrap margin='20px 0 0'>
@@ -79,11 +74,11 @@ function Index() {
             </Wrap>
             <Wrap>
                 <Button type='button' width='150px' borderRadius={'30px'} size={36}>
-                    <Icons name='공유' margin='0 5px 0 0' />
+                    <Icons name='공유_화이트' margin='0 5px 0 0' />
                     코드 공유하기
                 </Button>
             </Wrap>
-        </motion.div>
+        </MotionWrap>
     );
 }
 

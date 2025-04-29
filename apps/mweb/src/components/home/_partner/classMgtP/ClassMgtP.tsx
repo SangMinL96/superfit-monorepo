@@ -1,7 +1,7 @@
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import cx from 'clsx';
 import styles from './ClassMgtP.module.scss';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../../packages/design/src/components/iconCom/Icons';
 function ClassMgtP() {
     const nativeRouter = useNativeRouter();
     return (

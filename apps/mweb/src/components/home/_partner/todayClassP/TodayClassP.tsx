@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './TodayClassP.module.scss';
 import cx from 'clsx';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../../packages/design/src/components/iconCom/Icons';
 
 function TodayClassP() {
     const nativeRouter = useNativeRouter();

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from 'next/router';
 import { Button } from '@superfit/design/button';
 import Wrap from '@superfit/design/wrap';
-import Icons from '@superfit/design/Icons';
+import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
 
 type Props = {
     value: string;
