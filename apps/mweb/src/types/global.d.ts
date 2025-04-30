@@ -1,4 +1,6 @@
-export {};
+/* eslint-disable */
+export { };
+
 declare global {
     interface Window {
         Kakao?: any;

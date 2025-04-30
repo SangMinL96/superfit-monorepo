@@ -5,11 +5,13 @@ type Props = {
     children: React.ReactNode;
     styleClass?: string;
     styles?: React.CSSProperties;
+    key?: string;
 };
 
-function MotionWrap({ children, styleClass, styles }: Props) {
+function MotionWrap({ children, styleClass, styles, key }: Props) {
     return (
         <motion.div
+            {...(key && { key })}
             className={styleClass}
             style={{ width: '100%', ...styles }}
             initial={{ opacity: 0, y: 10 }}

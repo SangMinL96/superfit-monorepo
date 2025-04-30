@@ -16,7 +16,7 @@
     "./Card": "./src/components/card/Card.tsx",
     "./CheckBox": "./src/components/checkBox/CheckBox.tsx",
     "./Tabs": "./src/components/tabs/Tabs.tsx",
-    "./Icons": "./src/components/icons/Icons.tsx",
+    "./Icons": "./src/components/iconCom/Icons.tsx",
     "./IconsPage": "./src/components/iconsPage/iconsPage.tsx",
     "./motion": "./src/components/motion/index.tsx"
   },

@@ -27,9 +27,9 @@ function StaffForm() {
     return (
         <form className={cx(styles.wrap)}>
             <Input name='name' height='40px' type='text' placeholder={{ text: '예) 김아무개 트레이너' }} label='직원이름' required />
-            <Wrap margin='20px 0 0'>
+            <Wrap margin='20px 0 0' align='flex-start'>
                 <p className={cx(styles.sub_tit)}>특징태그</p>
-                <Wrap margin='10px 0 0'>
+                <Wrap margin='10px 0 0' align='flex-start'>
                     <div className={cx(styles.box)}>
                         {tags.map(item => (
                             <span key={item} className={cx(styles.tag)}>
@@ -43,7 +43,7 @@ function StaffForm() {
                 </Wrap>
             </Wrap>
 
-            <Wrap margin='20px 0 0'>
+            <Wrap margin='20px 0 0' align='flex-start'>
                 <OblongInput
                     value={tagValue}
                     onChange={e => setTabValue(e.target.value)}
@@ -54,9 +54,10 @@ function StaffForm() {
                     <Icons name='direct_up' />
                 </button>
             </Wrap>
-            <Wrap margin='20px 0 0'>
+            <Wrap margin='20px 0 0' align='flex-start'>
                 <p className={cx(styles.sub_tit)}>강사소개</p>
                 <TextArea
+                    width='100%'
                     wrapStyle={{ marginTop: 16 }}
                     placeholder={{
                         text: '예)\n<자격사항>\n- 1인 앱 개발자\n- 현직 업계1위 앱 개발자\n- 많은 사용 바랍니다',

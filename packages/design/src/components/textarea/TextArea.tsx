@@ -55,7 +55,6 @@ function TextArea({
             Object.entries(inlineStyle).forEach(([key, value]) => {
                 value && textAreaRef.current && textAreaRef.current.style.setProperty(key, value || '');
             });
-            textAreaRef.current.style.setProperty('opacity', '1');
         }
     }, [inlineStyle]);
 
