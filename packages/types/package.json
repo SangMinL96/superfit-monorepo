@@ -7,7 +7,8 @@
     "./login": "./src/login.ts",
     "./user": "./src/user.ts",
     "./class": "./src/class.ts",
-    "./staff": "./src/staff.ts"
+    "./staff": "./src/staff.ts",
+    "./center": "./src/center.ts"
   },
   "license": "MIT",
   "scripts": {

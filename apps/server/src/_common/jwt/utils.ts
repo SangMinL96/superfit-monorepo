@@ -14,3 +14,22 @@ export const setPayload = (data) => {
     center_id: data.center_id,
   } as UserInfoItf;
 };
+
+export const randomCode = () => {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  const numbers = "0123456789";
+
+  const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+
+  const allChars = letters + numbers;
+  let result = randomNumber;
+
+  for (let i = 0; i < 3; i++) {
+    result += allChars[Math.floor(Math.random() * allChars.length)];
+  }
+
+  return result
+    .split("")
+    .sort(() => Math.random() - 0.5)
+    .join("");
+};

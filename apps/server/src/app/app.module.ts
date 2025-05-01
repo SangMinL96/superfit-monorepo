@@ -7,6 +7,7 @@ import { AppService } from "./app.service";
 import { UserModule } from "@src/user/user.module";
 import { ClassModule } from "@src/class/class.module";
 import { StaffModule } from "@src/staff/staff.module";
+import { CenterModule } from "@src/center/center.module";
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { StaffModule } from "@src/staff/staff.module";
     UserModule,
     ClassModule,
     StaffModule,
+    CenterModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: dotEnv(),

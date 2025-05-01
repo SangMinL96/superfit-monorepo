@@ -34,8 +34,15 @@ function ProfileNav() {
                     </button>
                 </Wrap>
             </Card>
-            <Card title='센터입장관리'>
+            <Card title='센터관리'>
                 <Wrap margin='20px 0 0' gap='10px'>
+                    <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/partner/create')}>
+                        <span className={cx(styles.icon_box)}>
+                            <Icons cxStyles={cx(styles.icon_bg)} name='이모지_전구' size={20} />
+                            센터등록
+                        </span>
+                        <Icons name='arrow_right' />
+                    </button>
                     <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/manage/enter')}>
                         <span className={cx(styles.icon_box)}>
                             <Icons cxStyles={cx(styles.icon_bg)} name='이모지_입장관리' size={20} />
@@ -43,7 +50,7 @@ function ProfileNav() {
                         </span>
                         <Icons name='arrow_right' />
                     </button>
-                    <button type='button' className={cx(styles.btn)}  onClick={() => nRouter.push('/manage/code')}>
+                    <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/manage/code')}>
                         <span className={cx(styles.icon_box)}>
                             <Icons cxStyles={cx(styles.icon_bg)} name='이모지_편지하트' size={20} />
                             입장코드

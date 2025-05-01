@@ -7,7 +7,9 @@ import { postTempCenter } from '@src/api/user/api';
 import { postRefreshValidate } from '@src/api/auth/api';
 import { setAccessToken } from '@src/common/webStorage/storage';
 import { useRouter } from 'next/router';
+import { useNativeRouter } from '@src/hooks/useNativeRouter';
 function PartnerCheck() {
+    const nRouter = useNativeRouter();
     const router = useRouter();
     const tempCenterClick = async () => {
         try {
@@ -32,7 +34,7 @@ function PartnerCheck() {
                 <p className={cx(styles.txt)}>- 임시센터로 여러기능을 살펴 볼 수 있어요</p>
                 <p className={cx(styles.txt)}>- 슈퍼핏이 센터관리에 적합하면 센터 정보를 등록해주세요!</p>
                 <Wrap margin='50px 0 0' direction='row' justify='space-between'>
-                    <button type='button' className={cx(styles.btn)}>
+                    <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/partner/create')}>
                         센터등록
                     </button>
                     <button type='button' className={cx(styles.btn)} onClick={tempCenterClick}>

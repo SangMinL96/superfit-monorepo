@@ -15,11 +15,11 @@ function Index() {
         <div className={clsx(styles.wrap)}>
             <Wrap direction='row' gap='6px' padding='0 20px'>
                 <button type='button' className={clsx(styles.tab_btn, swiperIndex === 1 ? styles.active : '')} onClick={() => onSwiper?.slideTo(0)}>
-                    <Icons size={14} name='이모지_달력' />
+                    <Icons size={14} name='이모지_달력' />
                     달력
                 </button>
                 <button type='button' className={clsx(styles.tab_btn, swiperIndex === 2 ? styles.active : '')} onClick={() => onSwiper?.slideTo(1)}>
-                    <Icons size={14} name='이모지_책' />
+                    <Icons size={14} name='이모지_책' />
                     리스트
                 </button>
             </Wrap>
