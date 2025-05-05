@@ -3,11 +3,10 @@ import { ExecResultItf } from "@superfit/types/fetcher";
 import { UserInfoItf } from "@superfit/types/user";
 import { oAuthSignupParamsItf, signupParamsItf } from "@superfit/types/auth";
 
-import { Injectable, InternalServerErrorException } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import * as CryptoJS from "crypto-js";
 import {
-  businessUserSignupQuery,
   getRefreshTokenQuery,
   oAuthUserSignupQuery,
   phoneAuthNumQuery,
@@ -150,10 +149,10 @@ export class AuthService {
     if (result) return { result: "success" } as ExecResultItf;
     return { result: "fail" } as ExecResultItf;
   }
-  async refreshTokenUser(id) {
+  async refreshTokenUser(userUuid) {
     const [result] = await this.mysqlService.getQuery<{ token: string }[]>(
       getRefreshTokenQuery(),
-      { id }
+      { userUuid }
     );
     return result;
   }

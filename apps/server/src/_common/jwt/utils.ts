@@ -4,6 +4,7 @@ export const setPayload = (data) => {
   return {
     id: data.id,
     login_type: data.login_type,
+    user_uuid: data.user_uuid,
     user_id: data.user_id,
     user_hp: data.user_hp,
     user_name: data.user_name,

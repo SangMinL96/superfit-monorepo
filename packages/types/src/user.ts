@@ -1,6 +1,7 @@
 // shared/src/user.ts
 export interface UserInfoItf {
   id: number;
+  user_uuid: string;
   login_type: "basic" | "business" | "kakao" | "naver";
   user_id?: string;
   user_hp: string;

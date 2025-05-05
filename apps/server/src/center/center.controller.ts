@@ -15,10 +15,12 @@ export class CenterController {
     // private readonly connectionService: MysqlService, // private readonly CenterService: CenterService,
   }
 
-  @Get("/list")
+  @Get("/enter/code")
   @UseGuards(JwtAuthGuard)
-  async list(): Promise<any> {
-    const result = await this.centerService.getClass();
+  async enterCode(@Jwt() jwt: UserInfoItf): Promise<any> {
+    const result = await this.centerService.getEnterCode({
+      centerId: jwt.center_id,
+    });
     return result;
   }
   @Post("/create")
@@ -29,10 +31,15 @@ export class CenterController {
   ): Promise<any> {
     const params = {
       ...body,
-      ceoId: jwt.id,
+      userUuid: jwt.user_uuid,
       centerEnterCode: randomCode(),
     } as CenterCreateItf;
-    const result = await this.centerService.insertCenterCreate(params);
+    const { data } = await this.centerService.insertCenterCreate(params);
+    const result = await this.centerService.updateUserCenterId({
+      userUuid: params.userUuid,
+      centerId: data.insertId,
+    });
+
     return result;
   }
 }

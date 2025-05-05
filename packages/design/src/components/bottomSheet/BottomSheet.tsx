@@ -9,9 +9,16 @@ type Props = {
   children: React.ReactNode;
   onClose: () => void;
   title: string;
+  position?: "top" | "bottom";
 };
 
-function BottomSheet({ open, onClose, children, title }: Props): any {
+function BottomSheet({
+  open,
+  onClose,
+  children,
+  title,
+  position = "bottom",
+}: Props): any {
   const [hasMounted, setHasMounted] = useState(false);
   useScrollLock(true);
   useEffect(() => {
@@ -62,7 +69,7 @@ function BottomSheet({ open, onClose, children, title }: Props): any {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         />
-        <div className={clsx(styles.sheet_wrap)} ref={ref}>
+        <div className={clsx(styles.sheet_wrap, styles[position])} ref={ref}>
           <button
             className={clsx(styles.close_bar)}
             onTouchStart={onTouchStart}

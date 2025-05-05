@@ -19,7 +19,6 @@ type Props = {
 };
 export default function App({ Component, pageProps }: AppProps) {
     const { userInfo } = pageProps as Props;
-    console.log(userInfo);
     const router = useRouter();
     useEffect(() => {
         const onRouterBack = (url: string) => {
@@ -32,7 +31,8 @@ export default function App({ Component, pageProps }: AppProps) {
             }
         };
         window.routerBack = onRouterBack;
-    }, [router]);
+    }, [router, userInfo]);
+
     return (
         <>
             <Head>
@@ -65,6 +65,7 @@ App.getInitialProps = async (appContext: AppContext) => {
     const { ctx } = appContext;
     const cookies = nookies.get(ctx);
     const token = cookies.access_token;
+    console.log(parseJwt(token));
     return {
         pageProps: {
             userInfo: token && token.length > 10 ? (parseJwt(token) as UserInfoItf) : ({} as UserInfoItf),

@@ -46,7 +46,7 @@ export class LoginService {
         const { result } = await this.MysqlService.execQuery(
           updateRefreshTokenQuery(),
           {
-            user_id: user.id,
+            user_uuid: user.user_uuid,
             refresh_token,
           }
         );
@@ -54,6 +54,7 @@ export class LoginService {
           return { result: "fail" };
         }
       }
+      console.log(access_token, refresh_token);
       return { data: { access_token, refresh_token }, result: "success" };
     } else {
       throw new InternalServerErrorException("비밀번호가 틀렸습니다.");
@@ -80,7 +81,7 @@ export class LoginService {
       const { result } = await this.MysqlService.execQuery(
         updateRefreshTokenQuery(),
         {
-          user_id: user.id,
+          user_uuid: user.user_uuid,
           refresh_token,
         }
       );

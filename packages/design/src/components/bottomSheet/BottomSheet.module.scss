@@ -32,9 +32,14 @@
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 20px;
-  bottom: 10px;
   width: calc(100% - 20px);
   background-color: #fff;
+}
+.sheet_wrap.top {
+  top: 10px;
+}
+.sheet_wrap.bottom {
+  bottom: 10px;
 }
 .close_bar {
   position: absolute;

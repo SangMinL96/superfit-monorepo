@@ -9,7 +9,9 @@ import Icons from '../../../../../packages/design/src/components/iconCom/Icons';
 import QRCode from 'react-qr-code';
 import { Button } from '@superfit/design/button';
 import MotionWrap from '@superfit/design/MotionWrap';
+import { useCenterEnterCode } from '@src/api/center/hooks';
 function Index() {
+    const { data } = useCenterEnterCode();
     const [tab, setTab] = useState('QR코드');
     const tabData = [
         {
@@ -60,10 +62,10 @@ function Index() {
                             {tab === '텍스트코드' && (
                                 <Wrap margin='20px 0 0'>
                                     <Wrap width='250px' direction='row' justify='space-between'>
-                                        <span className={cx(styles.num_box)}>Y</span>
-                                        <span className={cx(styles.num_box)}>Y</span>
-                                        <span className={cx(styles.num_box)}>Y</span>
-                                        <span className={cx(styles.num_box)}>Y</span>
+                                        <span className={cx(styles.num_box)}>{data?.[0]}</span>
+                                        <span className={cx(styles.num_box)}>{data?.[1]}</span>
+                                        <span className={cx(styles.num_box)}>{data?.[2]}</span>
+                                        <span className={cx(styles.num_box)}>{data?.[3]}</span>
                                     </Wrap>
                                 </Wrap>
                             )}

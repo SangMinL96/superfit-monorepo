@@ -1,7 +1,8 @@
-// export const useUserCenterList = () => {
-//   const { data, isValidating, mutate } = useSWR(`/center/userCenterList`, url =>
-//     fetcher<any[]>(url),
-//   );
+import fetcher from '@src/common/fetcher/fetcher';
+import useSWR from 'swr';
 
-//   return { data, isValidating, mutate };
-// };
+export const useCenterEnterCode = () => {
+    const { data, isValidating, mutate } = useSWR(`/center/enter/code`, url => fetcher<string>(url));
+
+    return { data, isValidating, mutate };
+};

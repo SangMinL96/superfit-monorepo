@@ -118,17 +118,16 @@ export class AuthController {
         publicKey: process.env.JWT_SECRET,
       });
       const { token } = await this.authService.refreshTokenUser(
-        clientTokenInfo.id
+        clientTokenInfo.user_uuid
       );
       const verified = (await this.jwtService.verify(token, {
         publicKey: process.env.JWT_SECRET,
       })) as any;
-
-      if (clientTokenInfo.id === verified.id) {
+      if (clientTokenInfo.user_uuid === verified.user_uuid) {
         const [user] = await this.mysqlService.getQuery<UserInfoItf[]>(
           findByIdUserInfoQuery(),
           {
-            id: clientTokenInfo.id,
+            user_uuid: clientTokenInfo.user_uuid,
           }
         );
         const access_token = await this.authService.createToken(

@@ -1,4 +1,4 @@
-.wrap > input[type='checkbox'] {
+.wrap > input[type="checkbox"] {
   display: none;
 }
 .wrap {
@@ -8,22 +8,22 @@
     align-items: center;
   }
   .label:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     display: inline-block;
     width: 24px;
     height: 24px;
-    background-image: url('../../svgs/check_fill.svg');
+    background-image: url("../../../assets/icons/check_fill.svg");
     background-size: contain;
     cursor: pointer;
   }
-  input[type='checkbox']:checked + .label:before {
-    background-image: url('../../svgs/check_fill_active.svg');
+  input[type="checkbox"]:checked + .label:before {
+    background-image: url("../../../assets/icons/check_fill_active.svg");
     background-color: var(--theme_color);
   }
-  input[type='checkbox']:disabled + .label:before {
-    background-image: url('../../svgs/check_fill_disabled.svg');
+  input[type="checkbox"]:disabled + .label:before {
+    background-image: url("../../../assets/icons/check_fill_disabled.svg");
   }
 }
 

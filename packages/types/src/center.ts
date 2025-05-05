@@ -1,5 +1,5 @@
 export interface CenterCreateItf {
-  ceoId?: number;
+  userUuid?: string;
   centerName: string;
   centerAddress: string;
   centerBusinessNum: string;

@@ -1,4 +1,6 @@
+import { postRefreshValidate } from '@src/api/auth/api';
 import { centerCreateApi } from '@src/api/center/api';
+import { setAccessToken } from '@src/common/webStorage/storage';
 import DaumAdressBottom from '@src/components/bottomSheet/daumAdressBottom/DaumAdressBottom';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import BottomSheet from '@superfit/design/BottomSheet';
@@ -24,7 +26,6 @@ function Index() {
         setOpen(false);
     };
     const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        alert('test');
         e.preventDefault();
         try {
             const params = {
@@ -35,7 +36,11 @@ function Index() {
             const { result } = await centerCreateApi(params);
             if (result === 'success') {
                 alert('센터 등록 되었습니다.');
-                nRouter.back();
+                const { result, data } = await postRefreshValidate();
+                if (result === 'success') {
+                    setAccessToken(data);
+                    nRouter.back();
+                }
             }
         } catch (e) {
             if (axios.isAxiosError(e) && e.response) {
@@ -69,6 +74,7 @@ function Index() {
                         <OblongInput
                             fontSize='1.4rem'
                             value={formData.address}
+                            readOnly
                             margin='20px 0 0'
                             type='text'
                             height='44px'
@@ -95,7 +101,7 @@ function Index() {
                 </form>
             </MotionWrap>
             {open && (
-                <BottomSheet title='주소 입력' open={open} onClose={() => setOpen(false)}>
+                <BottomSheet position='top' title='주소 입력' open={open} onClose={() => setOpen(false)}>
                     <DaumAdressBottom onResult={onResult} />
                 </BottomSheet>
             )}

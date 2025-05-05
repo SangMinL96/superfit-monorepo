@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import Icons from '../../../../../packages/design/src/components/iconCom/Icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
+import Divide from '@superfit/design/Divide';
 const ScheduleCalendar = dynamic(() => import('@src/components/schedule/calendar/ScheduleCalendar'), { ssr: false });
 function Index() {
     const [onSwiper, setOnSwiper] = useState<SwiperType>();
@@ -23,6 +24,7 @@ function Index() {
                     리스트
                 </button>
             </Wrap>
+            <Divide value={10} marginOnly />
             {typeof window !== undefined && (
                 <Swiper
                     onSwiper={swiper => setOnSwiper(swiper)}

@@ -22,7 +22,7 @@ function StaffSelectBottom({ value, onResult }: Props) {
         <>
             <div className={cx(styles.wrap)}>
                 <div className={cx(styles.box)}>
-                    <Swiper slidesPerView={7} direction={'vertical'}>
+                    <Swiper slidesPerView={'auto'} freeMode direction={'vertical'}>
                         {time.map(item => {
                             return (
                                 <SwiperSlide key={`time_${item}`} className={cx(styles.item)}>
@@ -35,7 +35,7 @@ function StaffSelectBottom({ value, onResult }: Props) {
                     </Swiper>
                 </div>
                 <div className={cx(styles.box)}>
-                    <Swiper slidesPerView={6} direction={'vertical'}>
+                    <Swiper slidesPerView={'auto'} freeMode direction={'vertical'}>
                         {minutes.map(item => {
                             return (
                                 <SwiperSlide key={`minutes_${item}`} className={cx(styles.item)}>
