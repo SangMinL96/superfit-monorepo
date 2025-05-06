@@ -1,3 +1,4 @@
+import { useClientSideCheck } from '@src/hooks/useClientSideCheck';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
 import React from 'react';
 type Props = {
@@ -5,11 +6,12 @@ type Props = {
 };
 
 function GlobalLayout({ children }: Props) {
+    const isClient = useClientSideCheck();
     const nRouter = useNativeRouter();
     return (
-        <div style={{ paddingBottom: typeof window !== 'undefined' && window.ReactNativeWebView ? 0 : 80 }}>
+        <div style={{ paddingBottom: isClient && window.ReactNativeWebView ? 0 : 80 }}>
             {children}
-            {!(typeof window !== 'undefined' && window.ReactNativeWebView) && (
+            {!(isClient && window.ReactNativeWebView) && (
                 <div
                     style={{
                         position: 'fixed',

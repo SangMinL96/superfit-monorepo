@@ -41,7 +41,6 @@ export class AuthController {
       ...body,
       randomNum: String(randomNum),
     };
-    console.log(params);
     const result = await this.authService.hpAuthNumberSend(params);
     return result;
   }

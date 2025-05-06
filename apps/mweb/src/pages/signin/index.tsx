@@ -21,7 +21,13 @@ function SigninPage() {
             if (result.result === 'success') {
                 setAccessToken(result.data?.access_token);
                 setRefreshToken(result.data?.refresh_token);
-                if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'gotoMain' }));
+                if (window.ReactNativeWebView)
+                    window.ReactNativeWebView.postMessage(
+                        JSON.stringify({
+                            type: 'gotoMain',
+                            data: { accessToken: result.data?.access_token, refreshToken: result.data?.refresh_token },
+                        }),
+                    );
             }
         } catch (e: any) {
             if (axios.isAxiosError(e) && e.response) {

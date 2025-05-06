@@ -11,7 +11,6 @@ type Props = {
 };
 
 function Icons({ name, cxStyles, size = 20, margin }: Props) {
-  console.log(size)
   const ref = useRef<HTMLSpanElement>(null);
   const targetSvg = svgList[name] as any;
   return (

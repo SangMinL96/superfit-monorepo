@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 </style>
             </Head>
             <SWRConfig>
-                {userInfo?.login_type === 'business' && !userInfo?.center_id && <PartnerCheck />}
+                {false && userInfo?.login_type === 'business' && !userInfo?.center_id && <PartnerCheck />}
                 <GlobalLayout>
                     <Component {...pageProps} />
                 </GlobalLayout>

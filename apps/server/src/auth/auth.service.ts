@@ -34,7 +34,8 @@ export class AuthService {
       const type = {
         kakao: "카카오톡 계정으로 이미 가입되어 있습니다",
         naver: "네이버 계정으로 이미 가입되어 있습니다",
-        basic: `"${resultData[0]}" 계정으로 이미 가입되어 있습니다`,
+        basic: `"${resultData[0]?.user_id}" 계정으로 이미 가입되어 있습니다`,
+        business: `"${resultData[0]?.user_id}" 제휴계정으로 이미 가입되어 있습니다`,
       };
       return { result: "fail", data: type[resultData[0].login_type] };
     }
@@ -96,6 +97,7 @@ export class AuthService {
       phoneAuthNumQuery(),
       params
     );
+    console.log(params, "인증번호");
     return { result: "success" };
     const makeSignature = () => {
       const space = " "; // one space

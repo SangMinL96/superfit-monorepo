@@ -54,7 +54,6 @@ export class LoginService {
           return { result: "fail" };
         }
       }
-      console.log(access_token, refresh_token);
       return { data: { access_token, refresh_token }, result: "success" };
     } else {
       throw new InternalServerErrorException("비밀번호가 틀렸습니다.");

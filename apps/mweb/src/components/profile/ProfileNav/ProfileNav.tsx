@@ -57,6 +57,17 @@ function ProfileNav() {
                         </span>
                         <Icons name='arrow_right' />
                     </button>
+                    <button
+                        type='button'
+                        className={cx(styles.btn)}
+                        onClick={() => window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'logout' }))}
+                    >
+                        <span className={cx(styles.icon_box)}>
+                            <Icons cxStyles={cx(styles.icon_bg)} name='이모지_편지하트' size={20} />
+                            임시로그아웃
+                        </span>
+                        <Icons name='arrow_right' />
+                    </button>
                 </Wrap>
             </Card>
         </Wrap>

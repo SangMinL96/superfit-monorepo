@@ -1,0 +1,29 @@
+.wrap {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  background-color: #fff;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 15px;
+  overflow: hidden;
+}
+.scrolled {
+  box-shadow:
+    rgba(158, 167, 174, 0.1) 0px 1px 2px 0px,
+    rgba(156, 166, 173, 0.15) 0px 1px 3px 1px;
+}
+.tit {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--themeColor);
+}
+.icon_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+}
