@@ -20,8 +20,15 @@ function ProfileUserNav() {
                     </button>
                     <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/manage/enter')}>
                         <span className={cx(styles.icon_box)}>
-                            <Icons cxStyles={cx(styles.icon_bg)} name='이모지_' size={20} />
+                            <Icons cxStyles={cx(styles.icon_bg)} name='이모지_헤드셋' size={20} />
                             문의사항
+                        </span>
+                        <Icons name='arrow_right' />
+                    </button>
+                    <button type='button' className={cx(styles.btn)} onClick={() => nRouter.push('/manage/enter')}>
+                        <span className={cx(styles.icon_box)}>
+                            <Icons cxStyles={cx(styles.icon_bg)} name='이모지_책' size={20} />
+                            약관정책
                         </span>
                         <Icons name='arrow_right' />
                     </button>
