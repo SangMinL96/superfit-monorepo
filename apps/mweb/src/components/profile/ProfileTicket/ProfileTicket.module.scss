@@ -6,24 +6,35 @@
 }
 
 .class_name {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 600;
 }
+
 .class_date {
     font-size: 1.4rem;
     color: var(--grey300);
 }
-.staff {
-    margin-top: 15px;
-    font-size: 1.4rem;
-    color: var(--themeColor);
+
+.tag {
+    display: inline;
+    padding: 3px 5px;
+    border-radius: 4px;
+    background-color: var(--themeColor);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--txtColor);
 }
+
+
 .remain_class {
     color: var(--themeColor);
     font-size: 1.4rem;
     font-weight: 500;
+    margin-top: 10px;
 }
+
 .remain_count {
+    margin-top: 10px;
     color: var(--themeColor);
     font-size: 1.4rem;
     font-weight: 700;
@@ -41,4 +52,19 @@
     height: 100%;
     background-color: var(--themeColor);
     border-radius: 8px;
+}
+
+.current_ticket {
+    margin-top: -25px;
+    font-size: 1.2rem;
+    color: var(--grey200);
+    font-weight: 600;
+}
+
+.main_mark {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--themeColor);
 }

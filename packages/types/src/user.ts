@@ -14,3 +14,7 @@ export interface UserInfoItf {
   user_pw?: string;
   center_id?: number;
 }
+
+export interface UserInfoClientItf extends UserInfoItf {
+  isPartner?: boolean
+}

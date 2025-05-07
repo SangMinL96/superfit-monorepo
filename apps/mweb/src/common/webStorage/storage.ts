@@ -41,6 +41,7 @@ export const getRefreshToken = (): string => {
 };
 
 export const parseJwt = (token: string) => {
+    if(!token) return {} as UserInfoItf;
     const base64Url = token.split('.')[1]; // 페이로드 부분만 가져오기
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     const jsonPayload = decodeURIComponent(

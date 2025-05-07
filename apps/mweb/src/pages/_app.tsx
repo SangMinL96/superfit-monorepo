@@ -12,6 +12,7 @@ import { parseJwt } from '@src/common/webStorage/storage';
 import nookies from 'nookies';
 import { UserInfoItf } from '@superfit/types/user';
 import PartnerCheck from '@src/components/common/partnerCheck/PartnerCheck';
+import { useUserInfoState } from '@src/hooks/state/useUserInfoState';
 dayjs.locale('ko');
 
 type Props = {
@@ -19,6 +20,7 @@ type Props = {
 };
 export default function App({ Component, pageProps }: AppProps) {
     const { userInfo } = pageProps as Props;
+    const { setUserInfo } = useUserInfoState();
     const router = useRouter();
     useEffect(() => {
         const onRouterBack = (url: string) => {
@@ -30,8 +32,10 @@ export default function App({ Component, pageProps }: AppProps) {
                 }
             }
         };
+        const isPartner = ['business', 'staff'].includes(userInfo?.login_type || '');
+        setUserInfo({ ...userInfo, isPartner } as UserInfoItf);
         window.routerBack = onRouterBack;
-    }, [router, userInfo]);
+    }, [router, setUserInfo, userInfo]);
 
     return (
         <>

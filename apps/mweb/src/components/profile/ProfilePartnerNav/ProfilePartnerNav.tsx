@@ -2,10 +2,10 @@ import React from 'react';
 import Wrap from '@superfit/design/wrap';
 import Card from '@superfit/design/Card';
 import cx from 'clsx';
-import styles from './ProfileNav.module.scss';
+import styles from './ProfilePartnerNav.module.scss';
 import { useNativeRouter } from '@src/hooks/useNativeRouter';
-import Icons from '../../../../../../packages/design/src/components/iconCom/Icons';
-function ProfileNav() {
+import Icons from '@superfit/design/Icons';
+function ProfilePartnerNav() {
     const nRouter = useNativeRouter();
     return (
         <Wrap padding='0 20px 20px' gap='20px 0'>
@@ -74,4 +74,4 @@ function ProfileNav() {
     );
 }
 
-export default ProfileNav;
+export default ProfilePartnerNav;
